@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    }
+    // TODO: check if that is solution for error in console
+    // "paths": {
+    //   "@/*": ["./*"]
+    // }
   }
 }
