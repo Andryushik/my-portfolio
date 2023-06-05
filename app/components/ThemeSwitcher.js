@@ -20,6 +20,7 @@ export default function ThemeSwitcher() {
     <button
       className="cursor-pointer flex items-center justify-center w-10 h-10"
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
+      name="Change theme"
     >
       {theme === "light" ? (
         <BsFillMoonStarsFill className="text-2xl" />

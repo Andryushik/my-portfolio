@@ -1,12 +1,11 @@
 import Image from "next/image";
 import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
   AiFillGithub,
+  AiFillLinkedin,
+  AiFillTwitterCircle,
   AiFillYoutube,
 } from "react-icons/ai";
-// import Head from "next/head";
-import deved from "../public/dev-ed-wave.png";
+import deved from "../public/dev-ed-wave.png"; // TODO: remove this and file
 import design from "../public/design.png";
 import consulting from "../public/consulting.png";
 import code from "../public/code.png";
@@ -23,7 +22,7 @@ export default function Home() {
       {/* HOME/INTRO */}
       <section id="home" className="min-h-screen">
         <div className="text-center p-10">
-          <h2 className="text-5xl text-teal-600 font-medium md:text-6xl">
+          <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium md:text-7xl">
             Andrei Popov
           </h2>
           <h3 className="text-2xl py-2 md:text-3xl">
@@ -39,8 +38,6 @@ export default function Home() {
         <div className="text-5xl flex justify-center gap-16 py-3 text-gray-500">
           <AiFillLinkedin />
           <AiFillGithub />
-          <AiFillYoutube />
-          <AiFillTwitterCircle />
         </div>
         <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
           <Image

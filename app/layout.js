@@ -3,7 +3,7 @@ import Providers from "./providers";
 import "./globals.css";
 
 export const metadata = {
-  title: "Andrei Popov Portfolio",
+  title: "Andrei Popov",
   description:
     "My name is Andrei Popov. I am web developer and this is my personal portfolio web site.", //TODO: change description and favicon
 };

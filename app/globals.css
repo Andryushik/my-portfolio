@@ -8,7 +8,7 @@ html {
 }
 section {
   /* min-height: 100vh; */
-  padding-top: 100px;
+  padding-top: 80px;
   scroll-snap-align: start;
   scroll-margin-top: 20px;
 }
