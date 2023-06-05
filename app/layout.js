@@ -1,4 +1,4 @@
-import Nav from "./components/Nav";
+import Navbar from "./components/Navbar";
 import Providers from "./providers";
 import "./globals.css";
 
@@ -11,9 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="px-10 md:px-20 lg:px-40">
+      <body>
         <Providers>
-          <Nav />
+          <Navbar />
           {children}
         </Providers>
       </body>
