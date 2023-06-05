@@ -19,9 +19,9 @@ import web6 from "../public/web6.png";
 
 export default function Home() {
   return (
-    <main>
-      {/* ABOUT ME */}
-      <section className="min-h-screen">
+    <main className="px-10 md:px-20 lg:px-40">
+      {/* HOME/INTRO */}
+      <section id="home" className="min-h-screen">
         <div className="text-center p-10">
           <h2 className="text-5xl text-teal-600 font-medium md:text-6xl">
             Andrei Popov
@@ -47,7 +47,6 @@ export default function Home() {
             src={deved}
             alt="Profile Photo"
             fill
-            // style={{ objectFit: "cover" }}
             className="object-cover"
             priority={true}
             sizes="50vw"
@@ -55,10 +54,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SKILLS */}
-      <section>
+      {/* ABOUT */}
+      <section id="about">
         <div>
-          <h3 className="text-3xl py-1">Skills (Services I offer)</h3>
+          <h3 className="text-3xl py-1">About & Skills</h3>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
             Since the beginning of my journey as a freelance designer and
             developer, I&apos;ve done remote work for
@@ -125,10 +124,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PORTFOLIO */}
-      <section>
+      {/* PROJECTS */}
+      <section id="projects">
         <div>
-          <h3 className="text-3xl py-1">Portfolio</h3>
+          <h3 className="text-3xl py-1">Projects</h3>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
             Since the beginning of my journey as a freelance designer and
             developer, I&apos;ve done remote work for
@@ -185,6 +184,21 @@ export default function Home() {
               className="w-full h-full rounded-lg object-cover"
             />
           </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact">
+        <div>
+          <h3 className="text-3xl py-1">Contact</h3>
+          <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+            Since the beginning of my journey as a freelance designer and
+            developer, I&apos;ve done remote work for
+            <span className="text-teal-500"> agencies </span>
+            consulted for <span className="text-teal-500">startups </span>
+            and collaborated with talented people to create digital products for
+            both business and consumer use.
+          </p>
         </div>
       </section>
     </main>

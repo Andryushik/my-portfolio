@@ -18,7 +18,7 @@ export default function ThemeSwitcher() {
 
   return (
     <button
-      className="cursor-pointer align-middle"
+      className="cursor-pointer flex items-center justify-center w-10 h-10"
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
     >
       {theme === "light" ? (
