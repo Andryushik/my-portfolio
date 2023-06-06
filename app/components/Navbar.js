@@ -59,8 +59,11 @@ export default function Navbar() {
         {/* MENU */}
         <div>
           <div
-            className={`flex-1 justify-self-end pb-3 md:block md:pb-0 md:mt-0 p-6 md:p-0 ${
-              navbar ? "block" : "hidden"
+            className={`flex-1 justify-self-end pb-3 md:block md:pb-0 md:mt-0 p-6 md:p-0 bg-slate-200 bg-opacity-90 dark:bg-slate-950  dark:bg-opacity-90 w-full ${
+              // navbar ? "block" : "hidden"
+              navbar
+                ? "fixed top-20 left-0 ease-in duration-500"
+                : "fixed top-[-500%] left-0 ease-in duration-500"
             }`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
