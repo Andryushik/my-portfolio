@@ -22,13 +22,11 @@ export default function Home() {
       {/* HOME/INTRO */}
       <section id="home" className="min-h-screen">
         <div className="text-center p-10">
-          <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium md:text-7xl">
+          <h2 className="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium md:text-7xl">
             Andrei Popov
           </h2>
-          <h3 className="text-2xl py-2 md:text-3xl">
-            Full Stack Web Developer
-          </h3>
-          <p className="text-md py-5 leading-8 text-gray-500 md:text-xl max-w-3xl mx-auto">
+          <h3 className="text-xl py-2 md:text-3xl">Full Stack Web Developer</h3>
+          <p className="text-sm py-4 leading-8 text-gray-500 md:text-xl max-w-3xl mx-auto">
             Relocated to the Netherlands and eager to pursue a new career in IT
             as a Web Developer. Recently graduated from Hack Your Future and
             filled with enthusiasm. Possess international work experience in
@@ -69,7 +67,7 @@ export default function Home() {
           </p>
         </div>
         <div className="lg:flex gap-10">
-          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-900 flex-1">
+          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
               <Image src={design} alt="design icon" width={100} height={100} />
             </div>
@@ -84,7 +82,7 @@ export default function Home() {
             <p className="text-gray-500 py-1">Figma</p>
           </div>
 
-          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-900 flex-1">
+          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
               <Image
                 src={consulting}
@@ -104,7 +102,7 @@ export default function Home() {
             <p className="text-gray-500 py-1">Figma</p>
           </div>
 
-          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-900 flex-1">
+          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
               <Image src={code} alt="design icon" width={100} height={100} />
             </div>

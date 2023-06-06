@@ -22,7 +22,7 @@ export default function ThemeSwitcher() {
 
   return (
     <div
-      className="cursor-pointer flex items-center justify-between p-1 w-14 h-8 border border-slate-500 rounded-full relative"
+      className="cursor-pointer flex items-center justify-between p-1 w-14 h-8 border border-slate-500 rounded-full relative transition ease-in-out duration-500"
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
       name="Change theme"
     >
