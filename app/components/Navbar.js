@@ -17,7 +17,7 @@ export default function Navbar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* SOCIAL ICONS */}
-            <div className="text-4xl flex justify-center gap-6 text-cyan-500">
+            <div className="text-4xl flex justify-center gap-6 text-text-head">
               <Link href="#">
                 <AiFillGithub />
               </Link>
