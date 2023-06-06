@@ -68,25 +68,25 @@ export default function Navbar() {
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
               <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="/#home" onClick={() => setNavbar(!navbar)}>
+                <Link href="#home" onClick={() => setNavbar(!navbar)}>
                   Home
                 </Link>
               </li>
 
               <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="/#about" onClick={() => setNavbar(!navbar)}>
+                <Link href="#about" onClick={() => setNavbar(!navbar)}>
                   About
                 </Link>
               </li>
 
               <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="/#projects" onClick={() => setNavbar(!navbar)}>
+                <Link href="#projects" onClick={() => setNavbar(!navbar)}>
                   Projects
                 </Link>
               </li>
 
               <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="/#contact" onClick={() => setNavbar(!navbar)}>
+                <Link href="#contact" onClick={() => setNavbar(!navbar)}>
                   Contact
                 </Link>
               </li>

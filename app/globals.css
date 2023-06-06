@@ -4,6 +4,7 @@
 
 /* scroll snapping */
 html {
+  scroll-behavior: smooth !important;
   scroll-snap-type: y proximity;
 }
 section {
