@@ -1,14 +1,9 @@
 import Image from "next/image";
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-  AiFillYoutube,
-} from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import deved from "../public/dev-ed-wave.png"; // TODO: remove this and file
 import design from "../public/design.png";
-import consulting from "../public/consulting.png";
-import code from "../public/code.png";
+import database from "../public/database.png";
+import computer from "../public/computer.png";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
 import web3 from "../public/web3.png";
@@ -21,12 +16,14 @@ export default function Home() {
     <main className="px-10 md:px-20 lg:px-40">
       {/* HOME/INTRO */}
       <section id="home" className="min-h-screen">
-        <div className="text-center p-10">
+        <div className="text-center  px-5 md:px-10 py-10 md:mt-10">
           <h2 className="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium md:text-7xl">
             Andrei Popov
           </h2>
-          <h3 className="text-xl py-2 md:text-3xl">Full Stack Web Developer</h3>
-          <p className="text-sm py-4 leading-8 text-gray-500 md:text-xl max-w-3xl mx-auto">
+          <h3 className="text-xl py-2 md:py-4 md:text-3xl">
+            Full Stack Web Developer
+          </h3>
+          <p className="text-sm py-4 md:py-8 leading-8 text-gray-500 md:text-xl max-w-3xl mx-auto">
             Relocated to the Netherlands and eager to pursue a new career in IT
             as a Web Developer. Recently graduated from Hack Your Future and
             filled with enthusiasm. Possess international work experience in
@@ -69,9 +66,14 @@ export default function Home() {
         <div className="lg:flex gap-10">
           <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
-              <Image src={design} alt="design icon" width={100} height={100} />
+              <Image
+                src={computer}
+                alt="design icon"
+                width={100}
+                height={100}
+              />
             </div>
-            <h3 className="text-lg font-medium pt-8 pb-2">Beautiful Designs</h3>
+            <h3 className="text-lg font-medium pt-8 pb-2">Frontend</h3>
             <p className="py-2 ">
               Creating elegant designs suited for your needs following core
               design theory.
@@ -85,13 +87,13 @@ export default function Home() {
           <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
               <Image
-                src={consulting}
+                src={database}
                 alt="design icon"
                 width={100}
                 height={100}
               />
             </div>
-            <h3 className="text-lg font-medium pt-8 pb-2">Beautiful Designs</h3>
+            <h3 className="text-lg font-medium pt-8 pb-2">Backend</h3>
             <p className="py-2 ">
               Creating elegant designs suited for your needs following core
               design theory.
@@ -104,9 +106,9 @@ export default function Home() {
 
           <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
-              <Image src={code} alt="design icon" width={100} height={100} />
+              <Image src={design} alt="design icon" width={100} height={100} />
             </div>
-            <h3 className="text-lg font-medium pt-8 pb-2">Beautiful Designs</h3>
+            <h3 className="text-lg font-medium pt-8 pb-2">UX/UI Design</h3>
             <p className="py-2 ">
               Creating elegant designs suited for your needs following core
               design theory.
