@@ -4,6 +4,7 @@ import deved from "../public/dev-ed-wave.png"; // TODO: remove this and file
 import design from "../public/design.png";
 import database from "../public/database.png";
 import computer from "../public/computer.png";
+import consulting from "../public/consulting.png";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
 import web3 from "../public/web3.png";
@@ -68,7 +69,7 @@ export default function Home() {
             <div className="flex justify-center">
               <Image
                 src={computer}
-                alt="design icon"
+                alt="computer icon"
                 width={100}
                 height={100}
               />
@@ -88,7 +89,7 @@ export default function Home() {
             <div className="flex justify-center">
               <Image
                 src={database}
-                alt="design icon"
+                alt="database icon"
                 width={100}
                 height={100}
               />
@@ -188,6 +189,12 @@ export default function Home() {
       <section id="contact">
         <div>
           <h3 className="text-3xl py-1">Contact</h3>
+          <Image
+            src={consulting}
+            alt="contacts icon"
+            width={100}
+            height={100}
+          />
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
             Since the beginning of my journey as a freelance designer and
             developer, I&apos;ve done remote work for
