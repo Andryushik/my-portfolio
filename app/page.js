@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
+import { CiLocationOn } from "react-icons/ci";
+import { IoDocumentText } from "react-icons/io5";
 import deved from "../public/dev-ed-wave.png"; // TODO: remove this and file
 import design from "../public/design.png";
 import database from "../public/database.png";
@@ -11,8 +13,6 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
-import { IoDocumentText } from "react-icons/io5";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -55,9 +55,9 @@ export default function Home() {
           <h3 className="text-3xl py-1">About & Skills</h3>
           <div className="flex items-end gap-4 text-text-head">
             <span className="text-xl">Resume</span>
-            <Link href="#">
+            <a href="#" target="_blank" rel="noopener noreferrer">
               <IoDocumentText className="text-4xl" />
-            </Link>
+            </a>
           </div>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
             Since the beginning of my journey as a freelance designer and
@@ -211,6 +211,34 @@ export default function Home() {
             and collaborated with talented people to create digital products for
             both business and consumer use.
           </p>
+          <div className="flex justify-around flex-row">
+            <a
+              target="_blank"
+              href="mailto:a.g.popov@hotmaiil.com"
+              rel="noopener noreferrer"
+            >
+              <div className="text-6xl flex items-center">
+                <AiOutlineMail />
+                <div className="flex flex-col ml-5">
+                  <span className="text-lg">Mail: </span>
+                  <span className="text-lg underline">
+                    a.g.popov@hotmail.com
+                  </span>
+                </div>
+              </div>
+            </a>
+            <a target="_blank" href="#" rel="noopener noreferrer">
+              <div className="text-6xl flex items-center">
+                <CiLocationOn />
+                <div className="flex flex-col ml-5">
+                  <span className="text-lg">Address: </span>
+                  <span className="text-lg underline">
+                    Maastricht, Netherlands
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
     </main>

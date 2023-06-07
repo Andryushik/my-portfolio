@@ -18,25 +18,36 @@ export default function Navbar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* SOCIAL ICONS */}
-            <div className="text-4xl flex justify-center gap-6 text-text-head">
-              <div className="w-36 flex items-center">
-                <Image
-                  src={deved}
-                  alt="profile avatar"
-                  className="object-cover rounded-full"
-                  width={50}
-                  height={50}
-                />
-                <span className="text-xxs py-1 text-black dark:text-white">
-                  Andrei Popov andrei.popov.com
-                </span>
-              </div>
-              <Link href="#">
+            <div className="text-4xl flex justify-center gap- text-text-head">
+              <Link href="#home" onClick={() => setNavbar(!navbar)}>
+                <div className="w-36 flex items-center">
+                  <Image
+                    src={deved}
+                    alt="profile avatar"
+                    className="object-cover rounded-full"
+                    width={50}
+                    height={50}
+                  />
+                  <span className="text-xxs py-1 text-black dark:text-white">
+                    Andrei Popov andrei.popov.com
+                  </span>
+                </div>
+              </Link>
+
+              <a
+                target="_blank"
+                href="https://github.com/Andryushik"
+                rel="noopener noreferrer"
+              >
                 <AiFillGithub />
-              </Link>
-              <Link href="#">
+              </a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/andrei-popov-g/"
+                rel="noopener noreferrer"
+              >
                 <AiFillLinkedin />
-              </Link>
+              </a>
             </div>
 
             {/* HAMBURGER BUTTON FOR MOBILE */}

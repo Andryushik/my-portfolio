@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   AiOutlineGithub,
   AiOutlineLinkedin,
@@ -18,15 +17,27 @@ export default function Footer() {
 
         {/* SOCIAL ICONS */}
         <div className="text-2xl flex justify-center gap-6 text-text-head">
-          <Link href="#">
+          <a
+            target="_blank"
+            href="https://github.com/Andryushik"
+            rel="noopener noreferrer"
+          >
             <AiOutlineGithub />
-          </Link>
-          <Link href="#">
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/andrei-popov-g/"
+            rel="noopener noreferrer"
+          >
             <AiOutlineLinkedin />
-          </Link>
-          <Link href="#">
+          </a>
+          <a
+            target="_blank"
+            href="mailto:a.g.popov@hotmaiil.com"
+            rel="noopener noreferrer"
+          >
             <AiOutlineMail />
-          </Link>
+          </a>
         </div>
       </div>
     </footer>
