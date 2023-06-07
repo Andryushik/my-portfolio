@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from "react-icons/ai";
-import { CiLocationOn } from "react-icons/ci";
+import { CiLocationOn, CiMail } from "react-icons/ci";
 import { IoDocumentText } from "react-icons/io5";
 import deved from "../public/dev-ed-wave.png"; // TODO: remove this and file
 import design from "../public/design.png";
@@ -33,11 +33,8 @@ export default function Home() {
             customer service and sales.
           </p>
         </div>
-        <div className="text-5xl flex justify-center gap-16 py-3 text-gray-500">
-          <AiFillLinkedin />
-          <AiFillGithub />
-        </div>
-        <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
+
+        <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-72 h-72 mt-20 overflow-hidden md:h-96 md:w-96">
           <Image
             src={deved}
             alt="profile photo"
@@ -47,16 +44,39 @@ export default function Home() {
             sizes="50vw"
           />
         </div>
+        <div>
+          <Image
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+            alt="profile photo"
+            height={70}
+            width={70}
+          />
+        </div>
       </section>
 
       {/* ABOUT */}
       <section id="about">
         <div>
-          <h3 className="text-3xl py-1">About & Skills</h3>
-          <div className="flex items-end gap-4 text-text-head">
-            <span className="text-xl">Resume</span>
+          <h3 className="text-3xl py-3">About & Skills</h3>
+          <div className="flex justify-evenly text-6xl text-text-head py-3">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <IoDocumentText className="text-4xl" />
+              <AiFillGithub />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <AiFillLinkedin />
+            </a>
+            <a
+              target="_blank"
+              href="mailto:a.g.popov@hotmaiil.com"
+              rel="noopener noreferrer"
+            >
+              <div className="flex items-center">
+                <IoDocumentText />
+                <div className="flex flex-col ml-5">
+                  {/* <span className="text-base">Resume</span>
+                  <span className="text-base">download</span> */}
+                </div>
+              </div>
             </a>
           </div>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
@@ -218,10 +238,10 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <div className="text-6xl flex items-center">
-                <AiOutlineMail />
+                <CiMail />
                 <div className="flex flex-col ml-5">
-                  <span className="text-lg">Mail: </span>
-                  <span className="text-lg underline">
+                  <span className="text-base">Mail: </span>
+                  <span className="text-base underline">
                     a.g.popov@hotmail.com
                   </span>
                 </div>
@@ -231,8 +251,8 @@ export default function Home() {
               <div className="text-6xl flex items-center">
                 <CiLocationOn />
                 <div className="flex flex-col ml-5">
-                  <span className="text-lg">Address: </span>
-                  <span className="text-lg underline">
+                  <span className="text-base">Address: </span>
+                  <span className="text-base underline">
                     Maastricht, Netherlands
                   </span>
                 </div>

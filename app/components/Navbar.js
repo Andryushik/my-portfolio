@@ -20,7 +20,7 @@ export default function Navbar() {
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-4 text-text-head">
               <Link href="#home" onClick={() => setNavbar(!navbar)}>
-                <div className="w-36 flex items-center">
+                <div className="w-16 md:w-28 flex items-center">
                   <Image
                     src={deved}
                     alt="profile avatar"
@@ -28,9 +28,9 @@ export default function Navbar() {
                     width={50}
                     height={50}
                   />
-                  <span className="text-xxs py-1 text-black dark:text-white">
+                  {/* <span className="text-xxs py-1 text-black dark:text-white">
                     Andrei Popov andrei.popov.com
-                  </span>
+                  </span> */}
                 </div>
               </Link>
 
@@ -52,7 +52,7 @@ export default function Navbar() {
 
             {/* HAMBURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
-              <button
+              <div
                 className="p-2 text-gray-700 rounded-md border border-cyan-600 border-opacity-0 focus:border-opacity-80"
                 onClick={() => setNavbar(!navbar)}
               >
@@ -72,7 +72,7 @@ export default function Navbar() {
                     className="focus:border-none active:border-none"
                   />
                 )}
-              </button>
+              </div>
             </div>
           </div>
         </div>
@@ -80,11 +80,8 @@ export default function Navbar() {
         {/* MENU */}
         <div>
           <div
-            className={`flex-1 justify-self-end pb-3 md:block md:pb-0 md:mt-0 p-6 md:p-0 w-full ${
-              navbar ? "block" : "hidden"
-              // navbar
-              //   ? "fixed top-20 md:top-0 left-0 ease-in duration-500 bg-slate-100 bg-opacity-90 dark:bg-slate-950 dark:bg-opacity-90"
-              //   : "fixed top-[-500%] md:top-0 left-0 ease-in duration-500"
+            className={`flex-1 justify-self-end pb-3 md:block md:pb-0 md:mt-0  ${
+              navbar ? "block p-6 md:p-0 w-full" : "hidden"
             }`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
