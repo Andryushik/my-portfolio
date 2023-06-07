@@ -7,6 +7,7 @@ import cross from "../../public/cross.png";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { IoDocumentText } from "react-icons/io5";
 import ThemeSwitcher from "./ThemeSwitcher";
+import deved from "../../public/dev-ed-wave.png"; // TODO: remove this and file
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -17,15 +18,24 @@ export default function Navbar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* SOCIAL ICONS */}
-            <div className="text-4xl flex justify-center gap-6 text-cyan-500">
+            <div className="text-4xl flex justify-center gap-6 text-text-head">
+              <div className="w-20 flex items-center">
+                <Image
+                  src={deved}
+                  alt="profile avatar"
+                  className="object-cover rounded-full"
+                  width={40}
+                  height={40}
+                />
+                <span className="text-xs py-1 text-black dark:text-white">
+                  Andrei Popov
+                </span>
+              </div>
               <Link href="#">
                 <AiFillGithub />
               </Link>
               <Link href="#">
                 <AiFillLinkedin />
-              </Link>
-              <Link href="#">
-                <IoDocumentText />
               </Link>
             </div>
 
@@ -59,37 +69,40 @@ export default function Navbar() {
         {/* MENU */}
         <div>
           <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "p-12 md:p-0 block" : "hidden"
+            className={`flex-1 justify-self-end pb-3 md:block md:pb-0 md:mt-0 p-6 md:p-0 w-full ${
+              navbar ? "block" : "hidden"
+              // navbar
+              //   ? "fixed top-20 md:top-0 left-0 ease-in duration-500 bg-slate-100 bg-opacity-90 dark:bg-slate-950 dark:bg-opacity-90"
+              //   : "fixed top-[-500%] md:top-0 left-0 ease-in duration-500"
             }`}
           >
-            <ul className="h-screen md:h-auto items-center justify-center md:flex">
-              <li className="text-xl py-2 px-4 lg:px-10 text-center border-b-2 md:border-b-0  hover:bg-purple-900  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+            <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
+              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="#home" onClick={() => setNavbar(!navbar)}>
                   Home
                 </Link>
               </li>
 
-              <li className="text-xl py-2 px-4 lg:px-10 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="#about" onClick={() => setNavbar(!navbar)}>
                   About
                 </Link>
               </li>
 
-              <li className="text-xl py-2 px-4 lg:px-10 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="#projects" onClick={() => setNavbar(!navbar)}>
                   Projects
                 </Link>
               </li>
 
-              <li className="text-xl py-2 px-4 lg:px-10 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
+              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-4 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="#contact" onClick={() => setNavbar(!navbar)}>
                   Contact
                 </Link>
               </li>
 
               {/* THEME SWITCHER */}
-              <li className="text-xl py-2 flex justify-center items-center ml-0 md:ml-12 lg:ml-20 xl:ml-32">
+              <li className="text-xl py-4 flex justify-center items-center ml-0 md:ml-12 lg:ml-20 xl:ml-32">
                 <div onClick={() => setNavbar(!navbar)}>
                   <ThemeSwitcher onClick={() => setNavbar(!navbar)} />
                 </div>

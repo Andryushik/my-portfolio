@@ -8,9 +8,12 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        burtons: "burtons",
+      colors: {
+        "text-head": "#11b7bb",
       },
+      // fontFamily: {
+      //   burtons: "burtons",
+      // },
       // backgroundImage: {
       //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       //   "gradient-conic":

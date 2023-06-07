@@ -4,8 +4,10 @@
 
 /* scroll snapping */
 html {
+  scroll-behavior: smooth !important;
   scroll-snap-type: y proximity;
 }
+
 section {
   /* min-height: 100vh; */
   padding-top: 80px;
