@@ -18,7 +18,7 @@ export default function Navbar() {
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* SOCIAL ICONS */}
-            <div className="text-4xl flex justify-center gap- text-text-head">
+            <div className="text-4xl flex justify-center gap-4 text-text-head">
               <Link href="#home" onClick={() => setNavbar(!navbar)}>
                 <div className="w-36 flex items-center">
                   <Image
