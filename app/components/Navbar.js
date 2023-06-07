@@ -19,16 +19,16 @@ export default function Navbar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-6 text-text-head">
-              <div className="w-20 flex items-center">
+              <div className="w-36 flex items-center">
                 <Image
                   src={deved}
                   alt="profile avatar"
                   className="object-cover rounded-full"
-                  width={40}
-                  height={40}
+                  width={50}
+                  height={50}
                 />
-                <span className="text-xs py-1 text-black dark:text-white">
-                  Andrei Popov
+                <span className="text-xxs py-1 text-black dark:text-white">
+                  Andrei Popov andrei.popov.com
                 </span>
               </div>
               <Link href="#">

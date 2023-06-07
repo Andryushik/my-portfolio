@@ -11,6 +11,14 @@ module.exports = {
       colors: {
         "text-head": "#11b7bb",
       },
+      fontSize: {
+        xxs: [
+          "0.6rem",
+          {
+            lineHeight: "0.6rem",
+          },
+        ],
+      },
       // fontFamily: {
       //   burtons: "burtons",
       // },
