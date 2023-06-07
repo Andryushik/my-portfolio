@@ -11,6 +11,8 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import { IoDocumentText } from "react-icons/io5";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -38,7 +40,7 @@ export default function Home() {
         <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
           <Image
             src={deved}
-            alt="Profile Photo"
+            alt="profile photo"
             fill
             className="object-cover"
             priority={true}
@@ -51,6 +53,12 @@ export default function Home() {
       <section id="about">
         <div>
           <h3 className="text-3xl py-1">About & Skills</h3>
+          <div className="flex items-end gap-4 text-text-head">
+            <span className="text-xl">Resume</span>
+            <Link href="#">
+              <IoDocumentText className="text-4xl" />
+            </Link>
+          </div>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
             Since the beginning of my journey as a freelance designer and
             developer, I&apos;ve done remote work for
@@ -65,7 +73,7 @@ export default function Home() {
           </p>
         </div>
         <div className="lg:flex gap-10">
-          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
+          <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
               <Image
                 src={computer}
@@ -85,7 +93,7 @@ export default function Home() {
             <p className="text-gray-500 py-1">Figma</p>
           </div>
 
-          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
+          <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
               <Image
                 src={database}
@@ -105,7 +113,7 @@ export default function Home() {
             <p className="text-gray-500 py-1">Figma</p>
           </div>
 
-          <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
+          <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
             <div className="flex justify-center">
               <Image src={design} alt="design icon" width={100} height={100} />
             </div>

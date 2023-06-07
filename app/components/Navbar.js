@@ -7,6 +7,7 @@ import cross from "../../public/cross.png";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { IoDocumentText } from "react-icons/io5";
 import ThemeSwitcher from "./ThemeSwitcher";
+import deved from "../../public/dev-ed-wave.png"; // TODO: remove this and file
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -18,14 +19,23 @@ export default function Navbar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-6 text-text-head">
+              <div className="w-20 flex items-center">
+                <Image
+                  src={deved}
+                  alt="profile avatar"
+                  className="object-cover rounded-full"
+                  width={40}
+                  height={40}
+                />
+                <span className="text-xs py-1 text-black dark:text-white">
+                  Andrei Popov
+                </span>
+              </div>
               <Link href="#">
                 <AiFillGithub />
               </Link>
               <Link href="#">
                 <AiFillLinkedin />
-              </Link>
-              <Link href="#">
-                <IoDocumentText />
               </Link>
             </div>
 
