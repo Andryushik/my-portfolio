@@ -13,6 +13,7 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import Devicons from "./components/Devicons";
 
 export default function Home() {
   return (
@@ -34,7 +35,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-72 h-72 mt-20 overflow-hidden md:h-96 md:w-96">
+        <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-72 h-72 m-5 overflow-hidden md:h-96 md:w-96">
           <Image
             src={deved}
             alt="profile photo"
@@ -44,41 +45,13 @@ export default function Home() {
             sizes="50vw"
           />
         </div>
-        <div>
-          <Image
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-            alt="profile photo"
-            height={70}
-            width={70}
-          />
-        </div>
+        <Devicons />
       </section>
 
       {/* ABOUT */}
       <section id="about">
         <div>
           <h3 className="text-3xl py-3">About & Skills</h3>
-          <div className="flex justify-evenly text-6xl text-text-head py-3">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <AiFillGithub />
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <AiFillLinkedin />
-            </a>
-            <a
-              target="_blank"
-              href="mailto:a.g.popov@hotmaiil.com"
-              rel="noopener noreferrer"
-            >
-              <div className="flex items-center">
-                <IoDocumentText />
-                <div className="flex flex-col ml-5">
-                  {/* <span className="text-base">Resume</span>
-                  <span className="text-base">download</span> */}
-                </div>
-              </div>
-            </a>
-          </div>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
             Since the beginning of my journey as a freelance designer and
             developer, I&apos;ve done remote work for
@@ -147,6 +120,34 @@ export default function Home() {
             <p className="text-gray-500 py-1">Illustrator</p>
             <p className="text-gray-500 py-1">Figma</p>
           </div>
+        </div>
+
+        <p className="text-sm py-2 md:py-4 leading-8 text-gray-500 md:text-lg max-w-3xl mx-auto">
+          You can check more information about me by links: todo: delete You can
+          check more information about me and download resume by links:
+        </p>
+        <div className="flex justify-evenly text-5xl text-text-head py-5">
+          <a
+            href="https://github.com/Andryushik"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/andrei-popov-g/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillLinkedin />
+          </a>
+          <a
+            target="_blank"
+            href="mailto:a.g.popov@hotmaiil.com"
+            rel="noopener noreferrer"
+          >
+            <IoDocumentText />
+          </a>
         </div>
       </section>
 
@@ -231,28 +232,28 @@ export default function Home() {
             and collaborated with talented people to create digital products for
             both business and consumer use.
           </p>
-          <div className="flex justify-around flex-row">
+          <div className="p-7 flex justify-around items-center gap-5 flex-col md:flex-row">
             <a
               target="_blank"
               href="mailto:a.g.popov@hotmaiil.com"
               rel="noopener noreferrer"
             >
-              <div className="text-6xl flex items-center">
+              <div className="text-5xl md:text-6xl flex items-center">
                 <CiMail />
                 <div className="flex flex-col ml-5">
-                  <span className="text-base">Mail: </span>
-                  <span className="text-base underline">
+                  <span className="text-sm md:text-base">Mail: </span>
+                  <span className="text-sm md:text-base underline">
                     a.g.popov@hotmail.com
                   </span>
                 </div>
               </div>
             </a>
             <a target="_blank" href="#" rel="noopener noreferrer">
-              <div className="text-6xl flex items-center">
+              <div className="text-5xl flex items-center">
                 <CiLocationOn />
                 <div className="flex flex-col ml-5">
-                  <span className="text-base">Address: </span>
-                  <span className="text-base underline">
+                  <span className="text-sm md:text-base">Address: </span>
+                  <span className="text-sm md:text-base underline">
                     Maastricht, Netherlands
                   </span>
                 </div>

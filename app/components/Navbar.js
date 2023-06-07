@@ -5,7 +5,6 @@ import Image from "next/image";
 import menu from "../../public/menu.png";
 import cross from "../../public/cross.png";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { IoDocumentText } from "react-icons/io5";
 import ThemeSwitcher from "./ThemeSwitcher";
 import deved from "../../public/dev-ed-wave.png"; // TODO: remove this and file
 
@@ -19,8 +18,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-4 text-text-head">
-              <Link href="#home" onClick={() => setNavbar(!navbar)}>
-                <div className="w-16 md:w-28 flex items-center">
+              <Link href="#home">
+                <div className="w-16 md:w-36 flex items-center">
                   <Image
                     src={deved}
                     alt="profile avatar"
@@ -28,9 +27,9 @@ export default function Navbar() {
                     width={50}
                     height={50}
                   />
-                  {/* <span className="text-xxs py-1 text-black dark:text-white">
+                  <span className="hidden md:block text-xxs py-1 text-black dark:text-white">
                     Andrei Popov andrei.popov.com
-                  </span> */}
+                  </span>
                 </div>
               </Link>
 
@@ -80,8 +79,8 @@ export default function Navbar() {
         {/* MENU */}
         <div>
           <div
-            className={`flex-1 justify-self-end pb-3 md:block md:pb-0 md:mt-0  ${
-              navbar ? "block p-6 md:p-0 w-full" : "hidden"
+            className={`flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${
+              navbar ? "block p-12 md:p-0" : "hidden"
             }`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
