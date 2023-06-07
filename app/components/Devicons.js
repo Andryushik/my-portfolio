@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Devicons() {
   return (
-    <div className="p-5 flex justify-between">
+    <div className="p-5 flex justify-between gap-2">
       <div>
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
@@ -35,12 +35,12 @@ export default function Devicons() {
           width={50}
         />
       </div>
-      <div className="bg-white rounded-full p-[2px]">
+      <div className="bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
           alt="Next.js"
-          height={48}
-          width={48}
+          height={46}
+          width={46}
         />
       </div>
       <div>
@@ -51,12 +51,12 @@ export default function Devicons() {
           width={50}
         />
       </div>
-      <div className="bg-white rounded-full">
+      <div className="bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
           alt="Node.js"
-          height={50}
-          width={50}
+          height={46}
+          width={46}
         />
       </div>
       <div>
@@ -68,7 +68,68 @@ export default function Devicons() {
         />
       </div>
       <div>
-        <Image src="" alt="" height={50} width={50} />
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+          alt="Typescript"
+          height={50}
+          width={50}
+        />
+      </div>
+      <div>
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
+          alt="MaterialUI"
+          height={50}
+          width={50}
+        />
+      </div>
+      <div>
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+          alt="Bootstrap"
+          height={50}
+          width={50}
+        />
+      </div>
+      <div className="bg-white rounded-full p-1">
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+          alt="Express"
+          height={46}
+          width={46}
+        />
+      </div>
+      <div>
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg"
+          alt="Firebase"
+          height={50}
+          width={50}
+        />
+      </div>
+      <div>
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"
+          alt="MongoDB"
+          height={50}
+          width={50}
+        />
+      </div>
+      <div>
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
+          alt="MySQL"
+          height={50}
+          width={50}
+        />
+      </div>
+      <div>
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg"
+          alt="GIT"
+          height={50}
+          width={50}
+        />
       </div>
     </div>
   );
