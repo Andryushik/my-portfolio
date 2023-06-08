@@ -6,7 +6,7 @@ import menu from "../../public/menu.png";
 import cross from "../../public/cross.png";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import ThemeSwitcher from "./ThemeSwitcher";
-import deved from "../../public/dev-ed-wave.png"; // TODO: remove this and file
+import avatar from "../../public/avatar.jpg";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -19,15 +19,15 @@ export default function Navbar() {
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-4 text-text-head">
               <Link href="/">
-                <div className="w-16 md:w-36 flex items-end">
+                <div className="w-16 md:w-32 xl:w-40 flex items-center">
                   <Image
-                    src={deved}
+                    src={avatar}
                     alt="profile avatar"
                     className="object-cover rounded-full"
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                   />
-                  <span className="hidden md:block text-xxs py-1 text-black dark:text-white">
+                  <span className="hidden md:block text-xxs py-1 text-black dark:text-white ml-2">
                     Andrei Popov <br /> web developer
                   </span>
                 </div>
@@ -109,7 +109,7 @@ export default function Navbar() {
               </li>
 
               {/* THEME SWITCHER */}
-              <li className="text-xl py-4 flex justify-center items-center ml-0 md:ml-12 lg:ml-20 xl:ml-32">
+              <li className="text-xl py-2 flex justify-center items-center ml-0 md:ml-6 lg:ml-10 xl:ml-16">
                 <div onClick={() => setNavbar(!navbar)}>
                   <ThemeSwitcher onClick={() => setNavbar(!navbar)} />
                 </div>

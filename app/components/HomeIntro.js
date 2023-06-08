@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Devicons from "./Devicons";
-import deved from "../../public/dev-ed-wave.png"; // TODO: remove this and file
+import avatar from "../../public/avatar.jpg";
 
 export default function HomeIntro() {
   return (
@@ -20,9 +20,9 @@ export default function HomeIntro() {
         </p>
       </div>
 
-      <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-72 h-72 m-5 overflow-hidden md:h-96 md:w-96">
+      <div className="relative mx-auto rounded-full w-72 h-72 m-5 overflow-hidden md:h-96 md:w-96">
         <Image
-          src={deved}
+          src={avatar}
           alt="profile photo"
           fill
           className="object-cover"
