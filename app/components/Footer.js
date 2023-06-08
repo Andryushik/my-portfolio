@@ -33,7 +33,7 @@ export default function Footer() {
         </a>
         <a
           target="_blank"
-          href="mailto:a.g.popov@hotmaiil.com"
+          href="mailto:a.g.popov@hotmail.com?subject=[Website]"
           rel="noopener noreferrer"
         >
           <AiOutlineMail />

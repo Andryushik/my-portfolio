@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Devicons() {
   return (
     <div className="p-5 flex flex-wrap justify-evenly gap-3">
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
           alt="HTML"
@@ -11,7 +11,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
           alt="CSS"
@@ -19,7 +19,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
           alt="Tailwind-css"
@@ -35,7 +35,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div className="bg-white rounded-full p-1">
+      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
           alt="Next.js"
@@ -43,7 +43,7 @@ export default function Devicons() {
           width={40}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
           alt="JavaScript"
@@ -51,7 +51,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div className="bg-white rounded-full p-1">
+      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
           alt="Node.js"
@@ -59,7 +59,7 @@ export default function Devicons() {
           width={40}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
           alt="Sass"
@@ -67,7 +67,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
           alt="Typescript"
@@ -75,7 +75,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
           alt="MaterialUI"
@@ -83,7 +83,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
           alt="Bootstrap"
@@ -91,7 +91,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div className="bg-white rounded-full p-1">
+      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
           alt="Express"
@@ -99,7 +99,7 @@ export default function Devicons() {
           width={40}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg"
           alt="Firebase"
@@ -107,7 +107,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg"
           alt="MongoDB"
@@ -115,7 +115,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
           alt="MySQL"
@@ -123,7 +123,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div>
+      <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg"
           alt="GIT"
@@ -131,7 +131,7 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div className="bg-white rounded-full p-1">
+      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
           alt="Figma"

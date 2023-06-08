@@ -15,25 +15,25 @@ export default function Navbar() {
     <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900  dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-10">
       <div className="justify-between px-4 mx-auto md:items-center md:flex md:px-6 lg:px-12 xl:px-24">
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+          <div className="flex items-center justify-between py-3 md:block">
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-4 text-text-head">
               <Link href="/">
-                <div className="w-16 md:w-32 xl:w-40 flex items-center">
+                <div className="w-16 md:w-40 flex items-center">
                   <Image
                     src={avatar}
                     alt="profile avatar"
                     className="object-cover rounded-full"
-                    width={40}
-                    height={40}
+                    width={50}
+                    height={50}
                   />
-                  <span className="hidden md:block text-xxs py-1 text-black dark:text-white ml-2">
+                  <span className="hidden md:block text-xs py-1 text-black dark:text-white ml-2">
                     Andrei Popov <br /> web developer
                   </span>
                 </div>
               </Link>
 
-              <a
+              {/* <a
                 target="_blank"
                 href="https://github.com/Andryushik"
                 rel="noopener noreferrer"
@@ -46,7 +46,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
               >
                 <AiFillLinkedin />
-              </a>
+              </a> */}
             </div>
 
             {/* HAMBURGER BUTTON FOR MOBILE */}
