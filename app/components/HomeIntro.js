@@ -11,7 +11,7 @@ export default function HomeIntro() {
         <h2 className="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium md:text-7xl">
           Andrei Popov
         </h2>
-        <h3 className="text-xl py-2 md:py-4 md:text-3xl">
+        <h3 className="text-xl py-2 md:py-4 md:text-4xl">
           Full Stack Web Developer
         </h3>
 
