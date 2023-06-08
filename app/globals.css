@@ -5,17 +5,19 @@
 /* scroll snapping */
 html {
   scroll-behavior: smooth !important;
-  scroll-snap-type: y proximity;
+  /* TODO: need or not? */
+  /* scroll-snap-type: y proximity;  */
 }
 
 section {
   /* min-height: 100vh; */
   padding-top: 80px;
-  scroll-snap-align: start;
-  scroll-margin-top: 20px;
+  /* scroll-snap-align: start; */
+  /* scroll-margin-top: 20px; */
 }
 
+/* TODO: remove file also or find the issue  */
 /* @font-face {
   font-family: "burtons";
-  src: url("../public/Burtons.otf"); // TODO: remove file also or find the issue 
+  src: url("../public/Burtons.otf"); 
 } */

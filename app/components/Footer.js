@@ -6,7 +6,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="px-4 py-4 mt-8w-full mx-auto flex items-center justify-between">
+    <footer className="px-4 py-4 mt-8w-full mx-auto flex items-center justify-between md:px-6 lg:px-12 xl:px-24">
       {/* COPYRIGHT */}
       <div className="w-1/2">
         <p className="text-xs md:text-sm text-gray-500">

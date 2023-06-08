@@ -19,7 +19,7 @@ export default function Navbar() {
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-4 text-text-head">
               <Link href="#home">
-                <div className="w-16 md:w-36 flex items-center">
+                <div className="w-16 md:w-36 flex items-end">
                   <Image
                     src={deved}
                     alt="profile avatar"
@@ -28,7 +28,7 @@ export default function Navbar() {
                     height={50}
                   />
                   <span className="hidden md:block text-xxs py-1 text-black dark:text-white">
-                    Andrei Popov andrei.popov.com
+                    Andrei Popov <br /> web developer
                   </span>
                 </div>
               </Link>
