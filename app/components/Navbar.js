@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900  dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-10">
-      <div className="justify-between px-4 mx-auto md:items-center md:flex md:px-6 lg:px-12 xl:px-24">
+      <div className="justify-between mx-auto md:items-center md:flex px-6 md:px-20 lg:px-40">
         <div>
           <div className="flex items-center justify-between py-3 md:block">
             {/* SOCIAL ICONS */}

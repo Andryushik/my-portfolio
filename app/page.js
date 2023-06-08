@@ -5,7 +5,7 @@ import Contacts from "./components/Contacts";
 
 export default function Home() {
   return (
-    <main className="px-10 md:px-20 lg:px-40">
+    <main className="px-6 md:px-20 lg:px-40">
       <section id="home" className="min-h-screen">
         <HomeIntro />
       </section>

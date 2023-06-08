@@ -6,11 +6,11 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="px-4 py-4 mt-8w-full mx-auto flex items-center justify-between md:px-6 lg:px-12 xl:px-24">
+    <footer className="py-4 mt-8w-full mx-auto flex items-center justify-between px-6 md:px-20 lg:px-40">
       {/* COPYRIGHT */}
       <div className="w-1/2">
         <p className="text-xs md:text-sm text-gray-500">
-          &copy; 2023 Andrei Popov Website. All rights reserved.
+          &copy; 2023 Andrei Popov. All rights reserved.
           {/* TODO: add website name */}
         </p>
       </div>
