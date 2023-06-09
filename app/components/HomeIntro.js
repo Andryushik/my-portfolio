@@ -12,7 +12,7 @@ export default function HomeIntro() {
           Andrei Popov
         </h2>
         <h3 className="text-xl py-2 md:py-4 md:text-4xl">
-          Full Stack Web Developer
+          Full-Stack Web Developer
         </h3>
 
         <div className="flex justify-center text-4xl text-text-head py-3 gap-6 md:gap-16">
@@ -40,10 +40,9 @@ export default function HomeIntro() {
         </div>
 
         <p className="text-sm py-4 md:py-6 leading-8 text-gray-500 md:text-xl max-w-3xl mx-auto">
-          Relocated to the Netherlands and eager to pursue a new career in IT as
-          a Web Developer. Recently graduated from Hack Your Future and filled
-          with enthusiasm. Possess international work experience in customer
-          service and sales.
+          Recently graduated and filled with enthusiasm. I invite you to explore
+          my portfolio, where you can find a selection of my projects that
+          highlight my abilities and showcase my diverse range of work.
         </p>
       </div>
 

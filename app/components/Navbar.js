@@ -4,24 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import menu from "../../public/menu.png";
 import cross from "../../public/cross.png";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import ThemeSwitcher from "./ThemeSwitcher";
-import avatar from "../../public/avatar.jpg";
+import logo from "../../public/logo.png";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900  dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-10">
-      <div className="justify-between mx-auto md:items-center md:flex px-6 md:px-20 lg:px-40">
+    <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900 dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-10">
+      <div className="justify-between mx-auto md:items-center md:flex h-20 px-6 md:px-20 lg:px-40">
         <div>
-          <div className="flex items-center justify-between py-3 md:block">
+          <div className="flex items-center justify-between md:block">
             {/* SOCIAL ICONS */}
             <div className="text-4xl flex justify-center gap-4 text-text-head">
               <Link href="/">
                 <div className="w-16 md:w-40 flex items-center">
                   <Image
-                    src={avatar}
+                    src={logo}
                     alt="profile avatar"
                     className="object-cover rounded-full"
                     width={50}
