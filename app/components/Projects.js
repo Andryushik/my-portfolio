@@ -1,10 +1,10 @@
 import Image from "next/image";
-import web1 from "../public/web1.png";
-import web2 from "../public/web2.png";
-import web3 from "../public/web3.png";
-import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
+import web1 from "../../public/web1.png";
+import web2 from "../../public/web2.png";
+import web3 from "../../public/web3.png";
+import web4 from "../../public/web4.png";
+import web5 from "../../public/web5.png";
+import web6 from "../../public/web6.png";
 
 export default function Projects() {
   return (
@@ -12,18 +12,13 @@ export default function Projects() {
       <div>
         <h3 className="text-3xl py-1">Projects</h3>
         <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-          Since the beginning of my journey as a freelance designer and
-          developer, I&apos;ve done remote work for
-          <span className="text-teal-500"> agencies </span>
-          consulted for <span className="text-teal-500">startups </span>
-          and collaborated with talented people to create digital products for
-          both business and consumer use.
-        </p>
-        <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-          I offer from a wide range of services, including brand design,
-          programming and teaching.
+          As a junior web developer, I have endeavored to utilize various
+          approaches in each of my projects to enhance my skills and gain
+          diverse experience. This has enabled me to become proficient in
+          multiple frameworks and technologies.
         </p>
       </div>
+
       <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
         <div className="basis-1/3 flex-1">
           <Image
@@ -68,6 +63,15 @@ export default function Projects() {
           />
         </div>
       </div>
+
+      <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+        P.S. This portfolio website has been created using Next.js and Tailwind
+        CSS. With Next.js, I have been able to leverage server-side rendering
+        and efficient routing, while Tailwind CSS has provided a flexible and
+        utility-based approach to styling. The combination of Next.js and
+        Tailwind CSS has allowed me to create a seamless and responsive user
+        experience.
+      </p>
     </>
   );
 }

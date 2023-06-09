@@ -55,13 +55,19 @@ export default function AboutSkills() {
           </div>
           <h3 className="text-lg font-medium pt-8 pb-2">Frontend</h3>
           <p className="py-2 ">
-            Creating elegant designs suited for your needs following core design
-            theory.
+            I like to code things, and enjoy bringing ideas to life in the
+            browser.
           </p>
-          <h4 className="py-4 text-teal-600">Design tools I use</h4>
-          <p className="text-gray-500 py-1">Photoshop</p>
-          <p className="text-gray-500 py-1">Illustrator</p>
-          <p className="text-gray-500 py-1">Figma</p>
+          <h4 className="py-4 text-teal-600">Languages I speak:</h4>
+          <p className="text-gray-500 py-1">
+            HTML, CSS, JavaScript, React.js, Next.js, Tailwind, Sass
+          </p>
+          <h4 className="py-4 text-teal-600">Dev Tools:</h4>
+          <p className="text-gray-500 py-1">VS Code</p>
+          <p className="text-gray-500 py-1">Terminal</p>
+          <p className="text-gray-500 py-1">GitHub</p>
+          <p className="text-gray-500 py-1">MaterialUI</p>
+          <p className="text-gray-500 py-1">Vercel</p>
         </div>
 
         <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
@@ -78,10 +84,14 @@ export default function AboutSkills() {
             Creating elegant designs suited for your needs following core design
             theory.
           </p>
-          <h4 className="py-4 text-teal-600">Design tools I use</h4>
-          <p className="text-gray-500 py-1">Photoshop</p>
-          <p className="text-gray-500 py-1">Illustrator</p>
-          <p className="text-gray-500 py-1">Figma</p>
+          <h4 className="py-4 text-teal-600">Languages I speak:</h4>
+          <p className="text-gray-500 py-1">Node.js, MySQL, MongoDB</p>
+          <h4 className="py-4 text-teal-600">Dev Tools:</h4>
+          <p className="text-gray-500 py-1">Firebase</p>
+          <p className="text-gray-500 py-1">MongoDB</p>
+          <p className="text-gray-500 py-1">Mongoose</p>
+          <p className="text-gray-500 py-1">MySQL</p>
+          <p className="text-gray-500 py-1">Express</p>
         </div>
 
         <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
@@ -93,9 +103,10 @@ export default function AboutSkills() {
             Creating elegant designs suited for your needs following core design
             theory.
           </p>
-          <h4 className="py-4 text-teal-600">Design tools I use</h4>
-          <p className="text-gray-500 py-1">Photoshop</p>
-          <p className="text-gray-500 py-1">Illustrator</p>
+          <h4 className="py-4 text-teal-600">Languages I speak:</h4>
+          <p className="text-gray-500 py-1">UX, UI, Web</p>
+          <h4 className="py-4 text-teal-600">Design Tools:</h4>
+          <p className="text-gray-500 py-1">Pen & Paper</p>
           <p className="text-gray-500 py-1">Figma</p>
         </div>
       </div>

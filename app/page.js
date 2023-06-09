@@ -1,11 +1,11 @@
 import HomeIntro from "./components/HomeIntro";
 import AboutSkills from "./components/AboutSkills";
-import Projects from "./Projects";
+import Projects from "./components/Projects";
 import Contacts from "./components/Contacts";
 
 export default function Home() {
   return (
-    <main className="px-6 md:px-20 lg:px-40">
+    <main className="px-7 md:px-20 lg:px-40">
       <section id="home" className="min-h-screen">
         <HomeIntro />
       </section>
