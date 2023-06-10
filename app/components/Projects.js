@@ -10,8 +10,8 @@ export default function Projects() {
   return (
     <>
       <div>
-        <h3 className="text-3xl py-1">Projects</h3>
-        <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+        <h3 className="text-2xl md:3xl py-1">Projects</h3>
+        <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
           As a junior web developer, I have endeavored to utilize various
           approaches in each of my projects to enhance my skills and gain
           diverse experience. This has enabled me to become proficient in
@@ -64,7 +64,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+      <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
         P.S. This portfolio website has been created using Next.js and Tailwind
         CSS. With Next.js, I have been able to leverage server-side rendering
         and efficient routing, while Tailwind CSS has provided a flexible and
