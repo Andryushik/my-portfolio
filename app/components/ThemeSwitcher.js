@@ -29,9 +29,9 @@ export default function ThemeSwitcher() {
       <BsFillMoonStarsFill className="text-xl" />
       <BsFillSunFill className="text-xl" />
       {theme === "light" ? (
-        <BsFillCircleFill className="text-2xl absolute left-1" />
+        <BsFillCircleFill className="text-2xl absolute left-1 text-text-head" />
       ) : (
-        <BsFillCircleFill className="text-2xl absolute right-1" />
+        <BsFillCircleFill className="text-2xl absolute right-1 text-text-head" />
       )}
     </div>
   );

@@ -44,6 +44,7 @@ export default function About() {
 
       {/* SKILLS */}
       <div className="lg:flex gap-10">
+        {/* frontend */}
         <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
           <div className="flex justify-center">
             <Image
@@ -58,11 +59,11 @@ export default function About() {
             I like to code things, and enjoy bringing ideas to life in the
             browser.
           </p>
-          <h4 className="py-4 text-teal-600">Languages I speak:</h4>
-          <p className="text-gray-500 py-1">
+          <h4 className="py-4 text-lg text-teal-600">Languages I speak:</h4>
+          <p className="text-slate-500 py-1">
             HTML, CSS, JavaScript, React.js, Next.js, Tailwind, Sass
           </p>
-          <h4 className="py-4 text-teal-600">Dev Tools:</h4>
+          <h4 className="pt-4 text-lg text-teal-600">Dev Tools:</h4>
           <p className="text-gray-500 py-1">VS Code</p>
           <p className="text-gray-500 py-1">Terminal</p>
           <p className="text-gray-500 py-1">GitHub</p>
@@ -70,6 +71,7 @@ export default function About() {
           <p className="text-gray-500 py-1">Vercel</p>
         </div>
 
+        {/* backend */}
         <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
           <div className="flex justify-center">
             <Image
@@ -84,9 +86,9 @@ export default function About() {
             I enjoy exploring innovative and practical techniques for building a
             strong backend in modern web applications.
           </p>
-          <h4 className="py-4 text-teal-600">Languages I speak:</h4>
-          <p className="text-gray-500 py-1">Node.js, MySQL, MongoDB</p>
-          <h4 className="py-4 text-teal-600">Dev Tools:</h4>
+          <h4 className="py-4 text-lg text-teal-600">Languages I speak:</h4>
+          <p className="text-slate-500 py-1">Node.js, MySQL, MongoDB</p>
+          <h4 className="pt-4 text-lg text-teal-600">Dev Tools:</h4>
           <p className="text-gray-500 py-1">Firebase</p>
           <p className="text-gray-500 py-1">MongoDB</p>
           <p className="text-gray-500 py-1">Mongoose</p>
@@ -94,6 +96,7 @@ export default function About() {
           <p className="text-gray-500 py-1">Express</p>
         </div>
 
+        {/* design */}
         <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
           <div className="flex justify-center">
             <Image src={design} alt="design icon" width={100} height={100} />
@@ -102,9 +105,9 @@ export default function About() {
           <p className="py-2 ">
             I take pleasure in creating elegant designs suited to your needs.
           </p>
-          <h4 className="py-4 text-teal-600">Languages I speak:</h4>
-          <p className="text-gray-500 py-1">UX, UI, Web</p>
-          <h4 className="py-4 text-teal-600">Design Tools:</h4>
+          <h4 className="py-4 text-lg text-teal-600">Languages I speak:</h4>
+          <p className="text-slate-500 py-1">UX, UI, Web</p>
+          <h4 className="pt-4 text-lg text-teal-600">Design Tools:</h4>
           <p className="text-gray-500 py-1">Pen & Paper</p>
           <p className="text-gray-500 py-1">Figma</p>
         </div>

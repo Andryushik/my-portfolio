@@ -1,14 +1,17 @@
 "use client";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
 import menu from "../../public/menu.png";
 import cross from "../../public/cross.png";
 import ThemeSwitcher from "./ThemeSwitcher";
-import logo from "../../public/logo.png";
+import logoLight from "../../public/logo-light.png";
+import logoDark from "../../public/logo-dark.png";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
+  const { theme } = useTheme();
 
   return (
     <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900 dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-10">
@@ -17,17 +20,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
             <Link href="/">
-              <div className="w-16 md:w-44 flex items-center">
+              <div className="w-40 md:w-auto flex items-center">
                 <Image
-                  src={logo}
-                  alt="profile avatar"
-                  className="object-cover rounded-full"
-                  width={50}
+                  src={theme === "light" ? logoLight : logoDark}
+                  alt="logo"
+                  className="object-cover"
+                  width={230}
                   height={50}
                 />
-                <span className="hidden md:block text-sm py-1 text-black dark:text-white ml-1">
-                  andrei-popov.com
-                </span>
               </div>
             </Link>
 

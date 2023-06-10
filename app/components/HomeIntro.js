@@ -7,7 +7,7 @@ import avatar from "../../public/avatar.png";
 export default function HomeIntro() {
   return (
     <>
-      <div className="text-center px-5 md:px-10 py-5 md:py-12 md:mt-10">
+      <div className="text-center px-5 md:px-10 py-5 md:py-12 md:mt-20">
         <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium md:text-7xl">
           Andrei Popov
         </h1>
@@ -15,7 +15,7 @@ export default function HomeIntro() {
           Full-Stack Web Developer
         </h2>
 
-        <div className="flex justify-center text-4xl text-text-head py-3 gap-6 md:gap-16">
+        <div className="flex justify-center text-4xl text-text-head py-3 md:py-10 gap-6 md:gap-16">
           <a
             href="https://github.com/Andryushik"
             target="_blank"
