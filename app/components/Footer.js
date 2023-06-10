@@ -10,8 +10,7 @@ export default function Footer() {
       {/* COPYRIGHT */}
       <div className="w-1/2">
         <p className="text-xs md:text-sm text-gray-500">
-          &copy; 2023 Andrei Popov. All rights reserved.
-          {/* TODO: add website name */}
+          &copy; 2023 andrei-popov.com
         </p>
       </div>
 

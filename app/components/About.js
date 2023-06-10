@@ -5,7 +5,7 @@ import design from "../../public/design.png";
 import database from "../../public/database.png";
 import computer from "../../public/computer.png";
 
-export default function AboutSkills() {
+export default function About() {
   return (
     <>
       <div>
@@ -81,8 +81,8 @@ export default function AboutSkills() {
           </div>
           <h3 className="text-lg font-medium pt-8 pb-2">Backend</h3>
           <p className="py-2 ">
-            Creating elegant designs suited for your needs following core design
-            theory.
+            I enjoy exploring innovative and practical techniques for building a
+            strong backend in modern web applications.
           </p>
           <h4 className="py-4 text-teal-600">Languages I speak:</h4>
           <p className="text-gray-500 py-1">Node.js, MySQL, MongoDB</p>
@@ -100,8 +100,7 @@ export default function AboutSkills() {
           </div>
           <h3 className="text-lg font-medium pt-8 pb-2">UX/UI Design</h3>
           <p className="py-2 ">
-            Creating elegant designs suited for your needs following core design
-            theory.
+            I take pleasure in creating elegant designs suited to your needs.
           </p>
           <h4 className="py-4 text-teal-600">Languages I speak:</h4>
           <p className="text-gray-500 py-1">UX, UI, Web</p>
