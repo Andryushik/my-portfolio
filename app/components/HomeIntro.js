@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { IoDocumentText } from "react-icons/io5";
 import Devicons from "./Devicons";
-import avatar from "../../public/avatar.jpg";
+// import avatar from "../../public/avatar.jpg";
 
 export default function HomeIntro() {
   return (
@@ -47,14 +47,14 @@ export default function HomeIntro() {
       </div>
 
       <div className="relative mx-auto rounded-full w-72 h-72 m-5 overflow-hidden md:h-96 md:w-96">
-        <Image
+        {/* <Image
           src={avatar}
           alt="profile photo"
           fill
           className="object-cover"
           priority={true}
           sizes="50vw"
-        />
+        /> */}
       </div>
       <Devicons />
     </>
