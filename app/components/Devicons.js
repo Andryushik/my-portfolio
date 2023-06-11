@@ -21,8 +21,8 @@ export default function Devicons() {
       </div>
       <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-          alt="Tailwind-css"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          alt="JavaScript"
           height={48}
           width={48}
         />
@@ -45,18 +45,10 @@ export default function Devicons() {
       </div>
       <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-          alt="JavaScript"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+          alt="Tailwind-css"
           height={48}
           width={48}
-        />
-      </div>
-      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
-        <Image
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
-          alt="Node.js"
-          height={40}
-          width={40}
         />
       </div>
       <div className="w-8 h-8 md:w-12 md:h-12">
@@ -93,8 +85,8 @@ export default function Devicons() {
       </div>
       <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
         <Image
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-          alt="Express"
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
+          alt="Node.js"
           height={40}
           width={40}
         />
@@ -123,6 +115,14 @@ export default function Devicons() {
           width={48}
         />
       </div>
+      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
+        <Image
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+          alt="Express"
+          height={40}
+          width={40}
+        />
+      </div>
       <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg"
@@ -131,14 +131,14 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      {/* <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
+      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
           alt="Figma"
           height={40}
           width={40}
         />
-      </div> */}
+      </div>
     </div>
   );
 }
