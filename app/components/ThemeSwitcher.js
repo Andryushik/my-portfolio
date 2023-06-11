@@ -28,11 +28,11 @@ export default function ThemeSwitcher() {
     >
       <BsFillMoonStarsFill className="text-xl hover:scale-110 duration-500" />
       <BsFillSunFill className="text-xl hover:scale-110 duration-500" />
-      {theme === "light" ? (
-        <BsFillCircleFill className="text-2xl absolute left-1 text-text-head hover:scale-110 duration-500" />
-      ) : (
-        <BsFillCircleFill className="text-2xl absolute right-1 text-text-head hover:scale-110 duration-500" />
-      )}
+      <BsFillCircleFill
+        className={`text-2xl absolute text-text-head hover:scale-110 duration-500 ${
+          theme === "light" ? "left-1" : "right-1"
+        }`}
+      />
     </div>
   );
 }
