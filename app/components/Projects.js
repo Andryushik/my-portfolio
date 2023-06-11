@@ -19,69 +19,76 @@ export default function Projects() {
 
       <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-40 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
             className="group-hover:scale-125 transition-all duration-500"
             src={web1}
+            placeholder="blur"
+            blurDataURL={"../../public/web1.png"}
             alt="" // TODO: add alts here
           />
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-36 transition-all duration-300 z-40">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+              NextJS
+            </div>
+          </div>
+          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
             <span className="text-xl text-slate-500">
               MERN Stack Social Web App
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
             <span className="text-2xl text-text-head">MY DIARY</span>
           </div>
         </div>
 
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-40 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
             className="group-hover:scale-125 transition-all duration-500"
             src={web4}
             alt=""
           />
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
             <span className="text-xl text-slate-500">
               MERN Stack Social Web App
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
             <span className="text-2xl text-text-head">MY DIARY</span>
           </div>
         </div>
 
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-40 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
             className="group-hover:scale-125 transition-all duration-500"
             src={web5}
             alt=""
           />
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
             <span className="text-xl text-slate-500">
               MERN Stack Social Web App
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
             <span className="text-2xl text-text-head">MY DIARY</span>
           </div>
         </div>
 
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-40 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
             className="group-hover:scale-125 transition-all duration-500"
             src={web6}
             alt=""
           />
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
             <span className="text-xl text-slate-500">
               MERN Stack Social Web App
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-50">
+          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
             <span className="text-2xl text-text-head">MY DIARY</span>
           </div>
         </div>
