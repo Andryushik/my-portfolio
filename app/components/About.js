@@ -4,6 +4,7 @@ import { IoDocumentText } from "react-icons/io5";
 import design from "../../public/design.png";
 import database from "../../public/database.png";
 import computer from "../../public/computer.png";
+import SocialLinks from "./SocialLinks";
 
 export default function About() {
   return (
@@ -119,33 +120,13 @@ export default function About() {
         </div>
       </div>
 
-      <p className="text-sm py-2 md:py-4 leading-8 text-gray-500 md:text-lg max-w-3xl mx-auto">
+      <p className="text-sm md:text-lg mt-2 md:mt-5 leading-8 text-gray-500 text-center">
         You can check more information about me and my work through the
         following links:
       </p>
-      <div className="flex justify-evenly text-5xl text-text-head py-5">
-        <a
-          href="https://github.com/Andryushik"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <AiFillGithub className="hover:text-slate-500 hover:-translate-y-1 transform ease-in-out duration-500" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/andrei-popov-g/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <AiFillLinkedin className="hover:text-slate-500 hover:-translate-y-1 transform ease-in-out duration-500" />
-        </a>
-        <a
-          target="_blank"
-          href="mailto:a.g.popov@hotmaiil.com"
-          rel="noopener noreferrer"
-        >
-          <IoDocumentText className="hover:text-slate-500 hover:-translate-y-1 transform ease-in-out duration-500" />
-        </a>
-      </div>
+
+      <SocialLinks />
+
       <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
         Feel free to explore my GitHub profile to see my projects,
         contributions, and coding expertise. I appreciate your visit, and I look
