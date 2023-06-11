@@ -67,14 +67,14 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div className="w-8 h-8 md:w-12 md:h-12">
+      {/* <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
           alt="Typescript"
           height={48}
           width={48}
         />
-      </div>
+      </div> */}
       <div className="w-8 h-8 md:w-12 md:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
@@ -131,14 +131,14 @@ export default function Devicons() {
           width={48}
         />
       </div>
-      <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
+      {/* <div className="w-8 h-8 md:w-12 md:h-12 bg-white rounded-full p-1">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
           alt="Figma"
           height={40}
           width={40}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

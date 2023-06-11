@@ -15,20 +15,18 @@ export default function Navbar() {
 
   return (
     <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900 dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-10">
-      <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-20 lg:px-40">
+      <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-20 lg:px-28 xl:px-40">
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
             <Link href="/">
-              <div className="w-40 md:w-auto flex items-center">
-                <Image
-                  src={theme === "light" ? logoLight : logoDark}
-                  alt="logo"
-                  className="object-cover"
-                  width={230}
-                  height={50}
-                />
-              </div>
+              <Image
+                src={theme === "light" ? logoLight : logoDark}
+                alt="logo"
+                className="object-contain w-40 md:w-56 hover:scale-105 ease-in duration-500"
+                width={220}
+                height={50}
+              />
             </Link>
 
             {/* HAMBURGER BUTTON FOR MOBILE */}
@@ -66,32 +64,32 @@ export default function Navbar() {
             }`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
-              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-3 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
+              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="/" onClick={() => setNavbar(!navbar)}>
                   Home
                 </Link>
               </li>
 
-              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-3 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
+              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="#about" onClick={() => setNavbar(!navbar)}>
                   About
                 </Link>
               </li>
 
-              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-3 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
+              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="#projects" onClick={() => setNavbar(!navbar)}>
                   Projects
                 </Link>
               </li>
 
-              <li className="text-xl w-1/3 mb-1 md:mb-0 py-3 px-3 lg:px-10 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
+              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
                 <Link href="#contact" onClick={() => setNavbar(!navbar)}>
                   Contact
                 </Link>
               </li>
 
               {/* THEME SWITCHER */}
-              <li className="text-xl py-2 flex justify-center items-center ml-0 md:ml-2 lg:ml-8 xl:ml-16">
+              <li className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12">
                 <div onClick={() => setNavbar(!navbar)}>
                   <ThemeSwitcher onClick={() => setNavbar(!navbar)} />
                 </div>

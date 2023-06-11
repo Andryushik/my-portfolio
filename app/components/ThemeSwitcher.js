@@ -26,12 +26,12 @@ export default function ThemeSwitcher() {
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
       name="Change theme"
     >
-      <BsFillMoonStarsFill className="text-xl" />
-      <BsFillSunFill className="text-xl" />
+      <BsFillMoonStarsFill className="text-xl hover:scale-110 duration-500" />
+      <BsFillSunFill className="text-xl hover:scale-110 duration-500" />
       {theme === "light" ? (
-        <BsFillCircleFill className="text-2xl absolute left-1 text-text-head" />
+        <BsFillCircleFill className="text-2xl absolute left-1 text-text-head hover:scale-110 duration-500" />
       ) : (
-        <BsFillCircleFill className="text-2xl absolute right-1 text-text-head" />
+        <BsFillCircleFill className="text-2xl absolute right-1 text-text-head hover:scale-110 duration-500" />
       )}
     </div>
   );

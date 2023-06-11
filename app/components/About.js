@@ -9,7 +9,9 @@ export default function About() {
   return (
     <>
       <div>
-        <h3 className="text-2xl md:text-3xl py-3">About & Skills</h3>
+        <h3 className="text-2xl md:text-3xl text-text-head py-3">
+          About & Skills
+        </h3>
         <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
           I&apos;m a recently graduated Full-Stack Web Developer from
           <a
@@ -45,7 +47,7 @@ export default function About() {
       {/* SKILLS */}
       <div className="lg:flex gap-10">
         {/* frontend */}
-        <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
+        <div className="text-center shadow-xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1">
           <div className="flex justify-center">
             <Image
               src={computer}
@@ -61,18 +63,17 @@ export default function About() {
           </p>
           <h4 className="py-4 text-lg text-teal-600">Languages I speak:</h4>
           <p className="text-slate-500 py-1">
-            HTML, CSS, JavaScript, React.js, Next.js, Tailwind, Sass
+            HTML, CSS, JavaScript, React.js, Next.js, Tailwind, Sass, APIs,
+            MaterialUI
           </p>
           <h4 className="pt-4 text-lg text-teal-600">Dev Tools:</h4>
           <p className="text-gray-500 py-1">VS Code</p>
           <p className="text-gray-500 py-1">Terminal</p>
           <p className="text-gray-500 py-1">GitHub</p>
-          <p className="text-gray-500 py-1">MaterialUI</p>
-          <p className="text-gray-500 py-1">Vercel</p>
         </div>
 
         {/* backend */}
-        <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
+        <div className="text-center shadow-xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1">
           <div className="flex justify-center">
             <Image
               src={database}
@@ -83,33 +84,38 @@ export default function About() {
           </div>
           <h3 className="text-lg font-medium pt-8 pb-2">Backend</h3>
           <p className="py-2 ">
-            I enjoy exploring innovative and practical techniques for building a
-            strong backend in modern web applications.
+            I enjoy the challenge of building a strong backend in modern web
+            app.
           </p>
           <h4 className="py-4 text-lg text-teal-600">Languages I speak:</h4>
-          <p className="text-slate-500 py-1">Node.js, MySQL, MongoDB</p>
+          <p className="text-slate-500 py-1">
+            Node.js, MySQL, MongoDB, Express
+          </p>
+          <br />
           <h4 className="pt-4 text-lg text-teal-600">Dev Tools:</h4>
-          <p className="text-gray-500 py-1">Firebase</p>
-          <p className="text-gray-500 py-1">MongoDB</p>
-          <p className="text-gray-500 py-1">Mongoose</p>
+          <p className="text-gray-500 py-1">MongoDB Compass</p>
           <p className="text-gray-500 py-1">MySQL</p>
-          <p className="text-gray-500 py-1">Express</p>
+          <p className="text-gray-500 py-1">Postman</p>
         </div>
 
-        {/* design */}
-        <div className="text-center shadow-xl p-10 rounded-xl my-10 dark:bg-slate-900 flex-1">
+        {/* tools */}
+        <div className="text-center shadow-xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1">
           <div className="flex justify-center">
             <Image src={design} alt="design icon" width={100} height={100} />
           </div>
-          <h3 className="text-lg font-medium pt-8 pb-2">UX/UI Design</h3>
+          <h3 className="text-lg font-medium pt-8 pb-2">Other</h3>
           <p className="py-2 ">
-            I take pleasure in creating elegant designs suited to your needs.
+            A few essential tools that greatly assist me in my development
+            process.
           </p>
           <h4 className="py-4 text-lg text-teal-600">Languages I speak:</h4>
           <p className="text-slate-500 py-1">UX, UI, Web</p>
-          <h4 className="pt-4 text-lg text-teal-600">Design Tools:</h4>
+          <br />
+          <br />
+          <h4 className="pt-4 text-lg text-teal-600">Helpful Tools:</h4>
           <p className="text-gray-500 py-1">Pen & Paper</p>
           <p className="text-gray-500 py-1">Figma</p>
+          <p className="text-gray-500 py-1">Browsers</p>
         </div>
       </div>
 
@@ -123,21 +129,21 @@ export default function About() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <AiFillGithub />
+          <AiFillGithub className="hover:text-slate-500 hover:-translate-y-1 transform ease-in-out duration-500" />
         </a>
         <a
           href="https://www.linkedin.com/in/andrei-popov-g/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <AiFillLinkedin />
+          <AiFillLinkedin className="hover:text-slate-500 hover:-translate-y-1 transform ease-in-out duration-500" />
         </a>
         <a
           target="_blank"
           href="mailto:a.g.popov@hotmaiil.com"
           rel="noopener noreferrer"
         >
-          <IoDocumentText />
+          <IoDocumentText className="hover:text-slate-500 hover:-translate-y-1 transform ease-in-out duration-500" />
         </a>
       </div>
       <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">

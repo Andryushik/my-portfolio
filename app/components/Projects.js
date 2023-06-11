@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <>
       <div>
-        <h3 className="text-2xl md:3xl py-1">Projects</h3>
+        <h3 className="text-2xl md:text-3xl text-text-head py-1">Projects</h3>
         <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
           As a junior web developer, I have endeavored to utilize various
           approaches in each of my projects to enhance my skills and gain

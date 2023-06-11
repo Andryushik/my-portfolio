@@ -21,21 +21,21 @@ export default function HomeIntro() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <AiFillGithub />
+            <AiFillGithub className="hover:scale-125 hover:animate-pulse duration-500" />
           </a>
           <a
             href="https://www.linkedin.com/in/andrei-popov-g/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <AiFillLinkedin />
+            <AiFillLinkedin className="hover:scale-125 hover:animate-pulse duration-500" />
           </a>
           <a
             target="_blank"
             href="mailto:a.g.popov@hotmaiil.com"
             rel="noopener noreferrer"
           >
-            <IoDocumentText />
+            <IoDocumentText className="hover:scale-125 hover:animate-pulse duration-500" />
           </a>
         </div>
 

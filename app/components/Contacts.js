@@ -5,7 +5,7 @@ export default function Contacts() {
   return (
     <>
       <div>
-        <h3 className="text-2xl md:text-3xl py-1">Contact</h3>
+        <h3 className="text-2xl md:text-3xl text-text-head py-1">Contact</h3>
 
         <div className="p-7 flex justify-around items-center gap-5 flex-col md:flex-row">
           <a
@@ -13,7 +13,7 @@ export default function Contacts() {
             href="mailto:a.g.popov@hotmail.com?subject=[Website]"
             rel="noopener noreferrer"
           >
-            <div className="text-5xl md:text-6xl flex items-center">
+            <div className="text-5xl md:text-6xl flex items-center hover:text-text-head ease-in-out duration-500">
               <CiMail />
               <div className="flex flex-col ml-5">
                 <span className="text-sm md:text-base">Mail: </span>
@@ -28,7 +28,7 @@ export default function Contacts() {
             href="https://goo.gl/maps/TUnFzdNQGJRJjCSz6"
             rel="noopener noreferrer"
           >
-            <div className="text-5xl flex items-center">
+            <div className="text-5xl md:text-6xl flex items-center hover:text-text-head ease-in-out duration-500">
               <CiLocationOn />
               <div className="flex flex-col ml-5">
                 <span className="text-sm md:text-base">Address: </span>
