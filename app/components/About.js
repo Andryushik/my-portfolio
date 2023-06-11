@@ -48,7 +48,7 @@ export default function About() {
       {/* SKILLS */}
       <div className="lg:flex gap-10">
         {/* frontend */}
-        <div className="text-center shadow-xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1">
+        <div className="text-center shadow-2xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1 hover:shadow-md ease-in-out duration-700">
           <div className="flex justify-center">
             <Image
               src={computer}
@@ -74,7 +74,7 @@ export default function About() {
         </div>
 
         {/* backend */}
-        <div className="text-center shadow-xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1">
+        <div className="text-center shadow-2xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1 hover:shadow-md ease-in-out duration-700">
           <div className="flex justify-center">
             <Image
               src={database}
@@ -100,7 +100,7 @@ export default function About() {
         </div>
 
         {/* tools */}
-        <div className="text-center shadow-xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1">
+        <div className="text-center shadow-2xl dark:shadow-slate-700 p-5 rounded-xl my-10 dark:bg-slate-900 flex-1 hover:shadow-md ease-in-out duration-700">
           <div className="flex justify-center">
             <Image src={design} alt="design icon" width={100} height={100} />
           </div>
