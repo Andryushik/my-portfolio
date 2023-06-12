@@ -3,7 +3,7 @@ import SocialLinks from "./SocialLinks";
 export default function HomeIntro() {
   return (
     <div className="h-screen bg-fixed bg-left-bottom bg-contain bg-no-repeat hero-bg">
-      <div className="px-7 md:px-20 lg:px-28 xl:px-40 flex flex-col md:flex-row md:justify-end items-center h-screen bg-white/20 dark:bg-black/40 bg-gradient-to-l from-white dark:from-black">
+      <div className="px-7 md:px-20 lg:px-28 xl:px-40 flex flex-col md:flex-row md:justify-end items-center h-screen bg-white/20 dark:bg-black/30 bg-gradient-to-l from-black dark:from-white">
         <div className="text-center md:text-right md:w-3/5 px-10 py-20 md:py-10">
           <h1 className="text-3xl sm:4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium">
             Andrei Popov
