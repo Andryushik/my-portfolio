@@ -18,7 +18,7 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap text-sm md:text-base lg:text-xs xl:text-base">
+      <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap text-xs md:text-base lg:text-xs xl:text-base">
         {/* DIARY */}
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
           <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
@@ -57,7 +57,7 @@ export default function Projects() {
             </form>
           </div>
 
-          <div className="absolute flex gap-2 md:gap-2 lg:gap-1 xl:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
+          <div className="absolute flex gap-1 xl:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
             <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               HTML
             </div>
@@ -75,7 +75,7 @@ export default function Projects() {
             </div>
           </div>
           <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
-            <span className="text-slate-500">
+            <span className="text-sm md:text-base text-slate-500">
               MERN Stack social application
             </span>
           </div>
@@ -124,13 +124,10 @@ export default function Projects() {
 
           <div className="absolute flex gap-2 md:gap-2 lg:gap-1 xl:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
             <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
-              HTML
-            </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
-              MaterialUI
-            </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               ReactJS
+            </div>
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
+              MUI
             </div>
             <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               NodeJS
@@ -140,7 +137,7 @@ export default function Projects() {
             </div>
           </div>
           <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
-            <span className="text-slate-500">
+            <span className="text-sm md:text-base text-slate-500">
               React & Firebase online chat web application
             </span>
           </div>
@@ -201,12 +198,12 @@ export default function Projects() {
               NodeJS
             </div>
             <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
-              RestAPI
+              API
             </div>
           </div>
           <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
-            <span className="text-slate-500">
-              Web radio vanilla JavaScript application
+            <span className="text-sm md:text-base text-slate-500">
+              Web radio Vanilla JavaScript application
             </span>
           </div>
           <div className="absolute -bottom-full left-6 group-hover:bottom-6 transition-all duration-700 z-40">
@@ -266,7 +263,7 @@ export default function Projects() {
             </div>
           </div>
           <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
-            <span className="text-slate-500">
+            <span className="text-sm md:text-base text-slate-500">
               JavaScript funny quiz web application
             </span>
           </div>
