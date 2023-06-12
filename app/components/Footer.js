@@ -8,7 +8,7 @@ import { BsArrowUpCircleFill } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <footer className="py-7 mt-8w-full mx-auto flex items-center justify-between px-7 md:px-20 lg:px-28 xl:px-40">
+    <footer className="py-7 mt-8w-full mx-auto flex items-center justify-between px-7 md:px-16 lg:px-28 xl:px-40">
       {/* COPYRIGHT */}
       <div className="">
         <p className="text-xs md:text-sm text-text-head">

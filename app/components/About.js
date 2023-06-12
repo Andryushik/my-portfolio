@@ -9,7 +9,7 @@ import Devicons from "./Devicons";
 
 export default function About() {
   return (
-    <div className="flex justify-between h-screen px-7 md:px-20 lg:px-28 xl:px-40 py-60">
+    <div className="flex justify-between h-screen px-7 md:px-16 lg:px-28 xl:px-40 py-60">
       <div className="w-2/5">
         <h3 className="text-2xl md:text-3xl text-text-head py-3">
           About & Skills

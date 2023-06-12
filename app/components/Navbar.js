@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900 dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-50">
-      <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-20 lg:px-28 xl:px-40">
+      <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 lg:px-28 xl:px-40">
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
