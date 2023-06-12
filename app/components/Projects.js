@@ -275,11 +275,15 @@ export default function Projects() {
 
       <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
         P.S. This portfolio website has been created using Next.js and Tailwind
-        CSS. With Next.js, I have been able to leverage server-side rendering
-        and efficient routing, while Tailwind CSS has provided a flexible and
-        utility-based approach to styling. The combination of Next.js and
-        Tailwind CSS has allowed me to create a seamless and responsive user
-        experience.
+        CSS. The code source is available on GitHub
+        <a
+          href="https://github.com/Andryushik/my-portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          <span className="text-teal-500">here</span>.
+        </a>
       </p>
     </>
   );

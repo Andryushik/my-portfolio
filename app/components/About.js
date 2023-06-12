@@ -120,19 +120,17 @@ export default function About() {
         </div>
       </div>
 
-      <p className="text-sm md:text-lg mt-2 md:mt-5 leading-8 text-gray-500 text-center">
+      {/* <p className="text-sm md:text-lg mt-2 md:mt-5 leading-8 text-gray-500 text-center">
         You can check more information about me and my work through the
         following links:
-      </p>
+      </p> */}
 
-      <SocialLinks />
-
-      <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
+      {/* <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
         Feel free to explore my GitHub profile to see my projects,
         contributions, and coding expertise. I appreciate your visit, and I look
         forward to connecting with you on LinkedIn to further discuss my work
         and professional background.
-      </p>
+      </p> */}
     </>
   );
 }
