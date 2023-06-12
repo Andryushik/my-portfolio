@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 export const metadata = {
   title: "Andrei Popov | Web Developer",
   description:
-    "My name is Andrei Popov. I am Full-stack Web Developer and this is my personal portfolio web site.", //TODO: change description and favicon
+    "My name is Andrei Popov, and I am a Full-stack Web Developer. Welcome to my personal portfolio website, where I showcase my projects and skills. I have experience working with various frameworks, such as React, Next.js, and Node.js, to create dynamic and interactive web applications. Take a look at my portfolio to explore my projects. I hope you enjoy browsing through my work!",
 };
 
 export default function RootLayout({ children }) {
