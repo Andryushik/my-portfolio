@@ -1,8 +1,9 @@
 import Image from "next/image";
-import mydiary from "../../public/mydiary.gif";
-import chat from "../../public/chat.gif";
-import radio from "../../public/radio.gif";
-import quiz from "../../public/quiz.gif";
+import diary from "../../public/diary.png";
+import chat from "../../public/chat.png";
+import radio from "../../public/radio.png";
+import quiz from "../../public/quiz.png";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -17,148 +18,260 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-        {/* TODO: links to live demo and source code */}
-        {/* <a
-          target="_blank"
-          href="https://c41-team-two.herokuapp.com/"
-          rel="noopener noreferrer"
-        ></a> */}
+      <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap text-sm md:text-base lg:text-xs xl:text-base">
+        {/* DIARY */}
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
-            className="group-hover:scale-110 transition-all duration-500"
-            src={mydiary}
+            className="object-cover group-hover:scale-110 transition-all duration-500"
+            src={diary}
             placeholder="blur"
-            blurDataURL={"../../public/web1.png"}
+            blurDataURL={"../../public/diary-s.png"}
             alt="my diary app screenshot"
           />
-          <div className="absolute flex gap-2 -bottom-full left-12 group-hover:bottom-36 transition-all duration-300 z-40">
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
-              NextJS
+
+          <div className="absolute flex gap-2 right-6 group-hover:top-6 z-40">
+            <form
+              action="https://github.com/Andryushik/MyDiary"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Source
+              </button>
+            </form>
+            <form
+              action="https://c41-team-two.herokuapp.com/"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Live
+              </button>
+            </form>
+          </div>
+
+          <div className="absolute flex gap-2 md:gap-2 lg:gap-1 xl:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
+              HTML
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
-              Typescript
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
+              CSS
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
-              Tailwind
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
+              ReactJS
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               NodeJS
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               MongoDB
             </div>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
-            <span className="text-xl text-slate-500">
-              MERN Stack Social App (graduation group project)
+          <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
+            <span className="text-slate-500">
+              MERN Stack social application
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
-            <span className="text-2xl text-text-head">MY DIARY</span>
+          <div className="absolute -bottom-full left-6 group-hover:bottom-6 transition-all duration-700 z-40">
+            <span className="text-xl xl:text-2xl text-text-head">MY DIARY</span>
           </div>
         </div>
 
+        {/* CHAT */}
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
-            className="group-hover:scale-110 transition-all duration-500"
+            className="object-cover group-hover:scale-110 transition-all duration-500"
             src={chat}
             placeholder="blur"
-            blurDataURL={"../../public/web1.png"}
+            blurDataURL={"../../public/chat-s.png"}
             alt="chat app screenshot"
           />
-          <div className="absolute flex gap-2 -bottom-full left-12 group-hover:bottom-36 transition-all duration-300 z-40">
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
-              ReactJS
+
+          <div className="absolute flex gap-2 right-6 group-hover:top-6 z-40">
+            <form
+              action="https://github.com/Andryushik/chat_app_react"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Source
+              </button>
+            </form>
+            <form
+              action="https://chat-app-blah-blah.netlify.app/"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Live
+              </button>
+            </form>
+          </div>
+
+          <div className="absolute flex gap-2 md:gap-2 lg:gap-1 xl:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
+              HTML
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               MaterialUI
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
+              ReactJS
+            </div>
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               NodeJS
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               Firebase
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
-              Express
-            </div>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
-            <span className="text-xl text-slate-500">
-              React & Firebase Chat web application
+          <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
+            <span className="text-slate-500">
+              React & Firebase online chat web application
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
-            <span className="text-2xl text-text-head">CHAT APP</span>
+          <div className="absolute -bottom-full left-6 group-hover:bottom-6 transition-all duration-700 z-40">
+            <span className="text-xl xl:text-2xl text-text-head">CHAT APP</span>
           </div>
         </div>
 
+        {/* RADIO */}
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
-            className="group-hover:scale-110 transition-all duration-500"
+            className="object-cover group-hover:scale-110 transition-all duration-500"
             src={radio}
             placeholder="blur"
-            blurDataURL={"../../public/web1.png"}
-            alt="radio app screenshot"
+            blurDataURL={"../../public/radio-s.png"}
+            alt="world web radio app screenshot"
           />
-          <div className="absolute flex gap-2 -bottom-full left-12 group-hover:bottom-36 transition-all duration-300 z-40">
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+
+          <div className="absolute flex gap-2 right-6 group-hover:top-6 z-40">
+            <form
+              action="https://github.com/Andryushik/World-radios-APP"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Source
+              </button>
+            </form>
+            <form
+              action="https://worldradioswebapp.netlify.app/"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Live
+              </button>
+            </form>
+          </div>
+
+          <div className="absolute flex gap-2 md:gap-2 lg:gap-1 xl:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               HTML
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               CSS
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               JavaScript
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               NodeJS
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
-              Express
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
+              RestAPI
             </div>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
-            <span className="text-xl text-slate-500">
+          <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
+            <span className="text-slate-500">
               Web radio vanilla JavaScript application
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
-            <span className="text-2xl text-text-head">WEB RADIO APP</span>
+          <div className="absolute -bottom-full left-6 group-hover:bottom-6 transition-all duration-700 z-40">
+            <span className="text-xl xl:text-2xl text-text-head">
+              WORLD WEB RADIO
+            </span>
           </div>
         </div>
 
+        {/* QUIZ */}
         <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
-          <div className="group-hover:bg-gradient-to-t from-black w-full h-full absolute z-30 transition-all duration-300"></div>
+          <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
           <Image
-            className="group-hover:scale-110 transition-all duration-500"
+            className="object-cover group-hover:scale-110 transition-all duration-500"
             src={quiz}
             placeholder="blur"
-            blurDataURL={"../../public/web1.png"}
+            blurDataURL={"../../public/quiz-s.png"}
             alt="quiz web app screenshot"
           />
-          <div className="absolute flex gap-2 -bottom-full left-12 group-hover:bottom-36 transition-all duration-300 z-40">
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+
+          <div className="absolute flex gap-2 right-6 group-hover:top-6 z-40">
+            <form
+              action="https://github.com/Andryushik/browser-quiz-project"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Source
+              </button>
+            </form>
+            <form
+              action="https://quizz-app-andryushik.netlify.app/"
+              method="get"
+              target="_blank"
+            >
+              <button
+                className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                type="submit"
+              >
+                Live
+              </button>
+            </form>
+          </div>
+
+          <div className="absolute flex gap-2 md:gap-2 lg:gap-1 xl:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               HTML
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               CSS
             </div>
-            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-base text-white">
+            <div className="rounded-full py-1 px-2 bg-gray-500/80 text-white">
               JavaScript
             </div>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-40">
-            <span className="text-xl text-slate-500">
-              Funny quiz web application
+          <div className="md:text-base xl:text-lg absolute -bottom-full left-6 group-hover:bottom-16 transition-all duration-500 z-40">
+            <span className="text-slate-500">
+              JavaScript funny quiz web application
             </span>
           </div>
-          <div className="absolute -bottom-full left-12 group-hover:bottom-12 transition-all duration-700 z-40">
-            <span className="text-2xl text-text-head">QUIZ APP</span>
+          <div className="absolute -bottom-full left-6 group-hover:bottom-6 transition-all duration-700 z-40">
+            <span className="text-xl xl:text-2xl text-text-head">QUIZ APP</span>
           </div>
         </div>
       </div>
