@@ -37,14 +37,14 @@ export default function Footer() {
         >
           <AiOutlineLinkedin />
         </a>
-        <a
+        {/* <a
           className="hover:scale-125 ease-in-out duration-500"
           target="_blank"
-          href="mailto:a.g.popov@hotmail.com?subject=[Website]"
+          href=""
           rel="noopener noreferrer"
         >
           <AiOutlineMail />
-        </a>
+        </a> */}
       </div>
     </footer>
   );

@@ -18,11 +18,7 @@ export default function SocialLinks() {
       >
         <AiFillLinkedin className="hover:scale-125 hover:animate-pulse duration-500" />
       </a>
-      <a
-        target="_blank"
-        href="mailto:a.g.popov@hotmaiil.com"
-        rel="noopener noreferrer"
-      >
+      <a target="_blank" href="#" rel="noopener noreferrer">
         <IoDocumentText className="hover:scale-125 hover:animate-pulse duration-500" />
       </a>
     </div>

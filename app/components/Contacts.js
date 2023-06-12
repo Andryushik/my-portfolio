@@ -8,18 +8,12 @@ export default function Contacts() {
         <h3 className="text-2xl md:text-3xl text-text-head py-1">Contact</h3>
 
         <div className="p-7 flex justify-around items-center gap-5 flex-col md:flex-row">
-          <a
-            target="_blank"
-            href="mailto:a.g.popov@hotmail.com?subject=[Website]"
-            rel="noopener noreferrer"
-          >
+          <a target="_blank" href="#" rel="noopener noreferrer">
             <div className="text-5xl md:text-6xl flex items-center hover:text-text-head ease-in-out duration-500">
               <CiMail />
               <div className="flex flex-col ml-5">
                 <span className="text-sm md:text-base">Mail: </span>
-                <span className="text-sm md:text-base underline">
-                  a.g.popov@hotmail.com
-                </span>
+                <span className="text-sm md:text-base underline">---</span>
               </div>
             </div>
           </a>
