@@ -5,13 +5,14 @@
 /* scroll snapping */
 html {
   scroll-behavior: smooth !important;
-  /* TODO: need or not? */
-  /* scroll-snap-type: y proximity;  */
+  scroll-snap-type: y mandatory;
 }
 
 section {
-  /* min-height: 100vh; */
-  padding-top: 80px;
-  /* scroll-snap-align: start; */
-  /* scroll-margin-top: 20px; */
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+.hero-bg {
+  background-image: url("../public/avatar-bg.png");
 }
