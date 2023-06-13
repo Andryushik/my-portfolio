@@ -9,8 +9,8 @@ import Devicons from "./Devicons";
 
 export default function About() {
   return (
-    <div className="flex justify-between h-screen px-7 md:px-16 lg:px-28 xl:px-40 py-60">
-      <div className="w-2/5">
+    <div className="flex items-center md:justify-between h-fit md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40">
+      <div className=" w-screen md:w-2/5 h-fit px-7 py-10">
         <h3 className="text-2xl md:text-3xl text-text-head py-3">
           About & Skills
         </h3>
@@ -46,11 +46,6 @@ export default function About() {
       </div>
 
       <Devicons />
-
-      {/* <p className="text-sm md:text-lg mt-2 md:mt-5 leading-8 text-gray-500 text-center">
-        You can check more information about me and my work through the
-        following links:
-      </p> */}
     </div>
   );
 }

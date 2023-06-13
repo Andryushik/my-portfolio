@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <>
+    <div className="pt-14 md:pt-24 px-7 md:px-16 lg:px-28 xl:px-40">
       <div>
         <h3 className="text-2xl md:text-3xl text-text-head py-1">Projects</h3>
         <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
@@ -285,6 +285,6 @@ export default function Projects() {
           <span className="text-teal-500">here</span>.
         </a>
       </p>
-    </>
+    </div>
   );
 }
