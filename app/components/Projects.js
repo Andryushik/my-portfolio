@@ -3,7 +3,6 @@ import diary from "../../public/diary.png";
 import chat from "../../public/chat.png";
 import radio from "../../public/radio.png";
 import quiz from "../../public/quiz.png";
-import Link from "next/link";
 
 export default function Projects() {
   return (

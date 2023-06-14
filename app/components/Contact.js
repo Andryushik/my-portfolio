@@ -1,7 +1,7 @@
 import SocialLinks from "./SocialLinks";
 // import ContactForm from "./ContactForm";
 
-export default function Contacts() {
+export default function Contact() {
   return (
     <section id="contact">
       <div className="pt-14 md:pt-20 px-7 md:px-16 lg:px-28 xl:px-40">

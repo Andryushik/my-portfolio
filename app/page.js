@@ -1,18 +1,15 @@
 import Intro from "./components/Intro";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Contacts from "./components/Contacts";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
     <main>
       <Intro />
-
       <About />
-
       <Projects />
-
-      <Contacts />
+      <Contact />
     </main>
   );
 }
