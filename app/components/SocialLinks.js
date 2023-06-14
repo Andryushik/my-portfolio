@@ -2,7 +2,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 export default function SocialLinks() {
   return (
-    <div className="flex justify-center text-3xl md:text-5xl text-text-head py-2 md:py-8 gap-10">
+    <div className="flex justify-center w-fit text-3xl md:text-5xl text-text-head py-2 md:py-4 gap-10">
       <a
         href="https://github.com/Andryushik"
         target="_blank"
