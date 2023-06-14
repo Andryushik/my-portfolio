@@ -1,10 +1,3 @@
-import Image from "next/image";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { IoDocumentText } from "react-icons/io5";
-import design from "../../public/design.png";
-import database from "../../public/database.png";
-import computer from "../../public/computer.png";
-import SocialLinks from "./SocialLinks";
 import Devicons from "./Devicons";
 
 export default function About() {
