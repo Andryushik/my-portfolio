@@ -9,6 +9,7 @@ html {
   /* scroll-snap-type: y proximity;  */
 }
 
+/* TODO: need min height or not */
 section {
   /* min-height: 100vh; */
   padding-top: 80px;
