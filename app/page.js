@@ -6,21 +6,13 @@ import Contacts from "./components/Contacts";
 export default function Home() {
   return (
     <main>
-      <section id="home">
-        <Intro />
-      </section>
+      <Intro />
 
-      <section id="about">
-        <About />
-      </section>
+      <About />
 
-      <section id="projects">
-        <Projects />
-      </section>
+      <Projects />
 
-      <section id="contact">
-        <Contacts />
-      </section>
+      <Contacts />
     </main>
   );
 }
