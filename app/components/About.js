@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40">
-        <div className=" w-screen h-fit px-7 py-10">
+        <div className="h-fit md:w-2/3 max-w-prose flex-auto py-10 md:py-20">
           <h3 className="text-2xl md:text-3xl text-text-head py-3">
             About & Skills
           </h3>
@@ -38,7 +38,7 @@ export default function About() {
             development projects.
           </p>
         </div>
-        <div>
+        <div className=" flex-auto w-4/5 md:w-1/3 md:max-w-sm md:ml-16 lg:ml-24">
           <Devicons />
         </div>
       </div>

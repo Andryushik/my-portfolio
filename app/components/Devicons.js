@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Devicons() {
   return (
-    <div className="p-7 md:p-14 lg:p-20 flex flex-wrap justify-center gap-2 lg:gap-3">
+    <div className="flex flex-wrap justify-center gap-2 lg:gap-3">
       <div className="w-8 h-8 lg:w-12 lg:h-12">
         <Image
           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
