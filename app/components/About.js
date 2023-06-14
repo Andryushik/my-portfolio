@@ -3,8 +3,8 @@ import Devicons from "./Devicons";
 export default function About() {
   return (
     <section id="about">
-      <div className="flex items-center md:justify-between h-fit md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40">
-        <div className=" w-screen md:w-2/5 h-fit px-7 py-10">
+      <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40">
+        <div className=" w-screen h-fit px-7 py-10">
           <h3 className="text-2xl md:text-3xl text-text-head py-3">
             About & Skills
           </h3>
@@ -38,8 +38,9 @@ export default function About() {
             development projects.
           </p>
         </div>
-
-        <Devicons />
+        <div>
+          <Devicons />
+        </div>
       </div>
     </section>
   );
