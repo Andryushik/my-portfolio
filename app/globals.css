@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* scroll snapping */
+/* scroll snapping TODO: need or not?*/
 html {
   scroll-behavior: smooth !important;
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
 }
 
-/* TODO: need min height or not */
-section {
+/* section {
   scroll-snap-align: start;
-}
-
-.avatar-bg {
-  background-image: url("../public/avatar-bg.png");
-}
+} */

@@ -23,7 +23,7 @@ export default function Navbar() {
               <Image
                 src={theme === "light" ? logoLight : logoDark}
                 alt="logo"
-                className="object-contain w-40 md:w-56 hover:scale-105 ease-in duration-500"
+                className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500"
                 width={220}
                 height={50}
               />
