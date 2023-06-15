@@ -12,6 +12,7 @@ import logoDark from "../../public/logo-dark.png";
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const { theme } = useTheme();
+  const menu = ["Home", "About", "Projects", "Contact"];
 
   return (
     <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900 dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-50">
@@ -64,29 +65,19 @@ export default function Navbar() {
             }`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
-              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="/" onClick={() => setNavbar(!navbar)}>
-                  Home
-                </Link>
-              </li>
-
-              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="#about" onClick={() => setNavbar(!navbar)}>
-                  About
-                </Link>
-              </li>
-
-              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="#projects" onClick={() => setNavbar(!navbar)}>
-                  Projects
-                </Link>
-              </li>
-
-              <li className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500">
-                <Link href="#contact" onClick={() => setNavbar(!navbar)}>
-                  Contact
-                </Link>
-              </li>
+              {menu.map((menuItem, i) => (
+                <li
+                  key={i}
+                  className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500"
+                >
+                  <Link
+                    href={`#${menuItem.toLowerCase()}`}
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    {menuItem}
+                  </Link>
+                </li>
+              ))}
 
               {/* THEME SWITCHER */}
               <li className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12">
