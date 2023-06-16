@@ -70,7 +70,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40">
-        <div className="h-fit md:w-2/3 max-w-prose flex-auto py-10 md:py-20">
+        <div className="top-0 md:w-2/3 max-w-prose flex-auto py-14 md:py-20">
           <h3 className="text-2xl md:text-3xl text-text-head py-3">
             About & Skills
           </h3>
@@ -81,6 +81,7 @@ export default function About() {
                 variants={listVariants}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{ amount: 0.3 }}
                 custom={p.key}
                 key={p.key}
                 className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200"
@@ -90,7 +91,7 @@ export default function About() {
             ))}
           </ul>
         </div>
-        <div className=" flex-auto w-4/5 md:w-1/3 md:max-w-sm md:ml-16 lg:ml-24">
+        <div className="flex-auto w-4/5 md:w-1/3 md:max-w-sm md:ml-20 lg:ml-32">
           <Devicons />
         </div>
       </div>

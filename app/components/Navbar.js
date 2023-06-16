@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
-import menu from "../../public/menu.png";
-import cross from "../../public/cross.png";
+import menuIcon from "../../public/menu-icon.png";
+import crossIcon from "../../public/cross-icon.png";
 import ThemeSwitcher from "./ThemeSwitcher";
 import logoLight from "../../public/logo-light.png";
 import logoDark from "../../public/logo-dark.png";
@@ -38,14 +38,14 @@ export default function Navbar() {
               >
                 {navbar ? (
                   <Image
-                    src={cross}
+                    src={crossIcon}
                     width={30}
                     height={30}
                     alt="close menu icon"
                   />
                 ) : (
                   <Image
-                    src={menu}
+                    src={menuIcon}
                     width={30}
                     height={30}
                     alt="menu icon"
