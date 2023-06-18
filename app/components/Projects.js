@@ -20,10 +20,10 @@ export default function Projects() {
 
         <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap text-xs md:text-base lg:text-xs xl:text-base">
           {/* DIARY */}
-          <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
+          <div className="group relative overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-500 dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
             <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
             <Image
-              className="object-cover group-hover:scale-110 transition-all duration-500"
+              className="object-cover group-hover:scale-105 transition-all duration-500"
               src={diary}
               placeholder="blur"
               blurDataURL={"../../public/diary-s.png"}
@@ -87,10 +87,10 @@ export default function Projects() {
           </div>
 
           {/* CHAT */}
-          <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
+          <div className="group relative overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-500 dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
             <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
             <Image
-              className="object-cover group-hover:scale-110 transition-all duration-500"
+              className="object-cover group-hover:scale-105 transition-all duration-500"
               src={chat}
               placeholder="blur"
               blurDataURL={"../../public/chat-s.png"}
@@ -151,10 +151,10 @@ export default function Projects() {
           </div>
 
           {/* RADIO */}
-          <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
+          <div className="group relative overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-500 dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
             <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
             <Image
-              className="object-cover group-hover:scale-110 transition-all duration-500"
+              className="object-cover group-hover:scale-105 transition-all duration-500"
               src={radio}
               placeholder="blur"
               blurDataURL={"../../public/radio-s.png"}
@@ -218,10 +218,10 @@ export default function Projects() {
           </div>
 
           {/* QUIZ */}
-          <div className="group relative overflow-hidden shadow-xl md:shadow-2xl dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
+          <div className="group relative overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-500 dark:shadow-slate-700 rounded-xl basis-1/3 flex-1">
             <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
             <Image
-              className="object-cover group-hover:scale-110 transition-all duration-500"
+              className="object-cover group-hover:scale-105 transition-all duration-500"
               src={quiz}
               placeholder="blur"
               blurDataURL={"../../public/quiz-s.png"}

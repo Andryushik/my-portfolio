@@ -12,7 +12,7 @@ import logoDark from "../../public/logo-dark.png";
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const { theme } = useTheme();
-  const menu = ["Home", "About", "Projects", "Contact"];
+  const menu = ["About", "Projects", "Contact"];
 
   return (
     <nav className="bg-slate-200 bg-opacity-20 backdrop-blur dark:bg-slate-900 dark:bg-opacity-20 fixed w-full top-0 left-0 right-0 z-50">

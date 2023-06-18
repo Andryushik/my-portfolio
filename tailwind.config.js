@@ -19,9 +19,9 @@ module.exports = {
           },
         ],
       },
-      backgroundImage: {
-        avatar: "url('../public/avatar.png')",
-      },
+      // backgroundImage: {
+      //   avatar: "url('../public/avatar.png')",
+      // },
     },
   },
   plugins: [],
