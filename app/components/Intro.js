@@ -16,7 +16,7 @@ export default function Intro() {
           </div>
           <div className="absolute w-full flex flex-col justify-center md:justify-end">
             <div className="text-center md:text-right">
-              <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium drop-shadow-lg">
+              <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-lg">
                 Hi, <br />
                 my name is <br /> Andrei
               </h1>
@@ -29,7 +29,7 @@ export default function Intro() {
               I invite you to explore my portfolio, where you can find a
               selection of my projects.
             </p> */}
-              <div className="flex justify-center md:justify-end drop-shadow-lg">
+              <div className="flex justify-center md:justify-end">
                 <SocialLinks />
               </div>
             </div>

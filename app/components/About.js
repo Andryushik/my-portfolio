@@ -56,7 +56,7 @@ export default function About() {
   ];
 
   const listVariants = {
-    hidden: { opacity: 0, y: 70 },
+    hidden: { opacity: 0, y: "100%" },
     visible: (key) => ({
       opacity: 1,
       y: 0,
@@ -71,7 +71,7 @@ export default function About() {
     <section id="about">
       <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40">
         <div className="top-0 md:w-2/3 max-w-prose flex-auto py-14 md:py-20">
-          <h3 className="text-2xl md:text-3xl text-text-head py-3">
+          <h3 className="text-2xl md:text-3xl text-text-head py-3 drop-shadow-md">
             About & Skills
           </h3>
 
@@ -91,7 +91,7 @@ export default function About() {
             ))}
           </ul>
         </div>
-        <div className="flex-auto w-4/5 md:w-1/3 md:max-w-sm md:ml-20 lg:ml-32">
+        <div className="flex-auto w-full md:w-1/3 md:max-w-md md:ml-20 lg:ml-32">
           <Skills />
         </div>
       </div>
