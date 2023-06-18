@@ -3,24 +3,31 @@ import SocialLinks from "./SocialLinks";
 export default function Intro() {
   return (
     <section id="home">
-      <div className="bg-avatar h-screen bg-fixed bg-left-bottom bg-contain bg-no-repeat">
-        <div className="px-7 md:px-16 lg:px-28 xl:px-40 flex flex-col md:flex-row md:justify-end items-center h-screen bg-white/20 dark:bg-black/20 bg-gradient-to-l from-black dark:from-white">
-          <div className="text-center md:text-right md:w-3/5 py-20 md:py-10">
-            <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium drop-shadow-lg">
-              Hi, <br />
-              my name is <br /> Andrei
-            </h1>
+      <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center md:justify-end">
+          <div className="relative h-[430px] md:h-[600px] w-full max-w-lg">
+            <div className="absolute top-24 -left-8 w-64 h-64 md:w-96 md:h-96 rounded-full bg-purple-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90" />
+            <div className="absolute -right-10 w-64 h-64 md:w-96 md:h-96 rounded-full bg-yellow-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90 animation-delay-4000" />
+            <div className="absolute bottom-0 -right-10 w-64 h-64 md:w-96 md:h-96 rounded-full bg-pink-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90 animation-delay-2000" />
+          </div>
+          <div className="absolute w-full flex flex-col justify-center md:justify-end">
+            <div className="text-center md:text-right">
+              <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-teal-500 font-medium drop-shadow-lg">
+                Hi, <br />
+                my name is <br /> Andrei
+              </h1>
 
-            <h2 className="text-2xl sm:3xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl py-2 md:py-4 text-stone-500 drop-shadow-lg">
-              I&apos;m a Web Developer
-            </h2>
+              <h2 className="text-2xl sm:3xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl py-2 md:py-4 text-stone-500 drop-shadow-lg">
+                I&apos;m a Web Developer
+              </h2>
 
-            {/* <p className="text-sm md:ml-32 lg:ml-40 xl:ml-60 2xl:ml-60 md:mt-4 py-1 md:py-5 leading-8 text-gray-400 dark:text-gray-600 md:text-xl max-w-3xl mx-auto drop-shadow-lg">
+              {/* <p className="text-sm md:ml-32 lg:ml-40 xl:ml-64 2xl:ml-64 md:mt-4 py-1 md:py-5 leading-8 text-gray-400 dark:text-gray-640 md:text-xl max-w-3xl mx-auto drop-shadow-lg">
               I invite you to explore my portfolio, where you can find a
               selection of my projects.
             </p> */}
-            <div className="flex justify-center md:justify-end drop-shadow-lg">
-              <SocialLinks />
+              <div className="flex justify-center md:justify-end drop-shadow-lg">
+                <SocialLinks />
+              </div>
             </div>
           </div>
         </div>
