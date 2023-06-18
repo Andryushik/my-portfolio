@@ -1,3 +1,7 @@
+"use client";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "./SocialLinks";
 
 export default function Intro() {
@@ -30,6 +34,26 @@ export default function Intro() {
               </div>
             </div>
           </div>
+          <Link className="absolute bottom-6 flex items-center" href="#about">
+            <motion.span
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.5 }}
+            >
+              Scroll to discover
+            </motion.span>
+            <motion.div
+              className="text-2xl ml-4"
+              initial={{ y: -5 }}
+              animate={{ y: 5 }}
+              transition={{
+                type: "spring",
+                mass: 10,
+                damping: 0,
+              }}
+            >
+              <AiOutlineArrowDown />
+            </motion.div>
+          </Link>
         </div>
       </div>
     </section>

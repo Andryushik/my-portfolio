@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Devicons from "./Devicons";
+import Skills from "./Skills";
 
 export default function About() {
   const paragraphTexts = [
@@ -92,7 +92,7 @@ export default function About() {
           </ul>
         </div>
         <div className="flex-auto w-4/5 md:w-1/3 md:max-w-sm md:ml-20 lg:ml-32">
-          <Devicons />
+          <Skills />
         </div>
       </div>
     </section>
