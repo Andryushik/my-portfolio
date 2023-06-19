@@ -3,11 +3,17 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import menuIcon from "../../public/menu-icon.png";
 import crossIcon from "../../public/cross-icon.png";
 import ThemeSwitcher from "./ThemeSwitcher";
 import logoLight from "../../public/logo-light.png";
 import logoDark from "../../public/logo-dark.png";
+
+const menuVariants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -15,8 +21,13 @@ export default function Navbar() {
   const menu = ["About", "Projects", "Contact"];
 
   return (
-    <nav className="bg-white/50 backdrop-blur-sm dark:bg-slate-900/50 fixed w-full top-0 left-0 right-0 z-50">
-      <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 lg:px-28 xl:px-40">
+    <nav className="bg-white/30 backdrop-blur-sm dark:bg-gray-950/30 fixed w-full top-0 left-0 right-0 z-50">
+      <motion.div
+        className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 lg:px-28 xl:px-40"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
@@ -64,11 +75,23 @@ export default function Navbar() {
               navbar ? "block p-12 md:p-0" : "hidden"
             }`}
           >
-            <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
+            <motion.ul
+              className="h-auto items-center justify-center flex flex-col md:flex-row"
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                ease: "easeIn",
+                type: "tween",
+                staggerChildren: 0.13,
+                duration: 0.5,
+              }}
+            >
               {menu.map((menuItem, i) => (
-                <li
+                <motion.li
                   key={i}
                   className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500"
+                  variants={menuVariants}
                 >
                   <Link
                     href={`#${menuItem.toLowerCase()}`}
@@ -76,19 +99,17 @@ export default function Navbar() {
                   >
                     {menuItem}
                   </Link>
-                </li>
+                </motion.li>
               ))}
 
               {/* THEME SWITCHER */}
               <li className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12">
-                <div onClick={() => setNavbar(!navbar)}>
-                  <ThemeSwitcher onClick={() => setNavbar(!navbar)} />
-                </div>
+                <ThemeSwitcher onClick={() => setNavbar(!navbar)} />
               </li>
-            </ul>
+            </motion.ul>
           </div>
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 }

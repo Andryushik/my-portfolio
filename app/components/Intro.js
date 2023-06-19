@@ -29,15 +29,17 @@ export default function Intro() {
               I invite you to explore my portfolio, where you can find a
               selection of my projects.
             </p> */}
-              <div className="flex justify-center md:justify-end">
+              <div className="flex justify-center md:justify-end mt-20">
                 <SocialLinks />
               </div>
             </div>
           </div>
           <Link className="absolute bottom-6 flex items-center" href="#about">
             <motion.span
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5 }}
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
             >
               Scroll to discover
             </motion.span>
