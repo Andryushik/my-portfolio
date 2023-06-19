@@ -7,7 +7,7 @@ import quiz from "../../public/quiz.png";
 export default function Projects() {
   return (
     <section id="projects">
-      <div className="pt-14 md:pt-24 px-7 md:px-16 lg:px-28 xl:px-40">
+      <div className="py-14 md:py-24 px-7 md:px-16 lg:px-28 xl:px-40">
         <div>
           <h3 className="text-2xl md:text-3xl text-text-head py-1 drop-shadow-md">
             Projects

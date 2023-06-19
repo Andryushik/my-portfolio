@@ -69,7 +69,7 @@ export default function About() {
 
   return (
     <section id="about">
-      <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40">
+      <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40 py-14 md:py-24 ">
         <div className="top-0 md:w-2/3 max-w-prose flex-auto py-14 md:py-20">
           <h3 className="text-2xl md:text-3xl text-text-head py-3 drop-shadow-md">
             About & Skills
