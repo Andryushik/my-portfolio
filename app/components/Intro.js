@@ -9,12 +9,12 @@ export default function Intro() {
     <section id="home">
       <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
         <div className="min-h-screen flex items-center justify-center md:justify-end">
-          <div className="relative h-[430px] md:h-[600px] w-full max-w-lg">
+          <div className="relative h-[430px] md:h-[600px] w-full max-w-lg z-10">
             <div className="absolute top-24 -left-8 w-64 h-64 md:w-96 md:h-96 rounded-full bg-purple-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90" />
             <div className="absolute -right-10 w-64 h-64 md:w-96 md:h-96 rounded-full bg-yellow-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90 animation-delay-4000" />
             <div className="absolute bottom-0 -right-10 w-64 h-64 md:w-96 md:h-96 rounded-full bg-pink-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90 animation-delay-2000" />
           </div>
-          <div className="absolute w-full flex flex-col justify-center md:justify-end">
+          <div className="absolute w-full flex flex-col justify-center md:justify-end z-20">
             <div className="text-center md:text-right">
               <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-lg">
                 Hi, <br />
