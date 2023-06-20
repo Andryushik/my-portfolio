@@ -24,17 +24,17 @@ export default function Hero() {
           </div>
           <div className="absolute w-full flex flex-col justify-center md:justify-end z-20">
             <div className="text-center md:text-right text-slate-500">
-              {/* <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-lg">
-                        Hi, <br />
-                        my name is <br /> Andrei
-                      </h1> */}
+              <h1 className="text-3xl md:text-4xl lg:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-glow">
+                Hi, <br />
+                my name is <br /> Andrei
+              </h1>
 
               <TypingText
-                title="Hi, %my name is Andrei %%I'm a Web Developer"
-                textStyles="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 font-medium drop-shadow-lg"
+                title="I'm a Web Developer"
+                textStyles="text-2xl md:text-3xl lg:text-4xl py-5 font-medium drop-shadow-lg"
               />
 
-              <div className="flex justify-center md:justify-end mt-10 md:mt-20">
+              <div className="flex justify-center md:justify-end mt-8 md:mt-20">
                 <SocialLinks />
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function Hero() {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               whileHover={{ scale: 1.2 }}
-              transition={{ duration: 1.5, delay: 0.5 }}
+              transition={{ duration: 1.5, delay: 4.5 }}
             >
               Scroll to discover
             </motion.span>

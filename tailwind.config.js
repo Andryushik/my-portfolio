@@ -19,6 +19,12 @@ module.exports = {
           },
         ],
       },
+      dropShadow: {
+        glow: [
+          "0 0px 1px rgba(255, 255, 255, 0.4)",
+          "0 0px 4px rgba(255, 255, 255, 0.2)",
+        ],
+      },
       animation: {
         blob: "blob 9s infinite",
       },
