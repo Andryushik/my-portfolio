@@ -1,41 +1,54 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "../components/SocialLinks";
+import TypingText from "../components/TypingText";
+import avatar from "../../public/avatar.png";
 
-export default function Intro() {
+export default function Hero() {
   return (
     <section id="home">
       <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
-        <div className="min-h-screen flex items-center justify-center md:justify-end">
-          <div className="relative h-[430px] md:h-[600px] w-full max-w-lg z-10">
+        <Image
+          className="absolute left-0 bottom-0 object-cover md:w-3/5 opacity-90"
+          src={avatar}
+          alt="avatar"
+        />
+        <div className="min-h-screen flex mt-20 md:items-center justify-center md:justify-end">
+          <div className="relative h-[400px] md:h-[600px] w-full max-w-lg z-10">
             <div className="absolute top-24 -left-8 w-64 h-64 md:w-96 md:h-96 rounded-full bg-purple-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90" />
             <div className="absolute -right-10 w-64 h-64 md:w-96 md:h-96 rounded-full bg-yellow-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90 animation-delay-4000" />
             <div className="absolute bottom-0 -right-10 w-64 h-64 md:w-96 md:h-96 rounded-full bg-pink-300 mix-blend-multiply animate-blob filter blur-3xl opacity-90 animation-delay-2000" />
           </div>
           <div className="absolute w-full flex flex-col justify-center md:justify-end z-20">
-            <div className="text-center md:text-right">
-              <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-lg">
-                Hi, <br />
-                my name is <br /> Andrei
-              </h1>
+            <div className="text-center md:text-right text-slate-500">
+              {/* <h1 className="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-lg">
+                        Hi, <br />
+                        my name is <br /> Andrei
+                      </h1> */}
 
-              <h2 className="text-2xl sm:3xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl py-2 md:py-4 text-stone-500 drop-shadow-lg">
-                I&apos;m a Web Developer
-              </h2>
+              <TypingText
+                title="Hi, %my name is Andrei %%I'm a Web Developer"
+                textStyles="text-2xl sm:3xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl py-5 font-medium drop-shadow-lg"
+              />
 
-              {/* <p className="text-sm md:ml-32 lg:ml-40 xl:ml-64 2xl:ml-64 md:mt-4 py-1 md:py-5 leading-8 text-gray-400 dark:text-gray-640 md:text-xl max-w-3xl mx-auto drop-shadow-lg">
-              I invite you to explore my portfolio, where you can find a
-              selection of my projects.
-            </p> */}
-              <div className="flex justify-center md:justify-end mt-20">
+              <div className="flex justify-center md:justify-end mt-10 md:mt-20">
                 <SocialLinks />
               </div>
             </div>
           </div>
+          {/* <div className="absolute bottom-16 left-0 w-full text-center">
+            <p className="text-sm md:text-xl py-4 text-gray-400 dark:text-gray-600 drop-shadow-md">
+              I invite you to explore my portfolio, where you can find a
+              selection of my projects.
+            </p>
+          </div> */}
+
           <Link className="absolute bottom-6 flex items-center" href="#about">
             <motion.span
+              className="text-sm"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               whileHover={{ scale: 1.2 }}

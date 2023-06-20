@@ -18,6 +18,7 @@ const Skill = ({ name, source, x, y }) => {
         scale: 1.3,
       }}
       transition={{ duration: 1.5 }}
+      viewport={{ once: true }}
     >
       <Image src={source} alt={name} height={48} width={48} />
     </motion.div>

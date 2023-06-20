@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Skills from "./Skills";
+import Skills from "../components/Skills";
 
 export default function About() {
   const paragraphTexts = [
@@ -81,7 +81,7 @@ export default function About() {
                 variants={listVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.3 }}
+                viewport={{ once: true }}
                 custom={p.key}
                 key={p.key}
                 className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200"
