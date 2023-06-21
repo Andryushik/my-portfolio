@@ -11,7 +11,7 @@ import logoLight from "../../public/logo-light.png";
 import logoDark from "../../public/logo-dark.png";
 
 const menuVariants = {
-  hidden: { y: 30, opacity: 0 },
+  hidden: { y: 20, opacity: 0 },
   visible: { y: 0, opacity: 1 },
 };
 
@@ -109,8 +109,11 @@ export default function Navbar() {
               ))}
 
               {/* THEME SWITCHER */}
-              <li className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12">
-                <ThemeSwitcher onClick={() => setNavbar(!navbar)} />
+              <li
+                className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12"
+                onClick={() => setTimeout(() => setNavbar(!navbar), 500)}
+              >
+                <ThemeSwitcher />
               </li>
             </motion.ul>
             <div className="relative left-10 w-[400px]">
