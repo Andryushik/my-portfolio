@@ -49,8 +49,8 @@ export default function Skills() {
       <Skill
         name="Next.js"
         source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
-        x="0rem"
-        y="-10rem"
+        x="1rem"
+        y="-9rem"
       />
       <Skill
         name="Tailwind-css"

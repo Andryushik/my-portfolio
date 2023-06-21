@@ -15,11 +15,11 @@
 /* scroll snapping TODO: need or not?*/
 html {
   scroll-behavior: smooth !important;
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
 }
 
-section#about,
+/* section#about,
 section#hero,
 section#projects {
   scroll-snap-align: start;
-}
+} */

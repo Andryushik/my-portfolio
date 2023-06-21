@@ -91,7 +91,8 @@ export default function About() {
             ))}
           </ul>
         </div>
-        <div className="flex-auto w-full md:w-1/3 md:max-w-md md:ml-20 lg:ml-32">
+
+        <div className="flex-auto py-10 w-full md:w-1/3 md:max-w-md md:ml-20 lg:ml-32">
           <Skills />
         </div>
       </div>
