@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import menuIcon from "../../public/menu-icon.png";
 import crossIcon from "../../public/cross-icon.png";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -19,6 +19,12 @@ export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const { theme } = useTheme();
   const menu = ["About", "Projects", "Contact"];
+  const { scrollYProgress } = useScroll();
+  const progressBar = useTransform(
+    scrollYProgress,
+    [0.17, 0.7, 1],
+    [0, 0.5, 1]
+  );
 
   return (
     <nav className="bg-white/30 backdrop-blur-sm dark:bg-gray-950/30 fixed w-full top-0 left-0 right-0 z-50">
@@ -107,6 +113,15 @@ export default function Navbar() {
                 <ThemeSwitcher onClick={() => setNavbar(!navbar)} />
               </li>
             </motion.ul>
+            <div className="relative left-10 w-[400px]">
+              <motion.div
+                className="absolute h-1 right-0 top-0 left-0 bg-text-head"
+                style={{
+                  scaleX: progressBar,
+                  transformOrigin: "0%",
+                }}
+              />
+            </div>
           </div>
         </div>
       </motion.div>
