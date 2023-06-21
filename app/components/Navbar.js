@@ -22,7 +22,7 @@ export default function Navbar() {
   const { scrollYProgress } = useScroll();
   const progressBar = useTransform(
     scrollYProgress,
-    [0.17, 0.8, 1],
+    [0.17, 0.7, 1],
     [0, 0.5, 1]
   );
 

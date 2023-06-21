@@ -6,8 +6,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "../components/SocialLinks";
 import TypingText from "../components/TypingText";
-import bgCode from "../../public/background-code.jpg";
 import Fusion from "../components/Fusion";
+import bgCode from "../../public/background-pic.jpg";
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -15,12 +15,12 @@ export default function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], ["100%", "90%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], ["100%", "80%"]);
 
   return (
-    <section id="home" ref={heroRef}>
+    <section id="hero" ref={heroRef}>
       <motion.div
         className="absolute w-full h-screen left-0 bottom-0 -z-10"
         style={{ y, opacity, scale }}
@@ -34,7 +34,7 @@ export default function Hero() {
 
       <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
         <div className="min-h-screen flex mt-28 md:mt-0 md:items-center justify-center md:justify-end">
-          <motion.div style={{ y }}>
+          <motion.div style={{ y, opacity }}>
             <Fusion />
           </motion.div>
 
@@ -62,7 +62,10 @@ export default function Hero() {
             </p>
           </div> */}
 
-          <Link className="absolute bottom-6 flex items-center" href="#about">
+          <Link
+            className="absolute bottom-6 flex items-center text-slate-100"
+            href="#about"
+          >
             <motion.span
               className="text-sm"
               initial={{ y: 50, opacity: 0 }}
@@ -73,7 +76,7 @@ export default function Hero() {
               Scroll to discover
             </motion.span>
             <motion.div
-              className="text-2xl ml-4"
+              className="text-2xl ml-4 text-slate-100"
               initial={{ y: -5 }}
               animate={{ y: 5 }}
               transition={{
