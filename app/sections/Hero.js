@@ -22,11 +22,11 @@ export default function Hero() {
   return (
     <section id="home" ref={ref}>
       <motion.div
-        className="absolute w-full h-screen left-0 bottom-0 "
+        className="absolute w-full h-screen left-0 bottom-0 -z-10"
         style={{ y, opacity, scale }}
       >
         <Image
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full opacity-90"
           src={bgCode}
           alt="background code screen"
         />
@@ -38,7 +38,7 @@ export default function Hero() {
             <Fusion />
           </motion.div>
 
-          <div className="absolute flex flex-col z-20">
+          <div className="absolute flex flex-col">
             <div className="text-center md:text-right text-slate-500">
               <h1 className="text-3xl md:text-4xl lg:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-glow">
                 Hi, <br />
