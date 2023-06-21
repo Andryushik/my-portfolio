@@ -10,9 +10,9 @@ import bgCode from "../../public/background-code.jpg";
 import Fusion from "../components/Fusion";
 
 export default function Hero() {
-  const ref = useRef(null);
+  const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: heroRef,
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
@@ -20,7 +20,7 @@ export default function Hero() {
   const scale = useTransform(scrollYProgress, [0, 1], ["100%", "90%"]);
 
   return (
-    <section id="home" ref={ref}>
+    <section id="home" ref={heroRef}>
       <motion.div
         className="absolute w-full h-screen left-0 bottom-0 -z-10"
         style={{ y, opacity, scale }}
