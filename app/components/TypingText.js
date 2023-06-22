@@ -7,7 +7,7 @@ const textContainer = {
   },
   show: (i = 1) => ({
     opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: i * 0.2 },
+    transition: { delay: 1, staggerChildren: 0.2, delayChildren: 1 + i * 0.2 },
   }),
 };
 

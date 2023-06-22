@@ -33,28 +33,36 @@ export default function Hero() {
       </motion.div>
 
       <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
-        <div className="min-h-screen flex mt-28 md:mt-0 md:items-center justify-center md:justify-end">
+        <div className="relative min-h-screen flex mt-28 md:mt-0 md:items-center justify-center md:justify-end">
           <motion.div style={{ y, opacity }}>
             <Fusion />
           </motion.div>
 
-          <div className="absolute flex flex-col">
-            <div className="text-center md:text-right text-slate-500">
-              <h1 className="text-3xl md:text-4xl lg:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-glow">
-                Hi, <br />
-                my name is <br /> Andrei
-              </h1>
+          <motion.div
+            className="absolute flex flex-col w-full text-center md:text-right text-slate-500"
+            initial={{ x: 500 }}
+            animate={{ x: 0 }}
+            transition={{
+              ease: "easeOut",
+              duration: 1,
+              delay: 0.5,
+            }}
+          >
+            <h1 className="text-3xl md:text-4xl lg:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-glow">
+              Hi, <br />
+              my name is <br /> Andrei
+            </h1>
 
-              <TypingText
-                title="I'm a Web Developer"
-                textStyles="text-2xl md:text-3xl lg:text-4xl py-5 font-medium drop-shadow-lg"
-              />
+            <TypingText
+              title="I'm a Web Developer"
+              textStyles="text-2xl md:text-3xl lg:text-4xl py-5 font-medium drop-shadow-lg"
+            />
 
-              <div className="flex justify-center md:justify-end mt-8 md:mt-16">
-                <SocialLinks />
-              </div>
+            <div className="flex justify-center md:justify-end mt-8 md:mt-16">
+              <SocialLinks />
             </div>
-          </div>
+          </motion.div>
+
           {/* <div className="absolute bottom-16 left-0 w-full text-center">
             <p className="text-sm md:text-xl py-4 text-gray-400 dark:text-gray-600 drop-shadow-md">
               I invite you to explore my portfolio, where you can find a
