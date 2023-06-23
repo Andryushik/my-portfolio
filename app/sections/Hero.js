@@ -69,34 +69,33 @@ export default function Hero() {
               selection of my projects.
             </p>
           </div> */}
-
-          <Link
-            className="absolute bottom-6 flex items-center text-slate-100"
-            href="#about"
-          >
-            <motion.span
-              className="text-sm"
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              whileHover={{ scale: 1.2 }}
-              transition={{ duration: 1.5, delay: 4.5 }}
-            >
-              Scroll to discover
-            </motion.span>
-            <motion.div
-              className="text-2xl ml-4 text-slate-100"
-              initial={{ y: -5 }}
-              animate={{ y: 5 }}
-              transition={{
-                type: "spring",
-                mass: 10,
-                damping: 0,
-              }}
-            >
-              <AiOutlineArrowDown />
-            </motion.div>
-          </Link>
         </div>
+        <Link
+          className="absolute right-4 bottom-4 flex items-center text-slate-100"
+          href="#about"
+        >
+          <motion.div
+            className="relative text-2xl mr-6 text-slate-100"
+            initial={{ y: -5 }}
+            animate={{ y: 5 }}
+            transition={{
+              type: "spring",
+              mass: 10,
+              damping: 0,
+            }}
+          >
+            <AiOutlineArrowDown />
+          </motion.div>
+          <motion.span
+            className="relative text-xs  [writing-mode:vertical-lr]"
+            initial={{ y: 120, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 1.5, delay: 4.5 }}
+          >
+            Scroll to discover
+          </motion.span>
+        </Link>
       </div>
     </section>
   );

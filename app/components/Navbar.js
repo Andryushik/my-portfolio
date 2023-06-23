@@ -1,9 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "framer-motion";
 import menuIcon from "../../public/menu-icon.png";
 import crossIcon from "../../public/cross-icon.png";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -15,8 +20,18 @@ const menuVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
+const menuBackgroundVariants = {
+  hidden: { y: -100, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 1, ease: "easeIn" },
+  },
+};
+
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
+  const [bgNav, setBgNav] = useState(false);
   const { theme } = useTheme();
   const menu = ["About", "Projects", "Contact"];
   const { scrollYProgress } = useScroll();
@@ -26,22 +41,33 @@ export default function Navbar() {
     [0, 0.5, 1]
   );
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > 0.05) {
+      setBgNav(true);
+    } else {
+      setBgNav(false);
+    }
+  });
+
   return (
-    <nav className="bg-white/30 backdrop-blur-sm dark:bg-gray-950/30 fixed w-full top-0 left-0 right-0 z-50">
-      <motion.div
-        className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 lg:px-28 xl:px-40"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+    <nav className="fixed w-full top-0 left-0 right-0 z-50">
+      {bgNav && (
+        <motion.div
+          className="absolute h-14 md:h-20 w-full backdrop-blur-lg -z-10"
+          variants={menuBackgroundVariants}
+          initial="hidden"
+          animate="visible"
+        />
+      )}
+      <motion.div className="justify-between mx-auto md:items-center md:flex h-14 md:h-20 px-7 md:px-16 lg:px-28 xl:px-40">
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
             <Link href="/">
               <Image
+                className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500"
                 src={theme === "light" ? logoLight : logoDark}
                 alt="logo"
-                className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500"
                 width={220}
                 height={50}
               />
@@ -50,7 +76,7 @@ export default function Navbar() {
             {/* HAMBURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
               <div
-                className="p-2 text-gray-700 rounded-md border border-cyan-600 border-opacity-0 focus:border-opacity-80"
+                className="py-2 text-gray-700 rounded-md border border-cyan-600 border-opacity-0 focus:border-opacity-80"
                 onClick={() => setNavbar(!navbar)}
               >
                 {navbar ? (
@@ -116,7 +142,7 @@ export default function Navbar() {
                 <ThemeSwitcher />
               </li>
             </motion.ul>
-            <div className="relative left-10 w-[400px]">
+            <div className="relative left-5 w-3/4">
               <motion.div
                 className="absolute h-1 right-0 top-0 left-0 bg-text-head"
                 style={{
