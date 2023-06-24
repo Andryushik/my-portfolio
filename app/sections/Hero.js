@@ -7,7 +7,8 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "../components/SocialLinks";
 import TypingText from "../components/TypingText";
 import Fusion from "../components/Fusion";
-import bgCode from "../../public/background-pic.jpg";
+import bgImage from "../../public/my-photo.jpg";
+import netherlands from "../../public/netherlands-map.png";
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -22,24 +23,24 @@ export default function Hero() {
   return (
     <section id="hero" ref={heroRef}>
       <motion.div
-        className="absolute w-full h-screen left-0 bottom-0 -z-10"
+        className="absolute flex justify-start h-screen w-full bg-[#D7CEBD] -z-10"
         style={{ y, opacity, scale }}
       >
         <Image
-          className="object-cover w-full h-full opacity-90"
-          src={bgCode}
+          className="absolute object-left-bottom bottom-0 left-0 h-auto md:h-full w-auto"
+          src={bgImage}
           alt="background code screen"
         />
       </motion.div>
 
       <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
         <div className="relative min-h-screen flex mt-28 md:mt-0 md:items-center justify-center md:justify-end">
-          <motion.div style={{ y, opacity }}>
+          {/* <motion.div style={{ y, opacity }}>
             <Fusion />
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
-            className="absolute flex flex-col w-full text-center md:text-right text-slate-500"
+            className="absolute flex flex-col text-center md:text-right text-slate-500"
             initial={{ x: 500 }}
             animate={{ x: 0 }}
             transition={{
@@ -61,21 +62,21 @@ export default function Hero() {
             <div className="flex justify-center md:justify-end mt-8 md:mt-16">
               <SocialLinks />
             </div>
-          </motion.div>
 
-          {/* <div className="absolute bottom-16 left-0 w-full text-center">
-            <p className="text-sm md:text-xl py-4 text-gray-400 dark:text-gray-600 drop-shadow-md">
-              I invite you to explore my portfolio, where you can find a
-              selection of my projects.
-            </p>
-          </div> */}
+            <div className="flex justify-center gap-4 items-end md:justify-end mt-8 md:mt-16 text-sm">
+              <span>
+                Located <br /> in the <br /> Netherlands
+              </span>
+              <Image className="w-16" src={netherlands} alt="Netherlands map" />
+            </div>
+          </motion.div>
         </div>
         <Link
-          className="absolute right-4 bottom-4 flex items-center text-slate-100"
+          className="absolute right-4 bottom-4 flex items-center"
           href="#about"
         >
           <motion.div
-            className="relative text-2xl mr-6 text-slate-100"
+            className="relative text-2xl mr-6"
             initial={{ y: -5 }}
             animate={{ y: 5 }}
             transition={{
