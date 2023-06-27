@@ -16,15 +16,16 @@ export default function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], ["100%", "80%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  // const scale = useTransform(scrollYProgress, [0, 1], ["100%", "80%"]);
 
   return (
     <section id="hero" ref={heroRef}>
       <motion.div
         className="absolute flex justify-start h-screen w-full bg-[#CDCED2] -z-10"
-        style={{ y, opacity, scale }}
+        style={{ y }}
+        // style={{ y, opacity, scale }}
       >
         <Image
           className="absolute object-left-bottom bottom-0 left-0 h-auto md:h-full w-auto"
@@ -63,7 +64,7 @@ export default function Hero() {
               <SocialLinks />
             </div>
 
-            <div className="flex justify-center gap-4 items-end md:justify-end mt-8 md:mt-16 text-sm">
+            <div className="flex justify-center gap-4 items-end md:justify-end text-sm mt-8 md:mt-16">
               <span>
                 Located <br /> in the <br /> Netherlands
               </span>
