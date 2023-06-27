@@ -7,7 +7,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "../components/SocialLinks";
 import TypingText from "../components/TypingText";
 import Fusion from "../components/Fusion";
-import bgImage from "../../public/my-photo.jpg";
+import bgImage from "../../public/my-photo-removedbg.png";
 import netherlands from "../../public/netherlands-map.png";
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section id="hero" ref={heroRef}>
       <motion.div
-        className="absolute flex justify-start h-screen w-full bg-[#D7CEBD] -z-10"
+        className="absolute flex justify-start h-screen w-full bg-[#CDCED2] -z-10"
         style={{ y, opacity, scale }}
       >
         <Image
