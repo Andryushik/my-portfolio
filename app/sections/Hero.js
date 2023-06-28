@@ -7,7 +7,6 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "../components/SocialLinks";
 import TypingText from "../components/TypingText";
 import bgImage from "../../public/my-photo-removedbg.png";
-// import Fusion from "../components/Fusion";
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -35,10 +34,6 @@ export default function Hero() {
 
       <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
         <div className="relative min-h-screen flex mt-20 md:mt-0 md:items-center justify-center md:justify-end">
-          {/* <motion.div style={{ y, opacity }}>
-            <Fusion />
-          </motion.div> */}
-
           <motion.div
             className="absolute flex flex-col text-center md:text-right text-slate-500"
             initial={{ x: 500 }}
@@ -49,7 +44,7 @@ export default function Hero() {
               delay: 0.5,
             }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl py-3 md:py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium">
               Hi, <br />
               my name is <br /> Andrei
             </h1>
@@ -59,7 +54,7 @@ export default function Hero() {
               textStyles="text-2xl md:text-3xl lg:text-4xl py-5 font-medium drop-shadow-lg"
             />
 
-            <div className="flex justify-center md:justify-end mt-2 md:mt-12">
+            <div className="flex justify-center md:justify-end mt-0 md:mt-10">
               <SocialLinks />
             </div>
           </motion.div>
