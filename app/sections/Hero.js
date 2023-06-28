@@ -6,8 +6,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "../components/SocialLinks";
 import TypingText from "../components/TypingText";
-import Fusion from "../components/Fusion";
-import bgCode from "../../public/background-pic.jpg";
+import bgImage from "../../public/my-photo-removedbg.png";
+// import Fusion from "../components/Fusion";
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -15,31 +15,32 @@ export default function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], ["100%", "80%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  // const scale = useTransform(scrollYProgress, [0, 1], ["100%", "80%"]);
 
   return (
     <section id="hero" ref={heroRef}>
       <motion.div
-        className="absolute w-full h-screen left-0 bottom-0 -z-10"
-        style={{ y, opacity, scale }}
+        className="absolute flex justify-start h-screen w-full bg-[#CDCED2] dark:bg-gray-800 -z-10"
+        style={{ y }}
+        // style={{ y, opacity, scale }}
       >
         <Image
-          className="object-cover w-full h-full opacity-90"
-          src={bgCode}
+          className="absolute object-left-bottom bottom-0 left-0 h-auto md:h-full w-auto"
+          src={bgImage}
           alt="background code screen"
         />
       </motion.div>
 
       <div className="px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
-        <div className="relative min-h-screen flex mt-28 md:mt-0 md:items-center justify-center md:justify-end">
-          <motion.div style={{ y, opacity }}>
+        <div className="relative min-h-screen flex mt-20 md:mt-0 md:items-center justify-center md:justify-end">
+          {/* <motion.div style={{ y, opacity }}>
             <Fusion />
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
-            className="absolute flex flex-col w-full text-center md:text-right text-slate-500"
+            className="absolute flex flex-col text-center md:text-right text-slate-500"
             initial={{ x: 500 }}
             animate={{ x: 0 }}
             transition={{
@@ -48,7 +49,7 @@ export default function Hero() {
               delay: 0.5,
             }}
           >
-            <h1 className="text-3xl md:text-4xl lg:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium drop-shadow-glow">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium">
               Hi, <br />
               my name is <br /> Andrei
             </h1>
@@ -58,24 +59,17 @@ export default function Hero() {
               textStyles="text-2xl md:text-3xl lg:text-4xl py-5 font-medium drop-shadow-lg"
             />
 
-            <div className="flex justify-center md:justify-end mt-8 md:mt-16">
+            <div className="flex justify-center md:justify-end mt-2 md:mt-12">
               <SocialLinks />
             </div>
           </motion.div>
-
-          {/* <div className="absolute bottom-16 left-0 w-full text-center">
-            <p className="text-sm md:text-xl py-4 text-gray-400 dark:text-gray-600 drop-shadow-md">
-              I invite you to explore my portfolio, where you can find a
-              selection of my projects.
-            </p>
-          </div> */}
         </div>
         <Link
-          className="absolute right-4 bottom-4 flex items-center text-slate-100"
+          className="absolute right-4 bottom-4 flex items-center"
           href="#about"
         >
           <motion.div
-            className="relative text-2xl mr-6 text-slate-100"
+            className="relative text-2xl mr-6"
             initial={{ y: -5 }}
             animate={{ y: 5 }}
             transition={{

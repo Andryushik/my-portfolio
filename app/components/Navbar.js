@@ -37,8 +37,8 @@ export default function Navbar() {
   const { scrollYProgress } = useScroll();
   const progressBar = useTransform(
     scrollYProgress,
-    [0.17, 0.7, 1],
-    [0, 0.5, 1]
+    [0.07, 0.5, 0.75, 1],
+    [0, 0.4, 0.5, 1]
   );
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
