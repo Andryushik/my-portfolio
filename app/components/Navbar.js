@@ -116,17 +116,16 @@ export default function Navbar() {
                 <ThemeSwitcher />
               </li>
             </motion.ul>
-            {!navbar && (
-              <div className="relative left-5 w-3/4">
-                <motion.div
-                  className="absolute h-1 right-0 top-0 left-0 bg-text-head"
-                  style={{
-                    scaleX: progressBar,
-                    transformOrigin: "0%",
-                  }}
-                />
-              </div>
-            )}
+
+            <div className="relative left-5 w-3/4 hidden md:block">
+              <motion.div
+                className="absolute h-1 right-0 top-0 left-0 bg-text-head"
+                style={{
+                  scaleX: progressBar,
+                  transformOrigin: "0%",
+                }}
+              />
+            </div>
           </div>
         </div>
       </motion.div>
