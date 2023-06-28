@@ -31,7 +31,6 @@ const menuBackgroundVariants = {
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
-  const [bgNav, setBgNav] = useState(false);
   const { theme } = useTheme();
   const menu = ["About", "Projects", "Contact"];
   const { scrollYProgress } = useScroll();
@@ -41,24 +40,10 @@ export default function Navbar() {
     [0, 0.4, 0.5, 1]
   );
 
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > 0.05) {
-      setBgNav(true);
-    } else {
-      setBgNav(false);
-    }
-  });
-
   return (
-    <nav className="fixed w-full top-0 left-0 right-0 z-50">
-      {bgNav && (
-        <motion.div
-          className="absolute h-14 md:h-20 w-full backdrop-blur-lg -z-10"
-          variants={menuBackgroundVariants}
-          initial="hidden"
-          animate="visible"
-        />
-      )}
+    <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">
+      {/* <div className="absolute h-14 md:h-20 w-full backdrop-blur-lg -z-10" /> */}
+
       <motion.div className="justify-between mx-auto md:items-center md:flex h-14 md:h-20 px-7 md:px-16 lg:px-28 xl:px-40">
         <div>
           <div className="flex items-center justify-between md:block">
@@ -142,15 +127,17 @@ export default function Navbar() {
                 <ThemeSwitcher />
               </li>
             </motion.ul>
-            <div className="relative left-5 w-3/4">
-              <motion.div
-                className="absolute h-1 right-0 top-0 left-0 bg-text-head"
-                style={{
-                  scaleX: progressBar,
-                  transformOrigin: "0%",
-                }}
-              />
-            </div>
+            {!navbar && (
+              <div className="relative left-5 w-3/4">
+                <motion.div
+                  className="absolute h-1 right-0 top-0 left-0 bg-text-head"
+                  style={{
+                    scaleX: progressBar,
+                    transformOrigin: "0%",
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
