@@ -15,15 +15,6 @@ const menuVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
-const menuBackgroundVariants = {
-  hidden: { y: -100, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 1, ease: "easeIn" },
-  },
-};
-
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const { theme } = useTheme();
