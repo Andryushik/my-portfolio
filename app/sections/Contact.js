@@ -13,7 +13,7 @@ export default function Contact() {
         {/* TODO: */}
         {/* <ContactForm /> */}
 
-        <div className="flex justify-center gap-4 items-end md:justify-start mt-5 text-gray-800 dark:text-gray-200">
+        <div className="flex justify-center gap-4 items-end md:justify-start py-8 text-gray-800 dark:text-gray-200">
           <BsGlobeEuropeAfrica className="text-2xl text-slate-400" />
           <span>Located in the Netherlands</span>
         </div>
