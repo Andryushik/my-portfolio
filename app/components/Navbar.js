@@ -3,12 +3,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import menuIcon from "../../public/menu-icon.png";
 import crossIcon from "../../public/cross-icon.png";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -42,9 +37,12 @@ export default function Navbar() {
 
   return (
     <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">
-      {/* <div className="absolute h-14 md:h-20 w-full backdrop-blur-lg -z-10" /> */}
-
-      <motion.div className="justify-between mx-auto md:items-center md:flex h-14 md:h-20 px-7 md:px-16 lg:px-28 xl:px-40">
+      <motion.div
+        className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 lg:px-28 xl:px-40"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
