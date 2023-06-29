@@ -14,7 +14,7 @@ export default function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
 
   return (
     <section id="hero" ref={heroRef}>
@@ -37,14 +37,14 @@ export default function Hero() {
             delay: 0.5,
           }}
         >
-          <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl py-3 md:py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl py-3 md:py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium">
             Hi, <br />
             my name is <br /> Andrei
           </h1>
 
           <TypingText
             title="I'm a Web Developer"
-            textStyles="text-2xl md:text-3xl lg:text-4xl xl:text-5xl py-5 font-medium drop-shadow-lg"
+            textStyles="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl py-5 font-medium drop-shadow-lg"
           />
 
           <div className="flex justify-center md:justify-end mt-0 md:mt-14">
