@@ -2,14 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* scroll snapping need or not?*/
 html {
   scroll-behavior: smooth !important;
-  /* scroll-snap-type: y proximity; */
 }
-
-/* section#about,
-section#hero,
-section#projects {
-  scroll-snap-align: start;
-} */
