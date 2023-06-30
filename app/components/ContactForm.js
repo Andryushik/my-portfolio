@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -81,22 +81,6 @@ export default function ContactForm() {
           />
         </div>
 
-        {/* <div>
-          <label
-            className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
-            htmlFor="subject"
-          >
-            Subject
-          </label>
-          <input
-            className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-text-head"
-            type="text"
-            id="subject"
-            placeholder="Message from your website"
-            required
-          />
-        </div> */}
-
         <div className="sm:col-span-2">
           <label
             className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
@@ -115,8 +99,9 @@ export default function ContactForm() {
           ></textarea>
         </div>
         <button
-          className="py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300"
+          className="py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
           type="submit"
+          disabled={loading}
         >
           Send message
         </button>
