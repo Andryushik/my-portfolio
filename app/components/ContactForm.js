@@ -1,40 +1,44 @@
 "use client";
 import { useState } from "react";
+import { sendContactForm } from "@/lib/api";
+
+const initValues = { name: "", email: "", subject: "", message: "" };
+const initState = { isLoading: false, error: "", values: initValues };
 
 export default function ContactForm() {
-  const [loading, setLoading] = useState(false);
+  const [state, setState] = useState(initState);
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    setLoading(true);
+  const { values, isLoading, error } = state;
 
-    const data = {
-      name: String(event.target.name.value),
-      email: String(event.target.email.value),
-      message: String(event.target.message.value),
-    };
-
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+  const handleChange = ({ target }) =>
+    setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [target.id]: target.value,
       },
-      body: JSON.stringify(data),
-    });
+    }));
 
-    if (response.ok) {
-      console.log("Your message sent successfully");
-      setLoading(false);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setState((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
 
-      event.target.name.value = "";
-      event.target.email.value = "";
-      event.target.message.value = "";
+    try {
+      await sendContactForm(values);
+      setState(initState);
+
+      // TODO:modal success message
+    } catch (error) {
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: error.message,
+      }));
     }
-    if (!response.ok) {
-      console.log("Error sending message");
-      setLoading(false);
-    }
-  }
+  };
 
   return (
     <div className="py-8 px-4 mx-auto max-w-screen-md">
@@ -60,6 +64,8 @@ export default function ContactForm() {
             required
             minLength={2}
             maxLength={150}
+            value={values.name}
+            onChange={handleChange}
           />
         </div>
 
@@ -78,6 +84,8 @@ export default function ContactForm() {
             required
             minLength={5}
             maxLength={150}
+            value={values.email}
+            onChange={handleChange}
           />
         </div>
 
@@ -96,16 +104,21 @@ export default function ContactForm() {
             required
             minLength={5}
             maxLength={500}
+            value={values.message}
+            onChange={handleChange}
           ></textarea>
         </div>
         <button
           className="py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
           type="submit"
-          disabled={loading}
+          disabled={
+            isLoading || !values.name || !values.email || !values.message
+          }
         >
           Send message
         </button>
       </form>
+      {error && <span className="text-red-500">{error}</span>}
     </div>
   );
 }
