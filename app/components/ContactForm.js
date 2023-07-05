@@ -1,11 +1,15 @@
 "use client";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 import { sendContactForm } from "@/lib/api";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initValues = { name: "", email: "", subject: "", message: "" };
 const initState = { isLoading: false, error: "", values: initValues };
 
 export default function ContactForm() {
+  const { theme } = useTheme();
   const [state, setState] = useState(initState);
 
   const { values, isLoading, error } = state;
@@ -30,7 +34,17 @@ export default function ContactForm() {
       await sendContactForm(values);
       setState(initState);
 
-      // TODO:modal success message
+      toast.success("Message sent successfully!", {
+        icon: "🚀",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme,
+      });
     } catch (error) {
       setState((prev) => ({
         ...prev,
@@ -62,8 +76,8 @@ export default function ContactForm() {
             id="name"
             placeholder="Guest"
             required
-            minLength={2}
-            maxLength={150}
+            minLength={3}
+            maxLength={100}
             value={values.name}
             onChange={handleChange}
           />
@@ -82,8 +96,8 @@ export default function ContactForm() {
             id="email"
             placeholder="name@gmail.com"
             required
-            minLength={5}
-            maxLength={150}
+            minLength={3}
+            maxLength={100}
             value={values.email}
             onChange={handleChange}
           />
@@ -99,10 +113,9 @@ export default function ContactForm() {
           <textarea
             className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-text-head"
             id="message"
-            rows="6"
+            rows="5"
             placeholder="Let me know how I can help you..."
             required
-            minLength={5}
             maxLength={500}
             value={values.message}
             onChange={handleChange}
@@ -112,7 +125,10 @@ export default function ContactForm() {
           className="py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
           type="submit"
           disabled={
-            isLoading || !values.name || !values.email || !values.message
+            isLoading ||
+            !values.name ||
+            !values.email ||
+            values.message.length < 5
           }
         >
           {isLoading ? (
@@ -141,6 +157,20 @@ export default function ContactForm() {
         </button>
       </form>
       {error && <span className="text-red-500">{error}</span>}
+      <ToastContainer
+        progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
+        toastStyle={{ border: "2px solid rgb(148 163 184)" }}
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme
+      />
     </div>
   );
 }
