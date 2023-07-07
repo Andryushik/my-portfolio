@@ -50,16 +50,20 @@ export default function ContactForm() {
 
       reset();
     } else if (error) {
-      toast.error(`Message was not send!\nERROR: ${error.message}`, {
-        position: "top-center",
-        autoClose: 10000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme,
-      });
+      toast.error(
+        `Message was not send! 
+      ERROR: ${error.message}`,
+        {
+          position: "top-center",
+          autoClose: 10000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme,
+        }
+      );
     }
   }, [isSubmitSuccessful, reset, error, theme]);
 
