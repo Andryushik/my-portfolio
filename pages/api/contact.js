@@ -13,8 +13,6 @@ export default async function ContactAPI(req, res) {
       return res.status(400).send({ message: "Bad request" });
     }
 
-    // TODO: validation email here
-
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,

@@ -1,37 +1,46 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { useTheme } from "next-themes";
 import { sendContactForm } from "@/lib/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const initValues = { name: "", email: "", subject: "", message: "" };
-const initState = { isLoading: false, error: "", values: initValues };
+const initState = { error: "" };
+
+const contactFormSchema = yup.object({
+  name: yup.string().max(100).required("please enter your name"),
+  email: yup
+    .string()
+    .email("email format is not valid")
+    .required("please enter your email"),
+  message: yup.string().min(3).max(1000).required("please enter your message"),
+});
 
 export default function ContactForm() {
+  const contactForm = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    resolver: yupResolver(contactFormSchema),
+  });
+
+  const { register, handleSubmit, formState, reset } = contactForm;
+  const { errors, isDirty, isValid, isSubmitting, isSubmitSuccessful } =
+    formState;
+
   const { theme } = useTheme();
+
   const [state, setState] = useState(initState);
+  const { error } = state;
 
-  const { values, isLoading, error } = state;
-
-  const handleChange = ({ target }) =>
-    setState((prev) => ({
-      ...prev,
-      values: {
-        ...prev.values,
-        [target.id]: target.value,
-      },
-    }));
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setState((prev) => ({
-      ...prev,
-      isLoading: true,
-    }));
-
+  const onSubmit = async (data) => {
     try {
-      await sendContactForm(values);
+      await sendContactForm(data);
       setState(initState);
 
       toast.success("Message sent successfully!", {
@@ -48,11 +57,17 @@ export default function ContactForm() {
     } catch (error) {
       setState((prev) => ({
         ...prev,
-        isLoading: false,
+
         error: error.message,
       }));
     }
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div className="py-8 px-4 mx-auto max-w-screen-md">
@@ -62,7 +77,7 @@ export default function ContactForm() {
       <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
         Wanna hire me? Got a question? Want to send feedback? Let me know.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form className="space-y-8" onSubmit={handleSubmit(onSubmit)} noValidate>
         <div>
           <label
             className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
@@ -75,12 +90,9 @@ export default function ContactForm() {
             type="text"
             id="name"
             placeholder="Guest"
-            required
-            minLength={3}
-            maxLength={100}
-            value={values.name}
-            onChange={handleChange}
+            {...register("name")}
           />
+          <p className="text-red-600 text-sm">{errors.name?.message}</p>
         </div>
 
         <div>
@@ -95,12 +107,9 @@ export default function ContactForm() {
             type="email"
             id="email"
             placeholder="name@gmail.com"
-            required
-            minLength={3}
-            maxLength={100}
-            value={values.email}
-            onChange={handleChange}
+            {...register("email")}
           />
+          <p className="text-red-600 text-sm">{errors.email?.message}</p>
         </div>
 
         <div className="sm:col-span-2">
@@ -115,23 +124,16 @@ export default function ContactForm() {
             id="message"
             rows="5"
             placeholder="Let me know how I can help you..."
-            required
-            maxLength={500}
-            value={values.message}
-            onChange={handleChange}
+            {...register("message")}
           ></textarea>
+          <p className="text-red-600 text-sm">{errors.message?.message}</p>
         </div>
         <button
           className="py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
           type="submit"
-          disabled={
-            isLoading ||
-            !values.name ||
-            !values.email ||
-            values.message.length < 5
-          }
+          disabled={isSubmitting || !isDirty || !isValid}
         >
-          {isLoading ? (
+          {isSubmitting ? (
             <>
               <svg
                 aria-hidden="true"
