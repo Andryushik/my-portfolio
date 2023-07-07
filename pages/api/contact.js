@@ -5,7 +5,7 @@ const password = process.env.PASS_EMAIL;
 const sendToEmail = process.env.SEND_EMAIL;
 
 export default async function ContactAPI(req, res) {
-  if (req.method === "POST") {
+  if (req.method === "POT") {
     const data = req.body;
     const { name, email, message } = data;
 
