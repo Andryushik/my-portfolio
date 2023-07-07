@@ -38,7 +38,7 @@ export default async function ContactAPI(req, res) {
 
       return res.status(200).json({ message: "Success" });
     } catch (error) {
-      return res.status(400).json({ message: err.message });
+      return res.status(400).json({ message: error.message });
     }
   }
   return res.status(400).json({ message: "Bad request" });

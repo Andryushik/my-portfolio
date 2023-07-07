@@ -2,22 +2,11 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { useTheme } from "next-themes";
 import { sendContactForm } from "@/lib/api";
+import { contactFormSchema } from "@/validation/contactFormValidation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const initState = { error: "" };
-
-const contactFormSchema = yup.object({
-  name: yup.string().max(100).required("please enter your name"),
-  email: yup
-    .string()
-    .email("email format is not valid")
-    .required("please enter your email"),
-  message: yup.string().min(3).max(1000).required("please enter your message"),
-});
 
 export default function ContactForm() {
   const contactForm = useForm({
@@ -27,26 +16,30 @@ export default function ContactForm() {
       message: "",
     },
     resolver: yupResolver(contactFormSchema),
+    mode: "onBlur",
   });
 
   const { register, handleSubmit, formState, reset } = contactForm;
-  const { errors, isDirty, isValid, isSubmitting, isSubmitSuccessful } =
-    formState;
+  const { errors, isValid, isSubmitting, isSubmitSuccessful } = formState;
 
   const { theme } = useTheme();
 
-  const [state, setState] = useState(initState);
-  const { error } = state;
+  const [error, setError] = useState("");
 
   const onSubmit = async (data) => {
     try {
       await sendContactForm(data);
-      setState(initState);
+    } catch (error) {
+      setError(error);
+    }
+  };
 
+  useEffect(() => {
+    if (isSubmitSuccessful && !error) {
       toast.success("Message sent successfully!", {
         icon: "🚀",
         position: "top-center",
-        autoClose: 2000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -54,20 +47,21 @@ export default function ContactForm() {
         progress: undefined,
         theme,
       });
-    } catch (error) {
-      setState((prev) => ({
-        ...prev,
 
-        error: error.message,
-      }));
-    }
-  };
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
       reset();
+    } else if (error) {
+      toast.error(`Message was not send! ERROR:${error.message}`, {
+        position: "top-center",
+        autoClose: 10000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme,
+      });
     }
-  }, [isSubmitSuccessful, reset]);
+  }, [isSubmitSuccessful, reset, error, theme]);
 
   return (
     <div className="py-8 px-4 mx-auto max-w-screen-md">
@@ -92,7 +86,9 @@ export default function ContactForm() {
             placeholder="Guest"
             {...register("name")}
           />
-          <p className="text-red-600 text-sm">{errors.name?.message}</p>
+          <p className="absolute text-red-600 text-sm">
+            {errors.name?.message}
+          </p>
         </div>
 
         <div>
@@ -109,7 +105,9 @@ export default function ContactForm() {
             placeholder="name@gmail.com"
             {...register("email")}
           />
-          <p className="text-red-600 text-sm">{errors.email?.message}</p>
+          <p className="absolute text-red-600 text-sm">
+            {errors.email?.message}
+          </p>
         </div>
 
         <div className="sm:col-span-2">
@@ -126,12 +124,14 @@ export default function ContactForm() {
             placeholder="Let me know how I can help you..."
             {...register("message")}
           ></textarea>
-          <p className="text-red-600 text-sm">{errors.message?.message}</p>
+          <p className="absolute text-red-600 text-sm">
+            {errors.message?.message}
+          </p>
         </div>
         <button
-          className="py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
+          className="block mx-auto md:inline py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
           type="submit"
-          disabled={isSubmitting || !isDirty || !isValid}
+          disabled={isSubmitting || !isValid}
         >
           {isSubmitting ? (
             <>
@@ -157,13 +157,16 @@ export default function ContactForm() {
             "Send message"
           )}
         </button>
+        {error && (
+          <span className="block md:inline pl-8 text-red-500">
+            Sorry, message was not send. Text me on GitHub or LinkedIn.
+          </span>
+        )}
       </form>
-      {error && <span className="text-red-500">{error}</span>}
       <ToastContainer
         progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
         toastStyle={{ border: "2px solid rgb(148 163 184)" }}
         position="top-center"
-        autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
