@@ -17,5 +17,6 @@ A live demo of the app is available [here](https://www.andrei-popov.com/).
 
 1. Clone the repository.
 2. Install dependencies: `npm install`
-3. Run the development server: `npm run dev`
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Add .env.local file with email and password.
+4. Run the development server: `npm run dev`
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
