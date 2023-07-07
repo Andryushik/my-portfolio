@@ -22,7 +22,7 @@ export default function ContactForm() {
   const { register, handleSubmit, formState, reset } = contactForm;
   const { errors, isValid, isSubmitting, isSubmitSuccessful } = formState;
 
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const [error, setError] = useState("");
 
@@ -46,7 +46,7 @@ export default function ContactForm() {
         draggable: true,
         progress: undefined,
       });
-
+      console.log("resolvedTheme: " + resolvedTheme);
       reset();
     } else if (error) {
       toast.error(
@@ -63,7 +63,7 @@ export default function ContactForm() {
         }
       );
     }
-  }, [isSubmitSuccessful, reset, error, theme]);
+  }, [isSubmitSuccessful, reset, error, resolvedTheme]);
 
   return (
     <div className="py-8 px-4 mx-auto max-w-screen-md">
@@ -170,9 +170,6 @@ export default function ContactForm() {
         progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
         toastStyle={{
           border: "2px solid rgb(148 163 184)",
-          // backgroundColor: `${
-          //   theme === "dark" ? "rgba(0 0 0)" : "rgb(255 255 255)"
-          // }`,
         }}
         position="top-center"
         hideProgressBar={false}
@@ -182,7 +179,7 @@ export default function ContactForm() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme={theme}
+        theme={resolvedTheme}
       />
     </div>
   );
