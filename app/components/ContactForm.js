@@ -45,9 +45,8 @@ export default function ContactForm() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: theme,
       });
-      console.log(theme);
+
       reset();
     } else if (error) {
       toast.error(
@@ -61,7 +60,6 @@ export default function ContactForm() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme: theme,
         }
       );
     }
@@ -172,9 +170,9 @@ export default function ContactForm() {
         progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
         toastStyle={{
           border: "2px solid rgb(148 163 184)",
-          backgroundColor: `${
-            theme === "dark" ? "rgba(0 0 0)" : "rgb(255 255 255)"
-          }`,
+          // backgroundColor: `${
+          //   theme === "dark" ? "rgba(0 0 0)" : "rgb(255 255 255)"
+          // }`,
         }}
         position="top-center"
         hideProgressBar={false}
