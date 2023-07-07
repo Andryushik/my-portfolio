@@ -45,9 +45,9 @@ export default function ContactForm() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme,
+        theme: theme,
       });
-
+      console.log(theme);
       reset();
     } else if (error) {
       toast.error(
@@ -61,7 +61,7 @@ export default function ContactForm() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          theme,
+          theme: theme,
         }
       );
     }
@@ -167,6 +167,7 @@ export default function ContactForm() {
           </span>
         )}
       </form>
+
       <ToastContainer
         progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
         toastStyle={{
@@ -183,7 +184,7 @@ export default function ContactForm() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme
+        theme={theme}
       />
     </div>
   );
