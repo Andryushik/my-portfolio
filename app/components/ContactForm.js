@@ -56,9 +56,9 @@ export default function ContactForm() {
         {
           position: "top-center",
           autoClose: 10000,
-          hideProgressBar: true,
+          hideProgressBar: false,
           closeOnClick: true,
-          pauseOnHover: false,
+          pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme,
@@ -169,7 +169,12 @@ export default function ContactForm() {
       </form>
       <ToastContainer
         progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
-        toastStyle={{ border: "2px solid rgb(148 163 184)" }}
+        toastStyle={{
+          border: "2px solid rgb(148 163 184)",
+          backgroundColor: `${
+            theme === "dark" ? "rgba(0 0 0)" : "rgb(255 255 255)"
+          }`,
+        }}
         position="top-center"
         hideProgressBar={false}
         newestOnTop={false}
