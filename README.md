@@ -11,6 +11,7 @@ A live demo of the app is available [here](https://www.andrei-popov.com/).
 - React
 - Next.js
 - Framer Motion
+- Nodemailer
 - Tailwind css
 
 ## Installation
