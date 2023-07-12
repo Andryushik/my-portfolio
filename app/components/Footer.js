@@ -1,10 +1,6 @@
 import Link from "next/link";
-import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineMail,
-} from "react-icons/ai";
 import { BsArrowUpCircleFill } from "react-icons/bs";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
   return (
@@ -15,29 +11,18 @@ export default function Footer() {
           &copy; 2023 andrei-popov.com
         </p>
       </div>
-      <Link className="text-2xl text-slate-400 animate-bounce" href="/">
+
+      {/* TO THE TOP */}
+      <Link
+        className="text-2xl text-slate-400 animate-bounce"
+        href="/"
+        aria-label="Go to the top of the page"
+      >
         <BsArrowUpCircleFill />
       </Link>
 
       {/* SOCIAL ICONS */}
-      <div className="text-2xl flex justify-center gap-6 text-text-head">
-        <a
-          className="hover:scale-125 ease-in-out duration-500"
-          target="_blank"
-          href="https://github.com/Andryushik"
-          rel="noopener noreferrer"
-        >
-          <AiOutlineGithub />
-        </a>
-        <a
-          className="hover:scale-125 ease-in-out duration-500"
-          target="_blank"
-          href="https://www.linkedin.com/in/andrei-popov-g/"
-          rel="noopener noreferrer"
-        >
-          <AiOutlineLinkedin />
-        </a>
-      </div>
+      <SocialLinks sizes="text-2xl" />
     </footer>
   );
 }

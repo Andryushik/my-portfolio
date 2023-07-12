@@ -1,8 +1,12 @@
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
-export default function SocialLinks() {
+export default function SocialLinks({
+  sizes = "text-3xl md:text-5xl py-3 md:py-5",
+}) {
   return (
-    <div className="flex justify-center w-fit text-3xl md:text-5xl text-text-head py-3 md:py-5 gap-10 drop-shadow-lg hover:drop-shadow-xl">
+    <div
+      className={`${sizes} flex justify-center w-fit text-text-head gap-10 drop-shadow-lg hover:drop-shadow-xl`}
+    >
       <a
         href="https://github.com/Andryushik"
         target="_blank"
