@@ -22,7 +22,7 @@ export default function Footer() {
       </Link>
 
       {/* SOCIAL ICONS */}
-      <SocialLinks sizes="text-2xl" />
+      <SocialLinks sizes="text-2xl gap-6" />
     </footer>
   );
 }
