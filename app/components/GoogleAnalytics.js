@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import Script from "next/script";
 
 const GoogleAnalytics = ({ GA_TRACKING_ID }) => {

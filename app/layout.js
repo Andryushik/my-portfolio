@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Providers from "./providers";
 import "./globals.css";
 import Footer from "./components/Footer";
-import GoogleAnalytics from "@/pages/api/GoogleAnalytics";
+import GoogleAnalytics from "@/app/components/GoogleAnalytics";
 
 export const metadata = {
   title: "Andrei Popov | Web Developer",

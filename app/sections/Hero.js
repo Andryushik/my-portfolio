@@ -54,11 +54,11 @@ export default function Hero() {
         </motion.div>
       </div>
       <Link
-        className="absolute right-4 bottom-4 flex items-center"
+        className="absolute right-2 lg:right-4 bottom-4 flex items-center"
         href="#about"
       >
         <motion.div
-          className="relative text-2xl mr-6"
+          className="relative text-2xl mr-2 lg:mr-4"
           initial={{ y: -5 }}
           animate={{ y: 5 }}
           transition={{
