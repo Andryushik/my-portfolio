@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Providers from "./providers";
 import "./globals.css";
 import Footer from "./components/Footer";
+import GoogleAnalytics from "@/pages/api/GoogleAnalytics";
 
 export const metadata = {
   title: "Andrei Popov | Web Developer",
@@ -12,6 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleAnalytics GA_TRACKING_ID={process.env.GA_TRACKING_ID} />
       <body>
         <Providers>
           <Navbar />
