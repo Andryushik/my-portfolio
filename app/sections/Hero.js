@@ -14,7 +14,7 @@ export default function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section id="hero" ref={heroRef}>
