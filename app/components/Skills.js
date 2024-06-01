@@ -53,32 +53,26 @@ export default function Skills() {
         y="-9rem"
       />
       <Skill
-        name="Tailwind-css"
-        source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+        name="TailwindCss"
+        source="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
         x="7rem"
         y="8rem"
       />
       <Skill
-        name="Sass"
-        source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+        name="Git"
+        source="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
         x="-7rem"
         y="8rem"
       />
-      {/* <Skill
-        name="Typescript"
-        source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-        x="0rem"
-        y="0rem"
-      /> */}
       <Skill
-        name="MaterialUI"
-        source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
+        name="RubyOnRails"
+        source="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-original-wordmark.svg"
         x="7rem"
         y="-7rem"
       />
       <Skill
-        name="Bootstrap"
-        source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+        name="Ruby"
+        source="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original-wordmark.svg"
         x="-8rem"
         y="-4rem"
       />
@@ -89,8 +83,8 @@ export default function Skills() {
         y="5rem"
       />
       <Skill
-        name="Firebase"
-        source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg"
+        name="AlpineJS"
+        source="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/alpinejs/alpinejs-original.svg"
         x="-5rem"
         y="-8rem"
       />
@@ -100,7 +94,6 @@ export default function Skills() {
         x="0rem"
         y="10rem"
       />
-
       <Skill
         name="Express"
         source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
@@ -108,8 +101,8 @@ export default function Skills() {
         y="4rem"
       />
       <Skill
-        name="MySQL"
-        source="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg"
+        name="PostgreSQL"
+        source="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
         x="9rem"
         y="3rem"
       />

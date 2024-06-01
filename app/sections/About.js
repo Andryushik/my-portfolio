@@ -8,17 +8,7 @@ export default function About() {
       key: 1,
       content: (
         <p>
-          Recently relocated to the Netherlands, I am highly motivated to
-          kickstart my career as a Web Developer. Having graduated from
-          <a
-            href="https://www.hackyourfuture.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="text-teal-500"> HackYourFuture</span>
-          </a>
-          , I am eager to apply my skills and passion to the field of web
-          development.
+          Hello! I&apos;m a web developer based in the Netherlands, passionate about coding and technology.
         </p>
       ),
     },
@@ -26,10 +16,15 @@ export default function About() {
       key: 2,
       content: (
         <p>
-          With international experience in customer service and sales, I am
-          dedicated to delivering exceptional user experiences. My genuine
-          enthusiasm for technology and knack for creating innovative solutions
-          drive me in my web development journey.
+          As a proud graduate of
+          <a
+            href="https://www.hackyourfuture.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="text-teal-500"> HackYourFuture</span>
+          </a>
+          , I bring a wealth of international experience in both customer service and IT to the table.
         </p>
       ),
     },
@@ -37,9 +32,10 @@ export default function About() {
       key: 3,
       content: (
         <p>
-          I am detail-oriented and thrive in collaborative team environments. If
-          you&apos;re interested in discussing opportunities or collaborating on
-          projects, please feel free to reach out.
+          I am committed to delivering exceptional user experiences through innovative web solutions.
+          My enthusiasm for technology, combined with a keen eye for detail,
+          enables me to thrive in collaborative team environments.
+          I am always eager to discuss new opportunities or collaborate on exciting projects.
         </p>
       ),
     },
@@ -47,9 +43,8 @@ export default function About() {
       key: 4,
       content: (
         <p>
-          Outside of work, I indulge my passion for smart home technology and 3D
-          printing. I am ready to contribute my expertise to dynamic web
-          development projects.
+          Beyond coding, I enjoy exploring smart home technology and 3D printing.
+          Let&apos;s connect and see how we can create something amazing together!
         </p>
       ),
     },
