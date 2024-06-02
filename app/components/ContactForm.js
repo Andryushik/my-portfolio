@@ -50,7 +50,7 @@ export default function ContactForm() {
       reset();
     } else if (error) {
       toast.error(
-        `Message was not send! 
+        `Message was not send!
       ERROR: ${error.message}`,
         {
           position: "top-center",
