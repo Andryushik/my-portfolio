@@ -9,12 +9,12 @@ const Skill = ({ name, source, x, y }) => {
       initial={{
         x: 0,
         y: 0,
-        boxShadow: "2px 2px 0px rgba(0,0,0,0.5)",
+        boxShadow: "2px 2px 1px rgba(150,150,150,0.6)",
       }}
       whileInView={{
         x: x,
         y: y,
-        boxShadow: "8px 8px 5px rgba(0,0,0,0.4)",
+        boxShadow: "6px 6px 4px rgba(150,150,150,0.3)",
         scale: 1.3,
       }}
       transition={{ duration: 1.5 }}
