@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Demo
 
-A live demo of the app is available [here](https://www.andrei-popov.com/).
+A live version of the app is available [here](https://www.andrei-popov.me/).
 
 ## Technologies Used
 
