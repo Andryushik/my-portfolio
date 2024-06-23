@@ -5,9 +5,9 @@ import Footer from "./components/Footer";
 import GoogleAnalytics from "@/app/components/GoogleAnalytics";
 
 export const metadata = {
-  title: "Andrei Popov | Web Developer",
+  title: "Andrei Popov | Full-Stack Web Developer",
   description:
-    "My name is Andrei Popov, and I am a Full-stack Web Developer. Welcome to my personal portfolio website, where I showcase my projects and skills. I have experience working with various frameworks, such as React, Next.js, and Node.js, to create dynamic and interactive web applications. Take a look at my portfolio to explore my projects. I hope you enjoy browsing through my work!",
+    "Hi, I'm Andrei Popov, a Full-Stack Web Developer specializing in JavaScript, Ruby, React, Next.js, Node.js, Ruby on Rails, and Alpine.js. Welcome to my portfolio where you can explore my projects and see my skills in action. Enjoy browsing and feel free to reach out for collaboration!",
 };
 
 export default function RootLayout({ children }) {
