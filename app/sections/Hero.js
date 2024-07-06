@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "../components/SocialLinks";
 import TypingText from "../components/TypingText";
-import bgImage from "../../public/my-photo-removedbg.png";
+import bgImage from "../../public/my-photo-no-bg.png";
 
 export default function Hero() {
   const heroRef = useRef(null);
@@ -14,7 +14,7 @@ export default function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "70vh"]);
 
   return (
     <section id="hero" ref={heroRef}>
@@ -23,7 +23,7 @@ export default function Hero() {
           <Image
             className="absolute bottom-0 w-auto md:h-full max-h-[60%] md:max-h-screen"
             src={bgImage}
-            alt="Andrei photo"
+            alt="Andrei's photo"
             priority={true}
           />
         </motion.div>
