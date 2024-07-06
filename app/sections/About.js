@@ -8,7 +8,8 @@ export default function About() {
       key: 1,
       content: (
         <p>
-          Hello! I&apos;m a web developer based in the Netherlands, passionate about coding and technology.
+          Hello! I&apos;m a web developer based in the Netherlands, passionate
+          about coding and technology.
         </p>
       ),
     },
@@ -24,7 +25,8 @@ export default function About() {
           >
             <span className="text-teal-500"> HackYourFuture</span>
           </a>
-          , I bring a wealth of international experience in both customer service and IT to the table.
+          , I bring a wealth of international experience in both customer
+          service and IT to the table.
         </p>
       ),
     },
@@ -32,10 +34,11 @@ export default function About() {
       key: 3,
       content: (
         <p>
-          I am committed to delivering exceptional user experiences through innovative web solutions.
-          My enthusiasm for technology, combined with a keen eye for detail,
-          enables me to thrive in collaborative team environments.
-          I am always eager to discuss new opportunities or collaborate on exciting projects.
+          I am committed to delivering exceptional user experiences through
+          innovative web solutions. My enthusiasm for technology, combined with
+          a keen eye for detail, enables me to thrive in collaborative team
+          environments. I am always eager to discuss new opportunities or
+          collaborate on exciting projects.
         </p>
       ),
     },
@@ -43,8 +46,9 @@ export default function About() {
       key: 4,
       content: (
         <p>
-          Beyond coding, I enjoy exploring smart home technology and 3D printing.
-          Let&apos;s connect and see how we can create something amazing together!
+          Beyond coding, I enjoy exploring smart home technology and 3D
+          printing. Let&apos;s connect and see how we can create something
+          amazing together!
         </p>
       ),
     },
@@ -64,7 +68,7 @@ export default function About() {
 
   return (
     <section id="about">
-      <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40 py-14 md:py-24 bg-white dark:bg-black md:dark:bg-[#121212]">
+      <div className="flex items-center md:justify-between md:h-screen flex-col md:flex-row px-7 md:px-16 lg:px-28 xl:px-40 py-14 md:py-24">
         <div className="top-0 md:w-2/3 max-w-prose flex-auto py-14 md:py-20">
           <h3 className="text-2xl md:text-3xl text-text-head py-3 drop-shadow-md">
             About & Skills
