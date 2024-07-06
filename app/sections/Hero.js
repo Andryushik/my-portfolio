@@ -15,11 +15,16 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "70vh"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.2, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
 
   return (
     <section id="hero" ref={heroRef}>
       <div className="relative h-screen w-full flex md:items-center justify-center md:justify-end px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden bg-[#CDCED2] dark:bg-gray-800">
-        <motion.div className="absolute inset-0 z-0" style={{ y }}>
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{ y, opacity, scale }}
+        >
           <Image
             className="absolute bottom-0 w-auto md:h-full max-h-[60%] md:max-h-screen"
             src={bgImage}
