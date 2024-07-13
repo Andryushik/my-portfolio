@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,7 +5,6 @@ import { useTheme } from "next-themes";
 import { sendContactForm } from "@/lib/api";
 import { contactFormSchema } from "@/validation/contactFormValidation";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
   const contactForm = useForm({
