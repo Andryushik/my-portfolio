@@ -89,8 +89,8 @@ export default function Navbar() {
               transition={{
                 ease: "easeIn",
                 type: "tween",
-                staggerChildren: 0.13,
-                duration: 0.5,
+                staggerChildren: 0.2,
+                duration: 0.6,
               }}
             >
               {menu.map((menuItem, i) => (
