@@ -20,7 +20,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-10 p-12 md:p-24 text-xs md:text-base">
+        <div className="flex flex-col gap-10 px-4 md:px-24 py-8 text-xs md:text-base">
           {/* DIARY */}
           <div className="group relative overflow-hidden shadow-md transition-all duration-500 dark:shadow-slate-700 rounded-xl flex-1">
             <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
