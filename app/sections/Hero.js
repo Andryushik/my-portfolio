@@ -21,7 +21,7 @@ export default function Hero() {
     <section id="hero" ref={heroRef}>
       <div className="relative h-screen w-full flex md:items-center justify-center md:justify-end px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
         <motion.div
-          className="absolute inset-0 z-0 shadow-2xl dark:shadow-gray-700"
+          className="absolute inset-0 z-0 shadow-2xl dark:shadow-slate-700"
           style={{ y, opacity, scale }}
         >
           <Image
