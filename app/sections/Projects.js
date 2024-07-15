@@ -39,7 +39,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Source
@@ -51,7 +51,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Live
@@ -106,7 +106,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Source
@@ -118,7 +118,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Live
@@ -170,7 +170,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Source
@@ -182,7 +182,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Live
@@ -237,7 +237,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-slate-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Source
@@ -249,7 +249,7 @@ export default function Projects() {
                 target="_blank"
               >
                 <button
-                  className="rounded py-1 px-2 w:16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+                  className="rounded py-1 px-2 w-16 md:w-20 lg:w-16 bg-gray-500 opacity-70 hover:opacity-90 text-white"
                   type="submit"
                 >
                   Live

@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "react-toastify/ReactToastify.min.css";
+
 html {
   scroll-behavior: smooth !important;
+}
+
+/* For Lenis npm smooth scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Burger menu button */
+.burger {
+  width: 100%;
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  &::after {
+    top: -5px;
+  }
+  &::before {
+    top: 5px;
+  }
+}
+.burgerActive {
+  &::after {
+    transform: rotate(45deg);
+    top: -1px;
+  }
+  &::before {
+    transform: rotate(-45deg);
+    top: 0px;
+  }
 }

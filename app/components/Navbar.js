@@ -4,8 +4,6 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import menuIcon from "../../public/menu-icon.png";
-import crossIcon from "../../public/cross-icon.png";
 import ThemeSwitcher from "./ThemeSwitcher";
 import logoLight from "../../public/logo-light.png";
 import logoDark from "../../public/logo-dark.png";
@@ -47,28 +45,13 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* HAMBURGER BUTTON FOR MOBILE */}
+            {/* BURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
               <div
-                className="py-2 text-gray-700 rounded-md border border-cyan-600 border-opacity-0 focus:border-opacity-80"
+                className="flex justify-center items-center h-10 w-10 rounded-full cursor-pointer bg-text-head"
                 onClick={() => setNavbar(!navbar)}
               >
-                {navbar ? (
-                  <Image
-                    src={crossIcon}
-                    width={30}
-                    height={30}
-                    alt="close menu icon"
-                  />
-                ) : (
-                  <Image
-                    src={menuIcon}
-                    width={30}
-                    height={30}
-                    alt="menu icon"
-                    className="focus:border-none active:border-none"
-                  />
-                )}
+                <div className={`burger ${navbar && "burgerActive"}`}></div>
               </div>
             </div>
           </div>
@@ -89,8 +72,8 @@ export default function Navbar() {
               transition={{
                 ease: "easeIn",
                 type: "tween",
-                staggerChildren: 0.13,
-                duration: 0.5,
+                staggerChildren: 0.2,
+                duration: 0.6,
               }}
             >
               {menu.map((menuItem, i) => (

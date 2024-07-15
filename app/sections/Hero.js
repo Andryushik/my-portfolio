@@ -1,4 +1,3 @@
-"use client";
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,13 +19,13 @@ export default function Hero() {
 
   return (
     <section id="hero" ref={heroRef}>
-      <div className="relative h-screen w-full flex md:items-center justify-center md:justify-end px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden bg-[#CDCED2] dark:bg-gray-800">
+      <div className="relative h-screen w-full flex md:items-center justify-center md:justify-end px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
         <motion.div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 px-7 md:px-16 lg:px-28 xl:px-40 shadow-2xl dark:shadow-slate-700"
           style={{ y, opacity, scale }}
         >
           <Image
-            className="absolute bottom-0 w-auto md:h-full max-h-[60%] md:max-h-screen"
+            className="absolute bottom-0 w-auto max-h-[60%] md:h-full lg:max-h-screen"
             src={bgImage}
             alt="Andrei's photo"
             priority={true}
@@ -42,6 +41,7 @@ export default function Hero() {
             duration: 1,
             delay: 0.5,
           }}
+          style={{ y, opacity, scale }}
         >
           <h1 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl py-3 md:py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium">
             Hi, <br />
