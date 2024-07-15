@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { motion, useTransform } from "framer-motion";
 
 export default function ProjectCard({
+  i,
   imgSource,
   blurSource,
   sourceUrl,
@@ -8,13 +10,21 @@ export default function ProjectCard({
   technologies,
   description,
   title,
+  progress,
+  range,
+  targetScale,
 }) {
+  const scale = useTransform(progress, range, [1, targetScale]);
+
   return (
-    <div className="h-screen flex items-center justify-center sticky">
-      <div className="group relative overflow-hidden shadow-md transition-all duration-500 dark:shadow-slate-700 rounded-xl flex-1">
+    <div className="top-0 h-screen flex items-center justify-center sticky">
+      <motion.div
+        className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base"
+        style={{ scale, top: `calc(${i * 25}px)` }}
+      >
         <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
         <Image
-          className="object-cover w-full h-full group-hover:scale-105 transition-all duration-500"
+          className="object-cover w-full h-full"
           src={imgSource}
           placeholder="blur"
           blurDataURL={blurSource}
@@ -58,7 +68,7 @@ export default function ProjectCard({
         <div className="absolute -bottom-full left-6 group-hover:bottom-6 transition-all duration-700 z-40">
           <span className="text-xl xl:text-2xl text-text-head">{title}</span>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

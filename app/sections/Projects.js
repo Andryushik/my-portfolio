@@ -1,14 +1,65 @@
+import { useEffect, useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
 import diary from "../../public/diary.png";
 import chat from "../../public/chat.png";
 import radio from "../../public/radio.png";
 import quiz from "../../public/quiz.png";
 
+const projects = [
+  {
+    imgSource: diary,
+    blurSource: "../../public/diary-s.png",
+    sourceUrl: "https://github.com/Andryushik/MyDiary",
+    liveUrl: "https://c41-team-two.herokuapp.com/",
+    technologies: ["HTML", "CSS", "ReactJS", "NodeJS", "MongoDB"],
+    description: "MERN Stack social application",
+    title: "MY DIARY",
+  },
+  {
+    imgSource: radio,
+    blurSource: "../../public/radio-s.png",
+    sourceUrl: "https://github.com/Andryushik/World-radios-APP",
+    liveUrl: "https://worldradioswebapp.netlify.app/",
+    technologies: ["HTML", "CSS", "JavaScript", "NodeJS", "API"],
+    description: "Web radio Vanilla JavaScript application",
+    title: "WORLD WEB RADIO",
+  },
+  {
+    imgSource: chat,
+    blurSource: "../../public/chat-s.png",
+    sourceUrl: "https://github.com/Andryushik/chat_app_react",
+    liveUrl: "https://chat-app-blah-blah.netlify.app/",
+    technologies: ["ReactJS", "MUI", "NodeJS", "Firebase"],
+    description: "React & Firebase online chat web application",
+    title: "CHAT APP",
+  },
+  {
+    imgSource: quiz,
+    blurSource: "../../public/quiz-s.png",
+    sourceUrl: "https://github.com/Andryushik/browser-quiz-project",
+    liveUrl: "https://quizz-app-andryushik.netlify.app/",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    description: "JavaScript funny quiz web application",
+    title: "QUIZ APP",
+  },
+];
+
 export default function Projects() {
+  const projectsRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: projectsRef,
+    offset: ["start start", "end end"],
+  });
+
+  useEffect(() => {
+    scrollYProgress.on("change", (e) => console.log(scrollYProgress.current));
+  }, []);
+
   return (
-    <section id="projects">
+    <section ref={projectsRef} id="projects">
       <div className="py-14 md:py-24 px-7 md:px-16 lg:px-28 xl:px-40">
-        <div>
+        <div className="sticky top-14 md:top-24">
           <h3 className="text-2xl md:text-3xl text-text-head py-1 drop-shadow-md">
             Projects
           </h3>
@@ -20,50 +71,20 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-10 py-8 px-4 mx-auto max-w-screen-md text-xs md:text-base">
-          {/* DIARY */}
-          <ProjectCard
-            imgSource={diary}
-            blurSource="../../public/diary-s.png"
-            sourceUrl="https://github.com/Andryushik/MyDiary"
-            liveUrl="https://c41-team-two.herokuapp.com/"
-            technologies={["HTML", "CSS", "ReactJS", "NodeJS", "MongoDB"]}
-            description="MERN Stack social application"
-            title="MY DIARY"
-          />
-
-          {/* CHAT */}
-          <ProjectCard
-            imgSource={chat}
-            blurSource="../../public/chat-s.png"
-            sourceUrl="https://github.com/Andryushik/chat_app_react"
-            liveUrl="https://chat-app-blah-blah.netlify.app/"
-            technologies={["ReactJS", "MUI", "NodeJS", "Firebase"]}
-            description="React & Firebase online chat web application"
-            title="CHAT APP"
-          />
-
-          {/* RADIO */}
-          <ProjectCard
-            imgSource={radio}
-            blurSource="../../public/radio-s.png"
-            sourceUrl="https://github.com/Andryushik/World-radios-APP"
-            liveUrl="https://worldradioswebapp.netlify.app/"
-            technologies={["HTML", "CSS", "JavaScript", "NodeJS", "API"]}
-            description="Web radio Vanilla JavaScript application"
-            title="WORLD WEB RADIO"
-          />
-
-          {/* QUIZ */}
-          <ProjectCard
-            imgSource={quiz}
-            blurSource="../../public/quiz-s.png"
-            sourceUrl="https://github.com/Andryushik/browser-quiz-project"
-            liveUrl="https://quizz-app-andryushik.netlify.app/"
-            technologies={["HTML", "CSS", "JavaScript"]}
-            description="JavaScript funny quiz web application"
-            title="QUIZ APP"
-          />
+        <div className="mx-auto max-w-screen-md">
+          {projects.map((project, i) => {
+            const targetScale = 1 - (projects.length - i) * 0.05;
+            return (
+              <ProjectCard
+                key={i}
+                i={i}
+                {...project}
+                progress={scrollYProgress}
+                range={[i * 0.25, 1]}
+                targetScale={targetScale}
+              />
+            );
+          })}
         </div>
 
         <p className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200">
