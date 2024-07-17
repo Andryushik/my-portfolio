@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,12 +17,33 @@ export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const { theme } = useTheme();
   const menu = ["About", "Projects", "Contact"];
+  const menuRef = useRef();
+  const hamburgerRef = useRef();
   const { scrollYProgress } = useScroll();
   const progressBar = useTransform(
     scrollYProgress,
     [0.15, 0.35, 0.85],
     [0, 0.5, 1]
   );
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target)
+      ) {
+        setNavbar(false); // Close the menu if click is outside and not on the hamburger button
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef, hamburgerRef]);
 
   return (
     <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">
@@ -48,6 +69,7 @@ export default function Navbar() {
             {/* BURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
               <div
+                ref={hamburgerRef}
                 className="flex justify-center items-center h-10 w-10 rounded-full cursor-pointer bg-text-head"
                 onClick={() => setNavbar(!navbar)}
               >
@@ -58,7 +80,7 @@ export default function Navbar() {
         </div>
 
         {/* MENU */}
-        <div>
+        <motion.div ref={menuRef}>
           <div
             className={`flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${
               navbar ? "block p-12 md:p-0" : "hidden"
@@ -94,7 +116,7 @@ export default function Navbar() {
               {/* THEME SWITCHER */}
               <li
                 className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12"
-                onClick={() => setTimeout(() => setNavbar(!navbar), 500)}
+                onClick={() => setTimeout(() => setNavbar(!navbar), 300)}
               >
                 <ThemeSwitcher />
               </li>
@@ -110,7 +132,7 @@ export default function Navbar() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </nav>
   );
