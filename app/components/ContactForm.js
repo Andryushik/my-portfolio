@@ -44,7 +44,7 @@ export default function ContactForm() {
         draggable: true,
         progress: undefined,
       });
-      console.log("resolvedTheme: " + resolvedTheme);
+
       reset();
     } else if (error) {
       toast.error(
