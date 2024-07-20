@@ -22,10 +22,10 @@ export default function About() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-teal-500"> HackYourFuture</span>
+            <span className="text-teal-500"> HackYourFuture </span>
           </a>
-          , I bring a wealth of international experience in both customer
-          service and IT to the table.
+          bootcamp, I bring a wealth of international experience in both
+          customer service and IT to the table.
         </p>
       ),
     },

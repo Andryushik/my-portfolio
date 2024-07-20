@@ -20,7 +20,7 @@ export default function ProjectCard({
     <div className="top-0 h-screen flex items-center justify-center sticky">
       <motion.div
         className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base"
-        style={{ scale, top: `calc(${i * 25}px)` }}
+        style={{ scale, top: `calc(${i * 40}px)` }}
       >
         <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
         <Image
