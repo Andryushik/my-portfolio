@@ -1,4 +1,3 @@
-import { BsGlobeEuropeAfrica } from "react-icons/bs";
 import SocialLinks from "../components/SocialLinks";
 import ContactForm from "../components/ContactForm";
 
@@ -10,11 +9,6 @@ export default function Contact() {
           Contacts
         </h3>
 
-        <div className="flex justify-center gap-4 items-end md:justify-start py-8 text-gray-800 dark:text-gray-200">
-          <BsGlobeEuropeAfrica className="text-2xl text-slate-400" />
-          <span>Located in the Netherlands</span>
-        </div>
-
         <ContactForm />
 
         <div className="flex justify-center">
@@ -22,8 +16,18 @@ export default function Contact() {
         </div>
 
         <p className="text-sm md:text-base pt-12 leading-8 text-gray-800 dark:text-gray-200">
-          Thank you for visiting my portfolio, and I look forward to the
-          possibility of working together!
+          This portfolio website has been created using Next.js, Framer Motion
+          and Tailwind CSS. The
+          <a
+            href="https://github.com/Andryushik/my-portfolio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="text-teal-500"> code source </span>
+          </a>
+          is available on my GitHub page.
+          <br />
+          Thx for visit. See you again!
         </p>
       </div>
     </section>

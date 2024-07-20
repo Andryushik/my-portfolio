@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -7,11 +8,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ThemeSwitcher from "./ThemeSwitcher";
 import logoLight from "../../public/logo-light.png";
 import logoDark from "../../public/logo-dark.png";
-
-const menuVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1 },
-};
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -22,8 +18,8 @@ export default function Navbar() {
   const { scrollYProgress } = useScroll();
   const progressBar = useTransform(
     scrollYProgress,
-    [0.15, 0.35, 0.85],
-    [0, 0.5, 1]
+    [0.05, 0.2, 0.3, 0.85, 1],
+    [0, 0.3, 0.4, 0.65, 1]
   );
 
   useEffect(() => {
@@ -86,23 +82,11 @@ export default function Navbar() {
               navbar ? "block p-12 md:p-0" : "hidden"
             }`}
           >
-            <motion.ul
-              className="h-auto items-center justify-center flex flex-col md:flex-row"
-              variants={menuVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{
-                ease: "easeIn",
-                type: "tween",
-                staggerChildren: 0.2,
-                duration: 0.6,
-              }}
-            >
+            <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
               {menu.map((menuItem, i) => (
-                <motion.li
+                <li
                   key={i}
                   className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500"
-                  variants={menuVariants}
                 >
                   <Link
                     href={`#${menuItem.toLowerCase()}`}
@@ -110,7 +94,7 @@ export default function Navbar() {
                   >
                     {menuItem}
                   </Link>
-                </motion.li>
+                </li>
               ))}
 
               {/* THEME SWITCHER */}
@@ -120,7 +104,7 @@ export default function Navbar() {
               >
                 <ThemeSwitcher />
               </li>
-            </motion.ul>
+            </ul>
 
             <div className="relative left-5 w-3/4 hidden md:block">
               <motion.div
