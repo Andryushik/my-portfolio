@@ -7,8 +7,8 @@ export default function About() {
       key: 1,
       content: (
         <p>
-          Hello! I&apos;m a web developer based in the Netherlands, passionate
-          about coding and technology.
+          Hello! I&apos;m a full stack web developer based in the Netherlands,
+          passionate about coding and technology.
         </p>
       ),
     },

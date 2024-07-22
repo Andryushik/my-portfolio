@@ -11,7 +11,7 @@ import logoDark from "../../public/logo-dark.png";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const menu = ["About", "Projects", "Contact"];
   const menuRef = useRef();
   const hamburgerRef = useRef();
@@ -23,6 +23,25 @@ export default function Navbar() {
   );
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      const newTheme = e.matches ? "dark" : "light";
+      setTheme(newTheme);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    // Set initial theme based on system preference
+    if (theme === "system") {
+      setTheme(mediaQuery.matches ? "dark" : "light");
+    }
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, [theme, setTheme]);
+
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (
         menuRef.current &&
@@ -30,7 +49,7 @@ export default function Navbar() {
         hamburgerRef.current &&
         !hamburgerRef.current.contains(event.target)
       ) {
-        setNavbar(false); // Close the menu if click is outside and not on the hamburger button
+        setNavbar(false);
       }
     };
 
