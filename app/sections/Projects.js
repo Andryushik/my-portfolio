@@ -57,7 +57,6 @@ export default function Projects() {
   return (
     <section ref={projectsRef} id="projects">
       <div className="relative py-14 md:py-24 px-7 md:px-16 lg:px-28 xl:px-40">
-        {/* should disappear when scrollYProgress > 0,95 */}
         <motion.div
           className="sticky top-14 md:top-24 pb-44"
           style={{ opacity }}
