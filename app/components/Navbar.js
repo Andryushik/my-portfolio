@@ -95,7 +95,7 @@ export default function Navbar() {
         </div>
 
         {/* MENU */}
-        <motion.div ref={menuRef}>
+        <div ref={menuRef}>
           <div
             className={`flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${
               navbar ? "block p-12 md:p-0" : "hidden"
@@ -105,7 +105,7 @@ export default function Navbar() {
               {menu.map((menuItem, i) => (
                 <li
                   key={i}
-                  className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center hover:bg-text-head hover:bg-opacity-50 rounded md:hover:text-text-head md:hover:bg-transparent ease-in-out duration-500"
+                  className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center rounded hover:text-text-head ease-in-out duration-500"
                 >
                   <Link
                     href={`#${menuItem.toLowerCase()}`}
@@ -135,7 +135,7 @@ export default function Navbar() {
               />
             </div>
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </nav>
   );
