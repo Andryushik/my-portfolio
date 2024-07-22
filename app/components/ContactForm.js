@@ -64,7 +64,7 @@ export default function ContactForm() {
   }, [isSubmitSuccessful, reset, error, resolvedTheme]);
 
   return (
-    <div className="py-8 px-4 mx-auto max-w-screen-md">
+    <div className="py-8 px-4 mx-auto max-w-3xl">
       <h4 className="mb-6 text-2xl tracking-tight font-bold text-center text-text-head">
         Message Me
       </h4>
