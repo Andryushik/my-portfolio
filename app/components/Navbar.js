@@ -97,9 +97,9 @@ export default function Navbar() {
         {/* MENU */}
         <div ref={menuRef}>
           <div
-            className={`flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block p-12 md:p-0" : "hidden"
-            }`}
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+              navbar ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            } md:max-h-full md:opacity-100`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
               {menu.map((menuItem, i) => (
