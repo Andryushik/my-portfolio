@@ -63,7 +63,7 @@ export default function Navbar() {
   return (
     <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">
       <motion.div
-        className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 lg:px-28 xl:px-40"
+        className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 max-w-7xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

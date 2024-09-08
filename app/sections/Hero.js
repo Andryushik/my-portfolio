@@ -19,9 +19,9 @@ export default function Hero() {
 
   return (
     <section id="hero" ref={heroRef}>
-      <div className="relative h-screen w-full flex md:items-center justify-center md:justify-end px-7 md:px-16 lg:px-28 xl:px-40 overflow-hidden">
+      <div className="relative h-screen w-full flex md:items-center justify-center md:justify-end px-7 md:px-16 max-w-7xl mx-auto overflow-hidden">
         <motion.div
-          className="absolute inset-0 z-0 px-7 md:px-16 lg:px-28 xl:px-40 shadow-2xl dark:shadow-slate-700"
+          className="absolute inset-0 z-0 px-7 md:px-16 max-w-7xl mx-auto"
           style={{ y, opacity, scale }}
         >
           <Image
@@ -57,33 +57,34 @@ export default function Hero() {
             <SocialLinks />
           </div>
         </motion.div>
+
+        <Link
+          className="absolute right-2 lg:right-4 bottom-4 flex items-center"
+          href="#about"
+        >
+          <motion.div
+            className="relative text-xl mr-2"
+            initial={{ y: -5 }}
+            animate={{ y: 5 }}
+            transition={{
+              type: "spring",
+              mass: 10,
+              damping: 0,
+            }}
+          >
+            <AiOutlineArrowDown />
+          </motion.div>
+          <motion.span
+            className="relative text-xxs [writing-mode:vertical-lr]"
+            initial={{ y: 120, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 1.5, delay: 4.5 }}
+          >
+            Scroll to discover
+          </motion.span>
+        </Link>
       </div>
-      <Link
-        className="absolute right-2 lg:right-4 bottom-4 flex items-center"
-        href="#about"
-      >
-        <motion.div
-          className="relative text-2xl mr-2 lg:mr-4"
-          initial={{ y: -5 }}
-          animate={{ y: 5 }}
-          transition={{
-            type: "spring",
-            mass: 10,
-            damping: 0,
-          }}
-        >
-          <AiOutlineArrowDown />
-        </motion.div>
-        <motion.span
-          className="relative text-xs  [writing-mode:vertical-lr]"
-          initial={{ y: 120, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          whileHover={{ scale: 1.2 }}
-          transition={{ duration: 1.5, delay: 4.5 }}
-        >
-          Scroll to discover
-        </motion.span>
-      </Link>
     </section>
   );
 }

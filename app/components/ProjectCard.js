@@ -17,7 +17,7 @@ export default function ProjectCard({
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div className="top-0 h-screen flex items-center justify-center sticky">
+    <div className="top-0 lg:h-screen pt-32 pb-20 flex items-center justify-center sticky">
       <motion.div
         className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base"
         style={{ scale, top: `calc(${i * 40}px)` }}
