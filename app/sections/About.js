@@ -8,7 +8,7 @@ export default function About() {
       content: (
         <p>
           Hello! I&apos;m a full stack web developer based in the Netherlands,
-          passionate about coding and technology.
+          passionate about building digital experiences that matter.
         </p>
       ),
     },
@@ -16,16 +16,7 @@ export default function About() {
       key: 2,
       content: (
         <p>
-          As a proud graduate of
-          <a
-            href="https://www.hackyourfuture.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="text-teal-500"> HackYourFuture </span>
-          </a>
-          bootcamp, I bring a wealth of international experience in both
-          customer service and IT to the table.
+          I recently refreshed and expanded my coding expertise through an intensive development bootcamp, and I now work as a Software Developer at a dynamic startup. With a strong foundation in both customer service and IT, I&apos;ve evolved into a developer who understands not just the code, but the people behind the screen.
         </p>
       ),
     },
@@ -33,11 +24,7 @@ export default function About() {
       key: 3,
       content: (
         <p>
-          I am committed to delivering exceptional user experiences through
-          innovative web solutions. My enthusiasm for technology, combined with
-          a keen eye for detail, enables me to thrive in collaborative team
-          environments. I am always eager to discuss new opportunities or
-          collaborate on exciting projects.
+          I specialize in creating user-centric web solutions that blend functionality with seamless design. My international background and attention to detail help me excel in collaborative environments where innovation thrives.
         </p>
       ),
     },
@@ -45,9 +32,7 @@ export default function About() {
       key: 4,
       content: (
         <p>
-          Beyond coding, I enjoy exploring smart home technology and 3D
-          printing. Let&apos;s connect and see how we can create something
-          amazing together!
+          When I&apos;m not coding, you&apos;ll find me tinkering with smart home automation or bringing ideas to life through 3D printing. Ready to collaborate on your next project? Let&apos;s build something extraordinary together!
         </p>
       ),
     },
