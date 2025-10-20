@@ -11,7 +11,7 @@ export default function SocialLinks({
         href="https://github.com/Andryushik"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="To see my GitHib page"
+        aria-label="To see my GitHub page"
       >
         <AiFillGithub className="hover:scale-125 hover:animate-pulse duration-500" />
       </a>

@@ -97,9 +97,8 @@ export default function Navbar() {
         {/* MENU */}
         <div ref={menuRef}>
           <div
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${
-              navbar ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-            } md:max-h-full md:opacity-100`}
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${navbar ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+              } md:max-h-full md:opacity-100`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
               {menu.map((menuItem, i) => (
@@ -124,16 +123,17 @@ export default function Navbar() {
                 <ThemeSwitcher />
               </li>
             </ul>
+          </div>
 
-            <div className="relative left-5 w-3/4 hidden md:block">
-              <motion.div
-                className="absolute h-1 right-0 top-0 left-0 bg-text-head"
-                style={{
-                  scaleX: progressBar,
-                  transformOrigin: "0%",
-                }}
-              />
-            </div>
+          {/* SCROLL PROGRESS BAR */}
+          <div className="relative left-5 w-3/4 hidden md:block">
+            <motion.div
+              className="absolute h-1 right-0 top-0 left-0 bg-text-head"
+              style={{
+                scaleX: progressBar,
+                transformOrigin: "0%",
+              }}
+            />
           </div>
         </div>
       </motion.div>
