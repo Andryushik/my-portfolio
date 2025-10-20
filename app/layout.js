@@ -79,8 +79,6 @@ export const metadata = {
     images: ['https://andrei-popov.me/og-image.webp'],
   },
 
-  viewport: 'width=device-width, initial-scale=1',
-
   // Robots
   robots: {
     index: true,
@@ -90,6 +88,11 @@ export const metadata = {
       follow: true,
     },
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
