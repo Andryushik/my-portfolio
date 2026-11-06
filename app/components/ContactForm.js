@@ -18,7 +18,7 @@ export default function ContactForm() {
   });
 
   const { register, handleSubmit, formState, reset } = contactForm;
-  const { errors, isValid, isSubmitting, isSubmitSuccessful } = formState;
+  const { errors, isSubmitting, isSubmitSuccessful } = formState;
 
   const { resolvedTheme } = useTheme();
 
@@ -122,7 +122,7 @@ export default function ContactForm() {
         <button
           className="block mx-auto md:inline py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
           type="submit"
-          disabled={isSubmitting || !isValid}
+          disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
