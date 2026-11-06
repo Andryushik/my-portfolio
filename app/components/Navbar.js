@@ -104,7 +104,7 @@ export default function Navbar() {
               {menu.map((menuItem, i) => (
                 <li
                   key={i}
-                  className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center rounded hover:text-text-head ease-in-out duration-500"
+                  className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center rounded-sm hover:text-text-head ease-in-out duration-500"
                 >
                   <Link
                     href={`#${menuItem.toLowerCase()}`}
