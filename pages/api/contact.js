@@ -29,11 +29,8 @@ export default async function ContactAPI(req, res) {
         to: sendToEmail,
         replyTo: email,
         subject: `Your website message from ${name}`,
-        html: `
-      <p>Name: ${name}</p>
-      <p>Email: ${email}</p>
-      <p>Message: ${message}</p>
-      `,
+        // Plain text: visitor input must never be rendered as HTML.
+        text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
       });
 
       return res.status(200).json({ message: "Success" });
