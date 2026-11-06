@@ -30,22 +30,22 @@ export default function ProjectCard({
         />
 
         <div className="absolute flex gap-2 right-6 -top-full group-hover:top-6 transition-all duration-300 z-40">
-          <form action={sourceUrl} method="get" target="_blank">
-            <button
-              className="rounded-sm py-1 px-2 w-16 md:w-20 bg-slate-500 opacity-70 hover:opacity-90 text-white"
-              type="submit"
-            >
-              Source
-            </button>
-          </form>
-          <form action={liveUrl} method="get" target="_blank">
-            <button
-              className="rounded-sm py-1 px-2 w-16 md:w-20 bg-gray-500 opacity-70 hover:opacity-90 text-white"
-              type="submit"
-            >
-              Live
-            </button>
-          </form>
+          <a
+            className="rounded-sm py-1 px-2 w-16 md:w-20 text-center bg-slate-500 opacity-70 hover:opacity-90 text-white"
+            href={sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Source
+          </a>
+          <a
+            className="rounded-sm py-1 px-2 w-16 md:w-20 text-center bg-gray-500 opacity-70 hover:opacity-90 text-white"
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live
+          </a>
         </div>
 
         <div className="absolute flex gap-1 md:gap-2 -bottom-full left-6 group-hover:bottom-24 transition-all duration-300 z-40">
