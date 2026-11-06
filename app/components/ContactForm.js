@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTheme } from "next-themes";
@@ -18,42 +18,27 @@ export default function ContactForm() {
   });
 
   const { register, handleSubmit, formState, reset } = contactForm;
-  const { errors, isValid, isSubmitting, isSubmitted, isSubmitSuccessful } =
-    formState;
+  const { errors, isValid, isSubmitting, isSubmitSuccessful } = formState;
 
   const { resolvedTheme } = useTheme();
 
+  // Only a failed send sets this; a validation error doesn't.
+  const [sendFailed, setSendFailed] = useState(false);
+
   const onSubmit = async (data) => {
+    setSendFailed(false);
     try {
       await sendContactForm(data);
-      toast.success("Message sent successfully!", {
-        icon: () => "🚀",
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
     } catch (error) {
-      toast.error(
-        `Message was not send!
-      ERROR: ${error.message}`,
-        {
-          position: "top-center",
-          autoClose: 10000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        }
-      );
+      setSendFailed(true);
       // Rethrow so react-hook-form records the submit as failed
       // (isSubmitSuccessful stays false) without touching isValid.
       throw error;
     }
+    toast.success("Message sent successfully!", {
+      icon: () => "🚀",
+      autoClose: 3000,
+    });
   };
 
   // react-hook-form recommends resetting after submit here, not in onSubmit.
@@ -163,7 +148,7 @@ export default function ContactForm() {
             "Send message"
           )}
         </button>
-        {isSubmitted && !isSubmitSuccessful && (
+        {sendFailed && (
           <span className="block md:inline pl-8 text-red-500">
             Sorry, message was not send. Text me on GitHub or LinkedIn.
           </span>
