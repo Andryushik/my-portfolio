@@ -123,7 +123,7 @@ export default function Navbar() {
                 >
                   <a
                     href={`#${menuItem.toLowerCase()}`}
-                    onClick={() => setNavbar(!navbar)}
+                    onClick={() => setNavbar(false)}
                   >
                     {menuItem}
                   </a>
@@ -133,7 +133,6 @@ export default function Navbar() {
               {/* THEME SWITCHER */}
               <li
                 className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12"
-                onClick={() => setTimeout(() => setNavbar(!navbar), 300)}
               >
                 <ThemeSwitcher />
               </li>
