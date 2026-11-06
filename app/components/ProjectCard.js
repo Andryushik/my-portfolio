@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { motion, useTransform } from "framer-motion";
+import { motion, useTransform } from "motion/react";
 
 export default function ProjectCard({
   i,

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Skills from "../components/Skills";
 
 export default function About() {

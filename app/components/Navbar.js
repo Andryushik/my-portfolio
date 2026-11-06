@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import logoLight from "../../public/logo-light.png";
 import logoDark from "../../public/logo-dark.png";
