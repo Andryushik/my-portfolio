@@ -76,7 +76,7 @@ export default function Projects() {
         </div>
 
         <div className="pt-14">
-          <p className="text-sm md:text-base lg:pt-20 leading-8 md:leading-6 text-gray-800 dark:text-gray-200">
+          <p className="text-sm/8 md:text-base lg:pt-20 text-gray-800 dark:text-gray-200">
             As a junior web developer, I have endeavored to utilize various
             approaches in each of my projects to enhance my skills and gain
             diverse experience. This has enabled me to become proficient in

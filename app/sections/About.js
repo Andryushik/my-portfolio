@@ -67,7 +67,7 @@ export default function About() {
                 viewport={{ once: false }}
                 custom={p.key}
                 key={p.key}
-                className="text-sm md:text-base py-2 leading-8 md:leading-6 text-gray-800 dark:text-gray-200"
+                className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
               >
                 {p.content}
               </motion.li>
