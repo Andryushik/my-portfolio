@@ -16,7 +16,7 @@ export default function Contact() {
         </div>
 
         <p className="text-sm/8 md:text-base pt-12 text-gray-800 dark:text-gray-200">
-          This portfolio website has been created using Next.js, Framer Motion
+          This portfolio website has been created using Next.js, Motion
           and Tailwind CSS. The
           <a
             href="https://github.com/Andryushik/my-portfolio"
