@@ -2,6 +2,8 @@
 import Script from "next/script";
 
 const GoogleAnalytics = ({ GA_TRACKING_ID }) => {
+  if (!GA_TRACKING_ID) return null;
+
   return (
     <>
       <Script
