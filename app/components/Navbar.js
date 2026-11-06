@@ -73,8 +73,15 @@ export default function Navbar() {
             {/* LOGO */}
             <Link href="/">
               <Image
-                className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500"
-                src={theme === "light" ? logoLight : logoDark}
+                className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500 dark:hidden"
+                src={logoLight}
+                alt="logo"
+                width={220}
+                height={50}
+              />
+              <Image
+                className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500 hidden dark:block"
+                src={logoDark}
                 alt="logo"
                 width={220}
                 height={50}
