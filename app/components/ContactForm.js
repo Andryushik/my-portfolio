@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTheme } from "next-themes";
@@ -18,22 +18,14 @@ export default function ContactForm() {
   });
 
   const { register, handleSubmit, formState, reset } = contactForm;
-  const { errors, isValid, isSubmitting, isSubmitSuccessful } = formState;
+  const { errors, isValid, isSubmitting, isSubmitted, isSubmitSuccessful } =
+    formState;
 
   const { resolvedTheme } = useTheme();
-
-  const [error, setError] = useState("");
 
   const onSubmit = async (data) => {
     try {
       await sendContactForm(data);
-    } catch (error) {
-      setError(error);
-    }
-  };
-
-  useEffect(() => {
-    if (isSubmitSuccessful && !error) {
       toast.success("Message sent successfully!", {
         icon: () => "🚀",
         position: "top-center",
@@ -44,9 +36,7 @@ export default function ContactForm() {
         draggable: true,
         progress: undefined,
       });
-
-      reset();
-    } else if (error) {
+    } catch (error) {
       toast.error(
         `Message was not send!
       ERROR: ${error.message}`,
@@ -60,8 +50,16 @@ export default function ContactForm() {
           progress: undefined,
         }
       );
+      // Rethrow so react-hook-form records the submit as failed
+      // (isSubmitSuccessful stays false) without touching isValid.
+      throw error;
     }
-  }, [isSubmitSuccessful, reset, error, resolvedTheme]);
+  };
+
+  // react-hook-form recommends resetting after submit here, not in onSubmit.
+  useEffect(() => {
+    if (isSubmitSuccessful) reset();
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl">
@@ -71,7 +69,13 @@ export default function ContactForm() {
       <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
         Got a question? Want to send feedback? Let me know.
       </p>
-      <form className="space-y-8" onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form
+        className="space-y-8"
+        // The failure is already shown in a toast; don't leave the rethrown
+        // error unhandled.
+        onSubmit={(e) => handleSubmit(onSubmit)(e).catch(() => {})}
+        noValidate
+      >
         <div>
           <label
             className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
@@ -157,7 +161,7 @@ export default function ContactForm() {
             "Send message"
           )}
         </button>
-        {error && (
+        {isSubmitted && !isSubmitSuccessful && (
           <span className="block md:inline pl-8 text-red-500">
             Sorry, message was not send. Text me on GitHub or LinkedIn.
           </span>
