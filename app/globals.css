@@ -54,26 +54,11 @@ html {
   background: rgb(107 114 128);
 }
 
-/* For Lenis npm smooth scrolling */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
+/* Lenis does the smoothing while active; its stylesheet (imported in
+   app/page.js) no longer turns off the CSS smooth scrolling set on html above,
+   and running both makes scrolling fight itself. */
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
 }
 
 /* Burger menu button */
