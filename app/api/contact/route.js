@@ -1,22 +1,14 @@
 import nodemailer from "nodemailer";
 import { contactFormSchema } from "@/validation/contactFormValidation";
 
-// The form sends three short fields; anything bigger is not from it.
-const MAX_BODY_LENGTH = 16_000;
-
 export async function POST(request) {
   if (!request.headers.get("content-type")?.startsWith("application/json")) {
     return Response.json({ message: "Expected JSON" }, { status: 415 });
   }
 
-  const raw = await request.text();
-  if (raw.length > MAX_BODY_LENGTH) {
-    return Response.json({ message: "Request too large" }, { status: 413 });
-  }
-
   let body;
   try {
-    body = JSON.parse(raw);
+    body = await request.json();
   } catch {
     return Response.json({ message: "Invalid JSON" }, { status: 400 });
   }
