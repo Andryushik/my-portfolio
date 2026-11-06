@@ -35,7 +35,7 @@ export default function ContactForm() {
   useEffect(() => {
     if (isSubmitSuccessful && !error) {
       toast.success("Message sent successfully!", {
-        icon: "🚀",
+        icon: () => "🚀",
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
