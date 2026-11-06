@@ -13,6 +13,7 @@ export default function ThemeSwitcher() {
 
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- next-themes "mounted" pattern
     setMounted(true);
   }, []);
 

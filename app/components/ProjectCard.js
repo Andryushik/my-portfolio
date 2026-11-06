@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { motion, useTransform } from "framer-motion";
+import { motion, useTransform } from "motion/react";
 
 export default function ProjectCard({
   i,
   imgSource,
-  blurSource,
   sourceUrl,
   liveUrl,
   technologies,
@@ -22,19 +21,18 @@ export default function ProjectCard({
         className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base"
         style={{ scale, top: `calc(${i * 40}px)` }}
       >
-        <div className="group-hover:bg-gradient-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
+        <div className="group-hover:bg-linear-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
         <Image
           className="object-cover w-full h-full"
           src={imgSource}
           placeholder="blur"
-          blurDataURL={blurSource}
           alt="project's home page picture"
         />
 
         <div className="absolute flex gap-2 right-6 -top-full group-hover:top-6 transition-all duration-300 z-40">
           <form action={sourceUrl} method="get" target="_blank">
             <button
-              className="rounded py-1 px-2 w-16 md:w-20 bg-slate-500 opacity-70 hover:opacity-90 text-white"
+              className="rounded-sm py-1 px-2 w-16 md:w-20 bg-slate-500 opacity-70 hover:opacity-90 text-white"
               type="submit"
             >
               Source
@@ -42,7 +40,7 @@ export default function ProjectCard({
           </form>
           <form action={liveUrl} method="get" target="_blank">
             <button
-              className="rounded py-1 px-2 w-16 md:w-20 bg-gray-500 opacity-70 hover:opacity-90 text-white"
+              className="rounded-sm py-1 px-2 w-16 md:w-20 bg-gray-500 opacity-70 hover:opacity-90 text-white"
               type="submit"
             >
               Live

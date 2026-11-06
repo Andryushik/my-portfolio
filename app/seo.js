@@ -12,8 +12,8 @@ export const metadata = {
 
   // Open Graph
   openGraph: {
-    title: "Andrei Popov | Web Developer Portfolio",
-    description: "Full-Stack Web Developer based in Netherlands, specializing in Ruby on Rails, React, and Next.js. Building fast, accessible web applications. Check out my projects and let's connect!",
+    title: "Andrei Popov | Developer Portfolio",
+    description: "Full-Stack Software Developer based in Netherlands, specializing in Ruby on Rails, React, and Next.js. Building fast, accessible web applications. Check out my projects and let's connect!",
     url: 'https://andrei-popov.me',
     siteName: 'Andrei Popov Portfolio',
     images: [
@@ -21,7 +21,7 @@ export const metadata = {
         url: 'https://andrei-popov.me/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Andrei Popov - Full-Stack Web Developer',
+        alt: 'Andrei Popov - Full-Stack Software Developer',
       },
     ],
     locale: 'en_US',
@@ -51,7 +51,7 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Andrei Popov",
-    "jobTitle": "Full-Stack Web Developer",
+    "jobTitle": "Full-Stack Software Developer",
     "url": "https://andrei-popov.me",
     "image": "https://andrei-popov.me/og-image.webp",
     "sameAs": [
@@ -73,7 +73,7 @@ export function StructuredData() {
       "addressRegion": "North Brabant",
       "addressCountry": "NL"
     },
-    "description": "Full-Stack Web Developer specializing in Ruby on Rails and React, based in Netherlands"
+    "description": "Full-Stack Software Developer specializing in Ruby on Rails and React, based in Netherlands"
   };
 
   return (

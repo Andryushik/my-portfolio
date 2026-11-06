@@ -1,7 +1,6 @@
 import { useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import SocialLinks from "../components/SocialLinks";
 import TypingText from "../components/TypingText";
@@ -28,7 +27,7 @@ export default function Hero() {
             className="absolute bottom-0 w-auto max-h-[60%] md:h-full lg:max-h-screen"
             src={bgImage}
             alt="Andrei's photo"
-            priority={true}
+            preload
           />
         </motion.div>
 
@@ -43,13 +42,13 @@ export default function Hero() {
           }}
           style={{ y, opacity, scale }}
         >
-          <h1 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl py-3 md:py-5 text-transparent bg-clip-text bg-gradient-to-br from-cyan-600 to-teal-600 font-medium">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl py-3 md:py-5 text-transparent bg-clip-text bg-linear-to-br from-cyan-600 to-teal-600 font-medium">
             Hi, <br />
             my name is <br /> Andrei
           </h1>
 
           <TypingText
-            title="I'm a Web Developer"
+            title="Full-Stack Developer"
             textStyles="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl py-5 font-medium drop-shadow-lg"
           />
 
@@ -58,7 +57,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <Link
+        <a
           className="absolute right-2 lg:right-4 bottom-4 flex items-center"
           href="#about"
         >
@@ -83,7 +82,7 @@ export default function Hero() {
           >
             Scroll to discover
           </motion.span>
-        </Link>
+        </a>
       </div>
     </section>
   );

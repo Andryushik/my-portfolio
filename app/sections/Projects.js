@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import ProjectCard from "../components/ProjectCard";
 import diary from "../../public/diary.png";
 import chat from "../../public/chat.png";
@@ -9,7 +9,6 @@ import quiz from "../../public/quiz.png";
 const projects = [
   {
     imgSource: diary,
-    blurSource: "../../public/diary-s.png",
     sourceUrl: "https://github.com/Andryushik/MyDiary",
     liveUrl: "https://mydiary.andrei-popov.me",
     technologies: ["HTML", "CSS", "ReactJS", "NodeJS", "MongoDB"],
@@ -18,7 +17,6 @@ const projects = [
   },
   {
     imgSource: radio,
-    blurSource: "../../public/radio-s.png",
     sourceUrl: "https://github.com/Andryushik/World-radios-APP",
     liveUrl: "https://radio.andrei-popov.me",
     technologies: ["HTML", "CSS", "JavaScript", "NodeJS", "API"],
@@ -27,7 +25,6 @@ const projects = [
   },
   {
     imgSource: quiz,
-    blurSource: "../../public/quiz-s.png",
     sourceUrl: "https://github.com/Andryushik/browser-quiz-project",
     liveUrl: "https://quizz-app-andryushik.netlify.app",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -36,7 +33,6 @@ const projects = [
   },
   {
     imgSource: chat,
-    blurSource: "../../public/chat-s.png",
     sourceUrl: "https://github.com/Andryushik/chat_app_react",
     liveUrl: "https://chat-app-blah-blah.netlify.app",
     technologies: ["ReactJS", "MUI", "NodeJS", "Firebase"],
@@ -80,11 +76,10 @@ export default function Projects() {
         </div>
 
         <div className="pt-14">
-          <p className="text-sm md:text-base lg:pt-20 leading-8 text-gray-800 dark:text-gray-200">
-            As a junior web developer, I have endeavored to utilize various
-            approaches in each of my projects to enhance my skills and gain
-            diverse experience. This has enabled me to become proficient in
-            multiple frameworks and technologies.
+          <p className="text-sm/8 md:text-base lg:pt-20 text-gray-800 dark:text-gray-200">
+            These are projects from my junior days — each one a chance to try
+            a different stack and approach. Together they laid the foundation
+            for the full-stack work I do today.
           </p>
         </div>
       </div>

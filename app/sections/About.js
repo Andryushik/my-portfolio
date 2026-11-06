@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Skills from "../components/Skills";
 
 export default function About() {
@@ -7,7 +7,7 @@ export default function About() {
       key: 1,
       content: (
         <p>
-          Hello! I&apos;m a full stack web developer based in the Netherlands,
+          Hello! I&apos;m a full-stack software developer based in the Netherlands,
           passionate about building digital experiences that matter.
         </p>
       ),
@@ -67,7 +67,7 @@ export default function About() {
                 viewport={{ once: false }}
                 custom={p.key}
                 key={p.key}
-                className="text-sm md:text-base py-2 leading-8 text-gray-800 dark:text-gray-200"
+                className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
               >
                 {p.content}
               </motion.li>

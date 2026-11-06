@@ -2,12 +2,16 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { Electrolize } from "next/font/google";
+import { motion, useScroll, useTransform } from "motion/react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import logoLight from "../../public/logo-light.png";
 import logoDark from "../../public/logo-dark.png";
+
+const electrolize = Electrolize({ weight: "400", subsets: ["latin"] });
+
+const TAGLINE = "FULL-STACK DEVELOPER";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
@@ -71,15 +75,45 @@ export default function Navbar() {
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
-            <Link href="/">
-              <Image
-                className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500"
-                src={theme === "light" ? logoLight : logoDark}
-                alt="logo"
-                width={220}
-                height={50}
-              />
-            </Link>
+            <a href="#hero" className="flex items-center h-14 w-40 md:w-56">
+              <div className="@container relative w-full aspect-[2000/434] hover:scale-105 ease-in duration-500">
+                <Image
+                  className="w-full h-auto dark:hidden"
+                  src={logoLight}
+                  alt="logo"
+                  width={220}
+                  height={50}
+                />
+                <Image
+                  className="w-full h-auto hidden dark:block"
+                  src={logoDark}
+                  alt="logo"
+                  width={220}
+                  height={50}
+                />
+                {/* Tagline drawn over the image's empty slot; sizes in cqw
+                    scale with the logo. Letters use the page background
+                    colour (Canvas) so they look cut out of the tiles. */}
+                <span
+                  className={`${electrolize.className} absolute left-[24.65%] top-[66.6%] flex h-[19.6%] text-[3.7cqw] leading-none`}
+                  aria-hidden="true"
+                >
+                  {[...TAGLINE].map((char, i) =>
+                    char === " " ? (
+                      <span key={i} className="w-[1.2cqw]" />
+                    ) : (
+                      <span
+                        key={i}
+                        className="flex w-[3.4cqw] items-center justify-center rounded-[1.1cqw] bg-text-head text-[color:Canvas]"
+                      >
+                        {char}
+                      </span>
+                    )
+                  )}
+                </span>
+                <span className="sr-only">Full-Stack Developer</span>
+              </div>
+            </a>
 
             {/* BURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
@@ -104,14 +138,14 @@ export default function Navbar() {
               {menu.map((menuItem, i) => (
                 <li
                   key={i}
-                  className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center rounded hover:text-text-head ease-in-out duration-500"
+                  className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center rounded-sm hover:text-text-head ease-in-out duration-500"
                 >
-                  <Link
+                  <a
                     href={`#${menuItem.toLowerCase()}`}
                     onClick={() => setNavbar(!navbar)}
                   >
                     {menuItem}
-                  </Link>
+                  </a>
                 </li>
               ))}
 

@@ -15,8 +15,8 @@ export default function Contact() {
           <SocialLinks />
         </div>
 
-        <p className="text-sm md:text-base pt-12 leading-8 text-gray-800 dark:text-gray-200">
-          This portfolio website has been created using Next.js, Framer Motion
+        <p className="text-sm/8 md:text-base pt-12 text-gray-800 dark:text-gray-200">
+          This portfolio website has been created using Next.js, Motion
           and Tailwind CSS. The
           <a
             href="https://github.com/Andryushik/my-portfolio"

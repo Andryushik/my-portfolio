@@ -10,6 +10,6 @@ A live version of the app is available [here](https://www.andrei-popov.me/).
 
 - React
 - Next.js
-- Framer Motion
+- Motion
 - Nodemailer
 - Tailwind CSS

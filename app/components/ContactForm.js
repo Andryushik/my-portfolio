@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTheme } from "next-themes";
@@ -18,24 +18,16 @@ export default function ContactForm() {
   });
 
   const { register, handleSubmit, formState, reset } = contactForm;
-  const { errors, isValid, isSubmitting, isSubmitSuccessful } = formState;
+  const { errors, isValid, isSubmitting, isSubmitted, isSubmitSuccessful } =
+    formState;
 
   const { resolvedTheme } = useTheme();
-
-  const [error, setError] = useState("");
 
   const onSubmit = async (data) => {
     try {
       await sendContactForm(data);
-    } catch (error) {
-      setError(error);
-    }
-  };
-
-  useEffect(() => {
-    if (isSubmitSuccessful && !error) {
       toast.success("Message sent successfully!", {
-        icon: "🚀",
+        icon: () => "🚀",
         position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
@@ -44,9 +36,7 @@ export default function ContactForm() {
         draggable: true,
         progress: undefined,
       });
-
-      reset();
-    } else if (error) {
+    } catch (error) {
       toast.error(
         `Message was not send!
       ERROR: ${error.message}`,
@@ -60,8 +50,16 @@ export default function ContactForm() {
           progress: undefined,
         }
       );
+      // Rethrow so react-hook-form records the submit as failed
+      // (isSubmitSuccessful stays false) without touching isValid.
+      throw error;
     }
-  }, [isSubmitSuccessful, reset, error, resolvedTheme]);
+  };
+
+  // react-hook-form recommends resetting after submit here, not in onSubmit.
+  useEffect(() => {
+    if (isSubmitSuccessful) reset();
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl">
@@ -71,7 +69,13 @@ export default function ContactForm() {
       <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
         Got a question? Want to send feedback? Let me know.
       </p>
-      <form className="space-y-8" onSubmit={handleSubmit(onSubmit)} noValidate>
+      <form
+        className="space-y-8"
+        // The failure is already shown in a toast; don't leave the rethrown
+        // error unhandled.
+        onSubmit={(e) => handleSubmit(onSubmit)(e).catch(() => {})}
+        noValidate
+      >
         <div>
           <label
             className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
@@ -80,7 +84,7 @@ export default function ContactForm() {
             Your name
           </label>
           <input
-            className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-text-head"
+            className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             type="text"
             id="name"
             placeholder="Guest"
@@ -99,7 +103,7 @@ export default function ContactForm() {
             Your email
           </label>
           <input
-            className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-text-head"
+            className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             type="email"
             id="email"
             placeholder="name@gmail.com"
@@ -118,7 +122,7 @@ export default function ContactForm() {
             Your message
           </label>
           <textarea
-            className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-text-head"
+            className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             id="message"
             rows="5"
             placeholder="Let me know how I can help you..."
@@ -129,7 +133,7 @@ export default function ContactForm() {
           </p>
         </div>
         <button
-          className="block mx-auto md:inline py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-none focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
+          className="block mx-auto md:inline py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
           type="submit"
           disabled={isSubmitting || !isValid}
         >
@@ -138,7 +142,7 @@ export default function ContactForm() {
               <svg
                 aria-hidden="true"
                 role="status"
-                class="inline w-4 h-4 mr-3 text-gray-200 animate-spin dark:text-gray-600"
+                className="inline w-4 h-4 mr-3 text-gray-200 animate-spin dark:text-gray-600"
                 viewBox="0 0 100 101"
                 fill="none"
               >
@@ -157,7 +161,7 @@ export default function ContactForm() {
             "Send message"
           )}
         </button>
-        {error && (
+        {isSubmitted && !isSubmitSuccessful && (
           <span className="block md:inline pl-8 text-red-500">
             Sorry, message was not send. Text me on GitHub or LinkedIn.
           </span>
@@ -165,7 +169,7 @@ export default function ContactForm() {
       </form>
 
       <ToastContainer
-        progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
+        progressClassName="toast-progress"
         toastStyle={{
           border: "2px solid rgb(148 163 184)",
         }}

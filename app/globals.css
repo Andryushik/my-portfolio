@@ -1,33 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@import "react-toastify/ReactToastify.min.css";
+@custom-variant dark (&:is(.dark *));
+
+/* Keep v3 behaviour: hover applies on tap too, so project cards reveal
+   Source/Live on touch devices (v4 limits hover to hover-capable devices). */
+@custom-variant hover (&:hover);
+
+@theme {
+  --color-text-head: #11b7bb;
+
+  --text-xxs: 0.6rem;
+  --text-xxs--line-height: 0.6rem;
+}
+
+/* Keep v3 behaviour: v4 resets buttons to cursor: default. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
 }
 
-/* For Lenis npm smooth scrolling */
-html.lenis,
-html.lenis body {
-  height: auto;
+/* Toast progress bar colour (react-toastify v11 removed the progressStyle prop) */
+.Toastify__progress-bar.toast-progress {
+  background: rgb(107 114 128);
 }
 
+/* Lenis does the smoothing while active; its stylesheet (imported in
+   app/page.js) no longer turns off the CSS smooth scrolling set on html above,
+   and running both makes scrolling fight itself. */
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
 }
 
 /* Burger menu button */
