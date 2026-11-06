@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { AiOutlineArrowDown } from "react-icons/ai";
@@ -58,7 +57,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <Link
+        <a
           className="absolute right-2 lg:right-4 bottom-4 flex items-center"
           href="#about"
         >
@@ -83,7 +82,7 @@ export default function Hero() {
           >
             Scroll to discover
           </motion.span>
-        </Link>
+        </a>
       </div>
     </section>
   );

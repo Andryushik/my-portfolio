@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -71,7 +70,7 @@ export default function Navbar() {
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
-            <Link href="/">
+            <a href="#hero">
               <Image
                 className="object-contain h-14 w-40 md:w-56 hover:scale-105 ease-in duration-500 dark:hidden"
                 src={logoLight}
@@ -86,7 +85,7 @@ export default function Navbar() {
                 width={220}
                 height={50}
               />
-            </Link>
+            </a>
 
             {/* BURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
@@ -113,12 +112,12 @@ export default function Navbar() {
                   key={i}
                   className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center rounded-sm hover:text-text-head ease-in-out duration-500"
                 >
-                  <Link
+                  <a
                     href={`#${menuItem.toLowerCase()}`}
                     onClick={() => setNavbar(!navbar)}
                   >
                     {menuItem}
-                  </Link>
+                  </a>
                 </li>
               ))}
 

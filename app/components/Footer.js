@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { BsArrowUpCircleFill } from "react-icons/bs";
 import SocialLinks from "./SocialLinks";
 import CurrentYear from "./CurrentYear";
@@ -14,13 +13,13 @@ export default function Footer() {
       </div>
 
       {/* TO THE TOP */}
-      <Link
+      <a
         className="text-2xl text-slate-400 animate-bounce"
-        href="/"
+        href="#hero"
         aria-label="Go to the top of the page"
       >
         <BsArrowUpCircleFill />
-      </Link>
+      </a>
 
       {/* SOCIAL ICONS */}
       <SocialLinks sizes="text-2xl gap-6" />
