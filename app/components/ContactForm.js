@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTheme } from "next-themes";
@@ -18,28 +18,25 @@ export default function ContactForm() {
     mode: "onBlur",
   });
 
-  const { register, handleSubmit, formState, reset } = contactForm;
+  const { register, handleSubmit, formState, reset, setError } = contactForm;
   const { errors, isSubmitting, isSubmitSuccessful } = formState;
 
   const { resolvedTheme } = useTheme();
 
-  // Only a failed send sets this; a validation error doesn't.
-  const [sendFailed, setSendFailed] = useState(false);
-
   const onSubmit = async (data) => {
-    setSendFailed(false);
     try {
       await sendContactForm(data);
-    } catch (error) {
-      setSendFailed(true);
-      // Rethrow so react-hook-form records the submit as failed
-      // (isSubmitSuccessful stays false) without touching isValid.
-      throw error;
+      toast.success("Message sent successfully!", {
+        icon: () => "🚀",
+        autoClose: 3000,
+      });
+    } catch {
+      // A root error marks the submit as unsuccessful (so the form isn't
+      // reset); react-hook-form clears it on the next submit.
+      setError("root.server", {
+        message: "Sorry, message was not send. Text me on GitHub or LinkedIn.",
+      });
     }
-    toast.success("Message sent successfully!", {
-      icon: () => "🚀",
-      autoClose: 3000,
-    });
   };
 
   // react-hook-form recommends resetting after submit here, not in onSubmit.
@@ -57,9 +54,7 @@ export default function ContactForm() {
       </p>
       <form
         className="space-y-8"
-        // The failure is already shown below the form; don't leave the
-        // rethrown error unhandled.
-        onSubmit={(e) => handleSubmit(onSubmit)(e).catch(() => {})}
+        onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
         {/* Honeypot for bots: hidden from people, keyboard and screen readers. */}
@@ -167,9 +162,9 @@ export default function ContactForm() {
             "Send message"
           )}
         </button>
-        {sendFailed && (
+        {errors.root?.server && (
           <span role="alert" className="block md:inline pl-8 text-red-500">
-            Sorry, message was not send. Text me on GitHub or LinkedIn.
+            {errors.root.server.message}
           </span>
         )}
       </form>
