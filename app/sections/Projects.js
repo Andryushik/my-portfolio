@@ -77,10 +77,9 @@ export default function Projects() {
 
         <div className="pt-14">
           <p className="text-sm/8 md:text-base lg:pt-20 text-gray-800 dark:text-gray-200">
-            As a junior web developer, I have endeavored to utilize various
-            approaches in each of my projects to enhance my skills and gain
-            diverse experience. This has enabled me to become proficient in
-            multiple frameworks and technologies.
+            These are projects from my junior days — each one a chance to try
+            a different stack and approach. Together they laid the foundation
+            for the full-stack work I do today.
           </p>
         </div>
       </div>

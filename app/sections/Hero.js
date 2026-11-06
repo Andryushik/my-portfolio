@@ -48,7 +48,7 @@ export default function Hero() {
           </h1>
 
           <TypingText
-            title="I'm a Web Developer"
+            title="Full-Stack Developer"
             textStyles="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl py-5 font-medium drop-shadow-lg"
           />
 
