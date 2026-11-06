@@ -28,7 +28,7 @@ export default function Hero() {
             className="absolute bottom-0 w-auto max-h-[60%] md:h-full lg:max-h-screen"
             src={bgImage}
             alt="Andrei's photo"
-            priority={true}
+            preload
           />
         </motion.div>
 
