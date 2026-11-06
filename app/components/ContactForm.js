@@ -125,6 +125,8 @@ export default function ContactForm() {
             className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             id="message"
             rows="5"
+            // Let the wheel scroll the textarea instead of Lenis scrolling the page.
+            data-lenis-prevent
             placeholder="Let me know how I can help you..."
             {...register("message")}
           ></textarea>
