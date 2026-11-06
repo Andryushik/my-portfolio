@@ -56,8 +56,8 @@ export default function ContactForm() {
       </p>
       <form
         className="space-y-8"
-        // The failure is already shown in a toast; don't leave the rethrown
-        // error unhandled.
+        // The failure is already shown below the form; don't leave the
+        // rethrown error unhandled.
         onSubmit={(e) => handleSubmit(onSubmit)(e).catch(() => {})}
         noValidate
       >
@@ -73,9 +73,11 @@ export default function ContactForm() {
             type="text"
             id="name"
             placeholder="Guest"
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby="name-error"
             {...register("name")}
           />
-          <p className="absolute text-red-600 text-sm">
+          <p id="name-error" role="alert" className="absolute text-red-600 text-sm">
             {errors.name?.message}
           </p>
         </div>
@@ -92,9 +94,11 @@ export default function ContactForm() {
             type="email"
             id="email"
             placeholder="name@gmail.com"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby="email-error"
             {...register("email")}
           />
-          <p className="absolute text-red-600 text-sm">
+          <p id="email-error" role="alert" className="absolute text-red-600 text-sm">
             {errors.email?.message}
           </p>
         </div>
@@ -113,9 +117,11 @@ export default function ContactForm() {
             // Let the wheel scroll the textarea instead of Lenis scrolling the page.
             data-lenis-prevent
             placeholder="Let me know how I can help you..."
+            aria-invalid={Boolean(errors.message)}
+            aria-describedby="message-error"
             {...register("message")}
           ></textarea>
-          <p className="absolute text-red-600 text-sm">
+          <p id="message-error" role="alert" className="absolute text-red-600 text-sm">
             {errors.message?.message}
           </p>
         </div>
@@ -149,7 +155,7 @@ export default function ContactForm() {
           )}
         </button>
         {sendFailed && (
-          <span className="block md:inline pl-8 text-red-500">
+          <span role="alert" className="block md:inline pl-8 text-red-500">
             Sorry, message was not send. Text me on GitHub or LinkedIn.
           </span>
         )}
