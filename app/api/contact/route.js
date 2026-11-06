@@ -2,7 +2,8 @@ import nodemailer from "nodemailer";
 import { contactFormSchema } from "@/validation/contactFormValidation";
 
 export async function POST(request) {
-  if (!request.headers.get("content-type")?.startsWith("application/json")) {
+  const contentType = request.headers.get("content-type")?.toLowerCase();
+  if (!contentType?.startsWith("application/json")) {
     return Response.json({ message: "Expected JSON" }, { status: 415 });
   }
 
