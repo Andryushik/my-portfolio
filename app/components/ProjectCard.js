@@ -34,7 +34,7 @@ export default function ProjectCard({
             className="rounded-sm py-1 px-2 w-16 md:w-20 text-center bg-slate-500 opacity-70 hover:opacity-90 text-white"
             href={sourceUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
             Source
           </a>
@@ -42,7 +42,7 @@ export default function ProjectCard({
             className="rounded-sm py-1 px-2 w-16 md:w-20 text-center bg-gray-500 opacity-70 hover:opacity-90 text-white"
             href={liveUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
             Live
           </a>
