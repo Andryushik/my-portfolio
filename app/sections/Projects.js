@@ -9,7 +9,6 @@ import quiz from "../../public/quiz.png";
 const projects = [
   {
     imgSource: diary,
-    blurSource: "../../public/diary-s.png",
     sourceUrl: "https://github.com/Andryushik/MyDiary",
     liveUrl: "https://mydiary.andrei-popov.me",
     technologies: ["HTML", "CSS", "ReactJS", "NodeJS", "MongoDB"],
@@ -18,7 +17,6 @@ const projects = [
   },
   {
     imgSource: radio,
-    blurSource: "../../public/radio-s.png",
     sourceUrl: "https://github.com/Andryushik/World-radios-APP",
     liveUrl: "https://radio.andrei-popov.me",
     technologies: ["HTML", "CSS", "JavaScript", "NodeJS", "API"],
@@ -27,7 +25,6 @@ const projects = [
   },
   {
     imgSource: quiz,
-    blurSource: "../../public/quiz-s.png",
     sourceUrl: "https://github.com/Andryushik/browser-quiz-project",
     liveUrl: "https://quizz-app-andryushik.netlify.app",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -36,7 +33,6 @@ const projects = [
   },
   {
     imgSource: chat,
-    blurSource: "../../public/chat-s.png",
     sourceUrl: "https://github.com/Andryushik/chat_app_react",
     liveUrl: "https://chat-app-blah-blah.netlify.app",
     technologies: ["ReactJS", "MUI", "NodeJS", "Firebase"],

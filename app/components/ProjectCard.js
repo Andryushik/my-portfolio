@@ -4,7 +4,6 @@ import { motion, useTransform } from "motion/react";
 export default function ProjectCard({
   i,
   imgSource,
-  blurSource,
   sourceUrl,
   liveUrl,
   technologies,
@@ -27,7 +26,6 @@ export default function ProjectCard({
           className="object-cover w-full h-full"
           src={imgSource}
           placeholder="blur"
-          blurDataURL={blurSource}
           alt="project's home page picture"
         />
 
