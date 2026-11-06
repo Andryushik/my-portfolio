@@ -1,11 +1,14 @@
-@import "react-toastify/ReactToastify.min.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   scroll-behavior: smooth !important;
+}
+
+/* Toast progress bar colour (react-toastify v11 removed the progressStyle prop) */
+.Toastify__progress-bar.toast-progress {
+  background: rgb(107 114 128);
 }
 
 /* For Lenis npm smooth scrolling */

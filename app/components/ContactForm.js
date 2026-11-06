@@ -165,7 +165,7 @@ export default function ContactForm() {
       </form>
 
       <ToastContainer
-        progressStyle={{ background: "rgb(107 114 128)", margin: "4px" }}
+        progressClassName="toast-progress"
         toastStyle={{
           border: "2px solid rgb(148 163 184)",
         }}
