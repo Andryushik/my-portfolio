@@ -12,6 +12,7 @@ export default function ContactForm() {
       name: "",
       email: "",
       message: "",
+      website: "",
     },
     resolver: yupResolver(contactFormSchema),
     mode: "onBlur",
@@ -61,6 +62,18 @@ export default function ContactForm() {
         onSubmit={(e) => handleSubmit(onSubmit)(e).catch(() => {})}
         noValidate
       >
+        {/* Honeypot for bots: hidden from people, keyboard and screen readers. */}
+        <div className="absolute -left-[9999px]" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            type="text"
+            id="website"
+            tabIndex={-1}
+            autoComplete="off"
+            {...register("website")}
+          />
+        </div>
+
         <div>
           <label
             className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
