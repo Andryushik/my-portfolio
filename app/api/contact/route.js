@@ -27,10 +27,6 @@ export async function POST(request) {
   }
 
   const { USER_EMAIL, PASS_EMAIL, SEND_EMAIL } = process.env;
-  if (!USER_EMAIL || !PASS_EMAIL || !SEND_EMAIL) {
-    console.error("Contact form: SMTP environment variables are not set");
-    return Response.json({ message: "Not configured" }, { status: 500 });
-  }
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
