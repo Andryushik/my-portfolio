@@ -131,6 +131,9 @@ export default function Navbar() {
               {/* THEME SWITCHER */}
               <li
                 className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12"
+                // Close the mobile menu shortly after switching the theme, so the
+                // change is visible first.
+                onClick={() => setTimeout(() => setNavbar(false), 300)}
               >
                 <ThemeSwitcher />
               </li>
