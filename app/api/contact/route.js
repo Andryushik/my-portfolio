@@ -29,7 +29,7 @@ export async function POST(request) {
 
   let data;
   try {
-    data = await contactFormSchema.validate(body ?? {}, { strict: true });
+    data = await contactFormSchema.validate(body);
   } catch {
     return Response.json({ message: "Invalid input" }, { status: 400 });
   }
