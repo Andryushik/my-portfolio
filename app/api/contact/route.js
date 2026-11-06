@@ -15,8 +15,9 @@ export async function POST(request) {
   }
 
   // Honeypot: a hidden field that people never see but bots fill in.
-  // Answer as if it worked so the bot learns nothing.
-  if (body?.website) {
+  // Answer as if it worked so the bot learns nothing, but leave a trace.
+  if (body?._gotcha) {
+    console.warn("Contact form: honeypot filled, message dropped");
     return Response.json({ message: "Success" });
   }
 

@@ -12,7 +12,7 @@ export default function ContactForm() {
       name: "",
       email: "",
       message: "",
-      website: "",
+      _gotcha: "",
     },
     resolver: yupResolver(contactFormSchema),
     mode: "onBlur",
@@ -57,15 +57,17 @@ export default function ContactForm() {
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
-        {/* Honeypot for bots: hidden from people, keyboard and screen readers. */}
+        {/* Honeypot for bots: hidden from people, keyboard and screen readers.
+            The name means nothing to browser autofill, so real visitors
+            never fill it by accident. */}
         <div className="absolute -left-[9999px]" aria-hidden="true">
-          <label htmlFor="website">Website</label>
+          <label htmlFor="gotcha">Leave this field empty</label>
           <input
             type="text"
-            id="website"
+            id="gotcha"
             tabIndex={-1}
             autoComplete="off"
-            {...register("website")}
+            {...register("_gotcha")}
           />
         </div>
 
