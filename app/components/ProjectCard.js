@@ -22,6 +22,11 @@ export default function ProjectCard({
         className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base motion-reduce:transform-none!"
         style={{ scale, top: `calc(${i * 40}px)` }}
       >
+        {/* Title first, so the heading comes before the content it names;
+            it is positioned absolutely, so the order doesn't change the look. */}
+        <div className="absolute -bottom-full left-6 group-hover:bottom-6 group-focus-within:bottom-6 transition-all duration-700 z-40">
+          <h3 className="text-xl xl:text-2xl text-text-head">{title}</h3>
+        </div>
         <div className="group-hover:bg-linear-to-t group-focus-within:bg-linear-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
         <Image
           className="object-cover w-full h-full"
@@ -67,9 +72,6 @@ export default function ProjectCard({
           <span className="text-sm md:text-base text-slate-500">
             {description}
           </span>
-        </div>
-        <div className="absolute -bottom-full left-6 group-hover:bottom-6 group-focus-within:bottom-6 transition-all duration-700 z-40">
-          <h3 className="text-xl xl:text-2xl text-text-head">{title}</h3>
         </div>
       </motion.div>
     </div>
