@@ -111,7 +111,7 @@ export default function ContactForm() {
             aria-describedby="name-error"
             {...register("name")}
           />
-          <p id="name-error" className="absolute text-red-600 text-sm">
+          <p id="name-error" className="absolute text-red-600 dark:text-red-400 text-sm">
             {errors.name?.message}
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function ContactForm() {
             aria-describedby="email-error"
             {...register("email")}
           />
-          <p id="email-error" className="absolute text-red-600 text-sm">
+          <p id="email-error" className="absolute text-red-600 dark:text-red-400 text-sm">
             {errors.email?.message}
           </p>
         </div>
@@ -155,7 +155,7 @@ export default function ContactForm() {
             aria-describedby="message-error"
             {...register("message")}
           ></textarea>
-          <p id="message-error" className="absolute text-red-600 text-sm">
+          <p id="message-error" className="absolute text-red-600 dark:text-red-400 text-sm">
             {errors.message?.message}
           </p>
         </div>
@@ -196,7 +196,7 @@ export default function ContactForm() {
             role="alert"
             className={
               errors.root?.server
-                ? "block mt-8 md:mt-0 pl-8 text-red-600"
+                ? "block mt-8 md:mt-0 pl-8 text-red-600 dark:text-red-400"
                 : undefined
             }
           >
