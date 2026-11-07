@@ -55,7 +55,11 @@ export default function ContactForm() {
   // them would pull focus away while typing.
   useEffect(() => {
     const field = ["name", "email", "message"].find((name) => errors[name]);
-    if (field) setFocus(field);
+    if (!field) return;
+    // Enter in the invalid field leaves it focused, and focusing it again
+    // does nothing, so blur it first to have its error read.
+    if (document.activeElement?.id === field) document.activeElement.blur();
+    setFocus(field);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submitCount]);
 
