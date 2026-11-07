@@ -21,8 +21,10 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Toast progress bar colour (react-toastify v11 removed the progressStyle prop) */

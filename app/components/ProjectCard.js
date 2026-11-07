@@ -18,7 +18,8 @@ export default function ProjectCard({
   return (
     <div className="top-0 lg:h-screen pt-32 pb-20 flex items-center justify-center sticky">
       <motion.div
-        className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base"
+        // Shrinking on scroll is inline style; "reduce motion" turns it off.
+        className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base motion-reduce:transform-none!"
         style={{ scale, top: `calc(${i * 40}px)` }}
       >
         <div className="group-hover:bg-linear-to-t group-focus-within:bg-linear-to-t from-white dark:from-black w-full h-full absolute z-30 transition-all duration-300"></div>
