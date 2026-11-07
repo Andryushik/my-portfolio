@@ -16,10 +16,13 @@ export default function ContactForm() {
     },
     resolver: yupResolver(contactFormSchema),
     mode: "onBlur",
+    // We focus the first invalid field ourselves, after its error is shown.
+    shouldFocusError: false,
   });
 
-  const { register, handleSubmit, formState, reset, setError } = contactForm;
-  const { errors, isSubmitting, isSubmitSuccessful } = formState;
+  const { register, handleSubmit, formState, reset, setError, setFocus } =
+    contactForm;
+  const { errors, isSubmitting, isSubmitSuccessful, submitCount } = formState;
 
   const { resolvedTheme } = useTheme();
 
@@ -44,6 +47,17 @@ export default function ContactForm() {
   useEffect(() => {
     if (isSubmitSuccessful) reset();
   }, [isSubmitSuccessful, reset]);
+
+  // After a failed submit, focus the first invalid field once its error is on
+  // the page, so a screen reader reads the error with the field
+  // (react-hook-form's own focus comes before that render). Runs once per
+  // submit: errors change on every keystroke after a submit, and following
+  // them would pull focus away while typing.
+  useEffect(() => {
+    const field = ["name", "email", "message"].find((name) => errors[name]);
+    if (field) setFocus(field);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [submitCount]);
 
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl">
