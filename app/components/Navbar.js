@@ -47,7 +47,9 @@ export default function Navbar() {
     <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">
       <motion.div
         className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 max-w-7xl"
-        initial={{ opacity: 0 }}
+        // Start visible: the nav is in the server HTML and should not wait
+        // for JavaScript and a one-second fade.
+        initial={false}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
