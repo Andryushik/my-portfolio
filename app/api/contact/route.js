@@ -2,6 +2,8 @@ import nodemailer from "nodemailer";
 import { contactFormSchema } from "@/validation/contactFormValidation";
 
 export async function POST(request) {
+  // JSON only: browsers then send a CORS preflight first, which this route
+  // doesn't allow, so other sites can't post the form from a visitor's browser.
   const contentType = request.headers.get("content-type")?.toLowerCase();
   if (!contentType?.startsWith("application/json")) {
     return Response.json({ message: "Expected JSON" }, { status: 415 });
