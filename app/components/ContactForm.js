@@ -181,11 +181,18 @@ export default function ContactForm() {
               "Send message"
             )}
           </button>
-          {errors.root?.server && (
-            <span role="alert" className="block mt-8 md:mt-0 pl-8 text-red-500">
-              {errors.root.server.message}
-            </span>
-          )}
+          {/* Always in the page: screen readers announce an alert when its
+              text changes, not when it is added with the text already in. */}
+          <span
+            role="alert"
+            className={
+              errors.root?.server
+                ? "block mt-8 md:mt-0 pl-8 text-red-500"
+                : undefined
+            }
+          >
+            {errors.root?.server?.message}
+          </span>
         </div>
       </form>
 
