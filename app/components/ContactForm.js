@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useEffectEvent } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTheme } from "next-themes";
@@ -50,17 +50,20 @@ export default function ContactForm() {
 
   // After a failed submit, focus the first invalid field once its error is on
   // the page, so a screen reader reads the error with the field
-  // (react-hook-form's own focus comes before that render). Runs once per
-  // submit: errors change on every keystroke after a submit, and following
-  // them would pull focus away while typing.
-  useEffect(() => {
+  // (react-hook-form's own focus comes before that render). An Effect Event
+  // reads the latest errors without re-running on them: errors change on
+  // every keystroke after a submit, and following them would pull focus away
+  // while typing.
+  const focusFirstError = useEffectEvent(() => {
     const field = ["name", "email", "message"].find((name) => errors[name]);
     if (!field) return;
     // Enter in the invalid field leaves it focused, and focusing it again
     // does nothing, so blur it first to have its error read.
     if (document.activeElement?.id === field) document.activeElement.blur();
     setFocus(field);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
+  useEffect(() => {
+    focusFirstError();
   }, [submitCount]);
 
   return (
