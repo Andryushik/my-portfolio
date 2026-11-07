@@ -17,7 +17,7 @@
   --text-xxs--line-height: 0.6rem;
 }
 
-/* Dark theme keeps the logo teal (8.5:1 on the dark background). A plain
+/* Dark theme keeps the logo teal (7.6:1 on the dark page, #121212). A plain
    selector, because our dark variant only matches descendants of .dark,
    not <html class="dark"> itself. */
 .dark {
