@@ -27,6 +27,8 @@ export default function ProjectCard({
           className="object-cover w-full h-full"
           src={imgSource}
           placeholder="blur"
+          // Card width: max-w-4xl / 2xl / lg, or the screen minus padding.
+          sizes="(min-width: 1280px) 896px, (min-width: 1024px) 672px, (min-width: 568px) 512px, 100vw"
           alt={`${title} screenshot`}
         />
 
