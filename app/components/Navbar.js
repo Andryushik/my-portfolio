@@ -98,13 +98,17 @@ export default function Navbar() {
 
             {/* BURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
-              <div
+              <button
+                type="button"
                 ref={hamburgerRef}
                 className="flex justify-center items-center h-10 w-10 rounded-full cursor-pointer bg-text-head"
                 onClick={() => setNavbar(!navbar)}
+                aria-label="Menu"
+                aria-expanded={navbar}
+                aria-controls="mobile-menu"
               >
-                <div className={`burger ${navbar && "burgerActive"}`}></div>
-              </div>
+                <span className={`burger ${navbar && "burgerActive"}`}></span>
+              </button>
             </div>
           </div>
         </div>
