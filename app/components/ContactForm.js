@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useEffectEvent } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTheme } from "next-themes";
@@ -12,14 +12,19 @@ export default function ContactForm() {
       name: "",
       email: "",
       message: "",
+      _gotcha: "",
     },
     resolver: yupResolver(contactFormSchema),
-    mode: "onBlur",
+    // First check when leaving a field, then on every keystroke in it, so a
+    // fixed error clears as soon as the input is valid.
+    mode: "onTouched",
+    // We focus the first invalid field ourselves, after its error is shown.
+    shouldFocusError: false,
   });
 
-  const { register, handleSubmit, formState, reset } = contactForm;
-  const { errors, isValid, isSubmitting, isSubmitted, isSubmitSuccessful } =
-    formState;
+  const { register, handleSubmit, formState, reset, setError, setFocus } =
+    contactForm;
+  const { errors, isSubmitting, isSubmitSuccessful, submitCount } = formState;
 
   const { resolvedTheme } = useTheme();
 
@@ -28,31 +33,15 @@ export default function ContactForm() {
       await sendContactForm(data);
       toast.success("Message sent successfully!", {
         icon: () => "🚀",
-        position: "top-center",
         autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
       });
-    } catch (error) {
-      toast.error(
-        `Message was not send!
-      ERROR: ${error.message}`,
-        {
-          position: "top-center",
-          autoClose: 10000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        }
-      );
-      // Rethrow so react-hook-form records the submit as failed
-      // (isSubmitSuccessful stays false) without touching isValid.
-      throw error;
+    } catch {
+      // A root error marks the submit as unsuccessful (so the form isn't
+      // reset); react-hook-form clears it on the next submit.
+      setError("root.server", {
+        message:
+          "Sorry, your message wasn't sent. Please try again or message me on LinkedIn.",
+      });
     }
   };
 
@@ -60,6 +49,24 @@ export default function ContactForm() {
   useEffect(() => {
     if (isSubmitSuccessful) reset();
   }, [isSubmitSuccessful, reset]);
+
+  // After a failed submit, focus the first invalid field once its error is on
+  // the page, so a screen reader reads the error with the field
+  // (react-hook-form's own focus comes before that render). An Effect Event
+  // reads the latest errors without re-running on them: errors change on
+  // every keystroke after a submit, and following them would pull focus away
+  // while typing.
+  const focusFirstError = useEffectEvent(() => {
+    const field = ["name", "email", "message"].find((name) => errors[name]);
+    if (!field) return;
+    // Enter in the invalid field leaves it focused, and focusing it again
+    // does nothing, so blur it first to have its error read.
+    if (document.activeElement?.id === field) document.activeElement.blur();
+    setFocus(field);
+  });
+  useEffect(() => {
+    focusFirstError();
+  }, [submitCount]);
 
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl">
@@ -71,11 +78,23 @@ export default function ContactForm() {
       </p>
       <form
         className="space-y-8"
-        // The failure is already shown in a toast; don't leave the rethrown
-        // error unhandled.
-        onSubmit={(e) => handleSubmit(onSubmit)(e).catch(() => {})}
+        onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
+        {/* Honeypot for bots: hidden from people, keyboard and screen readers.
+            The name means nothing to browser autofill, so real visitors
+            never fill it by accident. */}
+        <div className="absolute -left-[9999px]" aria-hidden="true">
+          <label htmlFor="gotcha">Leave this field empty</label>
+          <input
+            type="text"
+            id="gotcha"
+            tabIndex={-1}
+            autoComplete="off"
+            {...register("_gotcha")}
+          />
+        </div>
+
         <div>
           <label
             className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
@@ -88,9 +107,11 @@ export default function ContactForm() {
             type="text"
             id="name"
             placeholder="Guest"
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby="name-error"
             {...register("name")}
           />
-          <p className="absolute text-red-600 text-sm">
+          <p id="name-error" className="absolute text-red-600 text-sm">
             {errors.name?.message}
           </p>
         </div>
@@ -107,9 +128,11 @@ export default function ContactForm() {
             type="email"
             id="email"
             placeholder="name@gmail.com"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby="email-error"
             {...register("email")}
           />
-          <p className="absolute text-red-600 text-sm">
+          <p id="email-error" className="absolute text-red-600 text-sm">
             {errors.email?.message}
           </p>
         </div>
@@ -125,47 +148,61 @@ export default function ContactForm() {
             className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             id="message"
             rows="5"
+            // Let the wheel scroll the textarea instead of Lenis scrolling the page.
+            data-lenis-prevent
             placeholder="Let me know how I can help you..."
+            aria-invalid={Boolean(errors.message)}
+            aria-describedby="message-error"
             {...register("message")}
           ></textarea>
-          <p className="absolute text-red-600 text-sm">
+          <p id="message-error" className="absolute text-red-600 text-sm">
             {errors.message?.message}
           </p>
         </div>
-        <button
-          className="block mx-auto md:inline py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
-          type="submit"
-          disabled={isSubmitting || !isValid}
-        >
-          {isSubmitting ? (
-            <>
-              <svg
-                aria-hidden="true"
-                role="status"
-                className="inline w-4 h-4 mr-3 text-gray-200 animate-spin dark:text-gray-600"
-                viewBox="0 0 100 101"
-                fill="none"
-              >
-                <path
-                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                  fill="#1C64F2"
-                />
-              </svg>
-              Sending...
-            </>
-          ) : (
-            "Send message"
-          )}
-        </button>
-        {isSubmitted && !isSubmitSuccessful && (
-          <span className="block md:inline pl-8 text-red-500">
-            Sorry, message was not send. Text me on GitHub or LinkedIn.
+        {/* On md+ the error sits beside the button and wraps in its own column. */}
+        <div className="md:flex md:items-center">
+          <button
+            className="block mx-auto md:mx-0 shrink-0 py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <>
+                <svg
+                  aria-hidden="true"
+                  role="status"
+                  className="inline w-4 h-4 mr-3 text-gray-200 animate-spin dark:text-gray-600"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="#1C64F2"
+                  />
+                </svg>
+                Sending...
+              </>
+            ) : (
+              "Send message"
+            )}
+          </button>
+          {/* Always in the page: screen readers announce an alert when its
+              text changes, not when it is added with the text already in. */}
+          <span
+            role="alert"
+            className={
+              errors.root?.server
+                ? "block mt-8 md:mt-0 pl-8 text-red-500"
+                : undefined
+            }
+          >
+            {errors.root?.server?.message}
           </span>
-        )}
+        </div>
       </form>
 
       <ToastContainer

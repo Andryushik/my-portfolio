@@ -9,7 +9,7 @@ import {
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function ThemeSwitcher() {
       <BsFillSunFill className="text-xl hover:scale-110 duration-500" />
       <BsFillCircleFill
         className={`text-2xl absolute text-text-head hover:scale-110 duration-500 ${
-          theme === "light" ? "left-1" : "right-1"
+          resolvedTheme === "light" ? "left-1" : "right-1"
         }`}
       />
     </div>
