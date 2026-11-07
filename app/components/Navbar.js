@@ -144,7 +144,17 @@ export default function Navbar() {
                 className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12"
                 // Close the mobile menu shortly after switching the theme, so the
                 // change is visible first.
-                onClick={() => setTimeout(() => setNavbar(false), 300)}
+                onClick={() =>
+                  setTimeout(() => {
+                    setNavbar(false);
+                    // The closed menu is hidden on phones, which would drop
+                    // keyboard focus: hand it to the burger. On desktop the
+                    // burger is hidden, so focus() does nothing there.
+                    if (menuRef.current?.contains(document.activeElement)) {
+                      hamburgerRef.current?.focus();
+                    }
+                  }, 300)
+                }
               >
                 <ThemeSwitcher />
               </li>
