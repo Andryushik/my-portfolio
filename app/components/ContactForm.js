@@ -15,7 +15,9 @@ export default function ContactForm() {
       _gotcha: "",
     },
     resolver: yupResolver(contactFormSchema),
-    mode: "onBlur",
+    // First check when leaving a field, then on every keystroke in it, so a
+    // fixed error clears as soon as the input is valid.
+    mode: "onTouched",
     // We focus the first invalid field ourselves, after its error is shown.
     shouldFocusError: false,
   });
