@@ -62,6 +62,7 @@ export default function Navbar() {
                   alt="logo"
                   width={220}
                   height={50}
+                  loading="eager"
                 />
                 <Image
                   className="w-full h-auto hidden dark:block"
@@ -69,6 +70,7 @@ export default function Navbar() {
                   alt="logo"
                   width={220}
                   height={50}
+                  loading="eager"
                 />
                 {/* Tagline drawn over the image's empty slot; sizes in cqw
                     scale with the logo. Letters use the page background
