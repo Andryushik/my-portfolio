@@ -87,7 +87,7 @@ export default function ContactForm() {
             aria-describedby="name-error"
             {...register("name")}
           />
-          <p id="name-error" role="alert" className="absolute text-red-600 text-sm">
+          <p id="name-error" className="absolute text-red-600 text-sm">
             {errors.name?.message}
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function ContactForm() {
             aria-describedby="email-error"
             {...register("email")}
           />
-          <p id="email-error" role="alert" className="absolute text-red-600 text-sm">
+          <p id="email-error" className="absolute text-red-600 text-sm">
             {errors.email?.message}
           </p>
         </div>
@@ -131,7 +131,7 @@ export default function ContactForm() {
             aria-describedby="message-error"
             {...register("message")}
           ></textarea>
-          <p id="message-error" role="alert" className="absolute text-red-600 text-sm">
+          <p id="message-error" className="absolute text-red-600 text-sm">
             {errors.message?.message}
           </p>
         </div>
