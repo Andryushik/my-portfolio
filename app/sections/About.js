@@ -58,21 +58,19 @@ export default function About() {
             About & Skills
           </h2>
 
-          <div>
-            {paragraphTexts.map((p) => (
-              <motion.div
-                variants={listVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false }}
-                custom={p.key}
-                key={p.key}
-                className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
-              >
-                {p.content}
-              </motion.div>
-            ))}
-          </div>
+          {paragraphTexts.map((p) => (
+            <motion.div
+              variants={listVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              custom={p.key}
+              key={p.key}
+              className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
+            >
+              {p.content}
+            </motion.div>
+          ))}
         </div>
 
         <div className="flex-auto py-10 px-40 w-full md:w-1/3 md:max-w-md">
