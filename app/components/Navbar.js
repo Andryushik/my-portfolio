@@ -96,7 +96,7 @@ export default function Navbar() {
               <button
                 type="button"
                 ref={hamburgerRef}
-                className="flex justify-center items-center h-10 w-10 rounded-full cursor-pointer bg-text-head"
+                className="flex justify-center items-center h-10 w-10 rounded-full cursor-pointer bg-button"
                 onClick={() => setNavbar(!navbar)}
                 aria-label="Menu"
                 aria-expanded={navbar}

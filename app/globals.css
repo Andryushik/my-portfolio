@@ -12,6 +12,10 @@
   --color-text-head: #0b7f83;
   /* The logo teal, same in both themes (tagline tiles over the logo). */
   --color-brand: #11b7bb;
+  /* Fill for buttons with white on them, the same in both themes: white
+     reads 4.8:1 on it, 6.3:1 on hover. */
+  --color-button: #0b7f83;
+  --color-button-hover: #096b6e;
 
   --text-xxs: 0.6rem;
   --text-xxs--line-height: 0.6rem;

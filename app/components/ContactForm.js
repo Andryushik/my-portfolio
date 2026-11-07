@@ -162,7 +162,7 @@ export default function ContactForm() {
         {/* On md+ the error sits beside the button and wraps in its own column. */}
         <div className="md:flex md:items-center">
           <button
-            className="block mx-auto md:mx-0 shrink-0 py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
+            className="block mx-auto md:mx-0 shrink-0 py-3 px-5 font-medium text-center text-white rounded-lg bg-button sm:w-fit hover:bg-button-hover transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-button/50 disabled:text-gray-500"
             type="submit"
             disabled={isSubmitting}
           >
