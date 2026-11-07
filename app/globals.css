@@ -7,10 +7,21 @@
 @custom-variant hover (&:hover);
 
 @theme {
-  --color-text-head: #11b7bb;
+  /* Brand teal for text and controls. The light theme uses a darker
+     shade so it reads on white (4.8:1; #11b7bb is 2.5:1). */
+  --color-text-head: #0b7f83;
+  /* The logo teal, same in both themes (tagline tiles over the logo). */
+  --color-brand: #11b7bb;
 
   --text-xxs: 0.6rem;
   --text-xxs--line-height: 0.6rem;
+}
+
+/* Dark theme keeps the logo teal (8.5:1 on the dark background). A plain
+   selector, because our dark variant only matches descendants of .dark,
+   not <html class="dark"> itself. */
+.dark {
+  --color-text-head: #11b7bb;
 }
 
 /* Keep v3 behaviour: v4 resets buttons to cursor: default. */

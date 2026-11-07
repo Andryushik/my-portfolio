@@ -196,7 +196,7 @@ export default function ContactForm() {
             role="alert"
             className={
               errors.root?.server
-                ? "block mt-8 md:mt-0 pl-8 text-red-500"
+                ? "block mt-8 md:mt-0 pl-8 text-red-600"
                 : undefined
             }
           >

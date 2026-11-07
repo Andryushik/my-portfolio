@@ -85,7 +85,7 @@ export default function Navbar() {
                     ) : (
                       <span
                         key={i}
-                        className="flex w-[3.4cqw] items-center justify-center rounded-[1.1cqw] bg-text-head text-[color:Canvas]"
+                        className="flex w-[3.4cqw] items-center justify-center rounded-[1.1cqw] bg-brand text-[color:Canvas]"
                       >
                         {char}
                       </span>
