@@ -70,9 +70,9 @@ export default function ContactForm() {
 
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl">
-      <h4 className="mb-6 text-2xl tracking-tight font-bold text-center text-text-head">
+      <h3 className="mb-6 text-2xl tracking-tight font-bold text-center text-text-head">
         Message Me
-      </h4>
+      </h3>
       <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
         Got a question? Want to send feedback? Let me know.
       </p>

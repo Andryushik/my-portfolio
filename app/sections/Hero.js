@@ -47,6 +47,8 @@ export default function Hero() {
           <h1 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl py-3 md:py-5 text-transparent bg-clip-text bg-linear-to-br from-cyan-600 to-teal-600 font-medium">
             Hi, <br />
             my name is <br /> Andrei
+            {/* Full name for screen readers and search; the design shows the first name. */}
+            <span className="sr-only"> Popov</span>
           </h1>
 
           <TypingText
