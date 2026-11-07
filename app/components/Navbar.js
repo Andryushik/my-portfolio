@@ -45,14 +45,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">
-      <motion.div
-        className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 max-w-7xl"
-        // Start visible: the nav is in the server HTML and should not wait
-        // for JavaScript and a one-second fade.
-        initial={false}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 max-w-7xl">
         <div>
           <div className="flex items-center justify-between md:block">
             {/* LOGO */}
@@ -172,7 +165,7 @@ export default function Navbar() {
             />
           </div>
         </div>
-      </motion.div>
+      </div>
     </nav>
   );
 }
