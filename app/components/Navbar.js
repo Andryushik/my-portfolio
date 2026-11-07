@@ -115,9 +115,12 @@ export default function Navbar() {
 
         {/* MENU */}
         <div ref={menuRef}>
+          {/* Closed on phones: invisible as well, so its links leave the Tab
+              order and the accessibility tree. Always shown from md up. */}
           <div
-            className={`transition-all duration-500 ease-in-out overflow-hidden ${navbar ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-              } md:max-h-full md:opacity-100`}
+            id="mobile-menu"
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${navbar ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible"
+              } md:max-h-full md:opacity-100 md:visible`}
           >
             <ul className="h-auto items-center justify-center flex flex-col md:flex-row">
               {menu.map((menuItem, i) => (
