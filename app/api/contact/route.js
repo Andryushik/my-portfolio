@@ -7,6 +7,11 @@ export async function POST(request) {
     return Response.json({ message: "Expected JSON" }, { status: 415 });
   }
 
+  // Refuse big bodies before reading them; the form sends a few KB at most.
+  if (Number(request.headers.get("content-length")) > 16 * 1024) {
+    return Response.json({ message: "Too large" }, { status: 413 });
+  }
+
   let body;
   try {
     body = await request.json();
