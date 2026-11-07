@@ -46,65 +46,63 @@ export default function Navbar() {
   return (
     <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">
       <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 max-w-7xl">
-        <div>
-          <div className="flex items-center justify-between md:block">
-            {/* LOGO */}
-            <a href="#hero" className="flex items-center h-14 w-40 md:w-56">
-              <div className="@container relative w-full aspect-[2000/434] hover:scale-105 ease-in duration-500">
-                <Image
-                  className="w-full h-auto dark:hidden"
-                  src={logoLight}
-                  alt="Andrei Popov"
-                  width={220}
-                  height={50}
-                  loading="eager"
-                />
-                <Image
-                  className="w-full h-auto hidden dark:block"
-                  src={logoDark}
-                  alt="Andrei Popov"
-                  width={220}
-                  height={50}
-                  loading="eager"
-                />
-                {/* Tagline drawn over the image's empty slot; sizes in cqw
-                    scale with the logo. Letters use the page background
-                    colour (Canvas) so they look cut out of the tiles. */}
-                <span
-                  className={`${electrolize.className} absolute left-[24.65%] top-[66.6%] flex h-[19.6%] text-[3.7cqw] leading-none`}
-                  aria-hidden="true"
-                >
-                  {[...TAGLINE].map((char, i) =>
-                    char === " " ? (
-                      <span key={i} className="w-[1.2cqw]" />
-                    ) : (
-                      <span
-                        key={i}
-                        className="flex w-[3.4cqw] items-center justify-center rounded-[1.1cqw] bg-brand text-[color:Canvas]"
-                      >
-                        {char}
-                      </span>
-                    )
-                  )}
-                </span>
-                <span className="sr-only">Full-Stack Developer</span>
-              </div>
-            </a>
-
-            {/* BURGER BUTTON FOR MOBILE */}
-            <div className="md:hidden">
-              <button
-                type="button"
-                ref={hamburgerRef}
-                className="flex justify-center items-center h-10 w-10 rounded-full cursor-pointer bg-button"
-                onClick={() => setNavbar(!navbar)}
-                aria-label="Menu"
-                aria-expanded={navbar}
-                aria-controls="mobile-menu"
+        <div className="flex items-center justify-between md:block">
+          {/* LOGO */}
+          <a href="#hero" className="flex items-center h-14 w-40 md:w-56">
+            <div className="@container relative w-full aspect-[2000/434] hover:scale-105 ease-in duration-500">
+              <Image
+                className="w-full h-auto dark:hidden"
+                src={logoLight}
+                alt="Andrei Popov"
+                width={220}
+                height={50}
+                loading="eager"
+              />
+              <Image
+                className="w-full h-auto hidden dark:block"
+                src={logoDark}
+                alt="Andrei Popov"
+                width={220}
+                height={50}
+                loading="eager"
+              />
+              {/* Tagline drawn over the image's empty slot; sizes in cqw
+                  scale with the logo. Letters use the page background
+                  colour (Canvas) so they look cut out of the tiles. */}
+              <span
+                className={`${electrolize.className} absolute left-[24.65%] top-[66.6%] flex h-[19.6%] text-[3.7cqw] leading-none`}
+                aria-hidden="true"
               >
-                <span className={`burger ${navbar && "burgerActive"}`}></span>
-              </button>
+                {[...TAGLINE].map((char, i) =>
+                  char === " " ? (
+                    <span key={i} className="w-[1.2cqw]" />
+                  ) : (
+                    <span
+                      key={i}
+                      className="flex w-[3.4cqw] items-center justify-center rounded-[1.1cqw] bg-brand text-[color:Canvas]"
+                    >
+                      {char}
+                    </span>
+                  )
+                )}
+              </span>
+              <span className="sr-only">Full-Stack Developer</span>
             </div>
+          </a>
+
+          {/* BURGER BUTTON FOR MOBILE */}
+          <div className="md:hidden">
+            <button
+              type="button"
+              ref={hamburgerRef}
+              className="flex justify-center items-center h-10 w-10 rounded-full cursor-pointer bg-button"
+              onClick={() => setNavbar(!navbar)}
+              aria-label="Menu"
+              aria-expanded={navbar}
+              aria-controls="mobile-menu"
+            >
+              <span className={`burger ${navbar && "burgerActive"}`}></span>
+            </button>
           </div>
         </div>
 
