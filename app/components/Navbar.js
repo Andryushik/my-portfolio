@@ -59,7 +59,7 @@ export default function Navbar() {
                 <Image
                   className="w-full h-auto dark:hidden"
                   src={logoLight}
-                  alt="logo"
+                  alt="Andrei Popov"
                   width={220}
                   height={50}
                   loading="eager"
@@ -67,7 +67,7 @@ export default function Navbar() {
                 <Image
                   className="w-full h-auto hidden dark:block"
                   src={logoDark}
-                  alt="logo"
+                  alt="Andrei Popov"
                   width={220}
                   height={50}
                   loading="eager"
