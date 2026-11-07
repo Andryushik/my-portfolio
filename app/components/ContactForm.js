@@ -34,7 +34,8 @@ export default function ContactForm() {
       // A root error marks the submit as unsuccessful (so the form isn't
       // reset); react-hook-form clears it on the next submit.
       setError("root.server", {
-        message: "Sorry, message was not send. Text me on GitHub or LinkedIn.",
+        message:
+          "Sorry, your message wasn't sent. Please try again or message me on LinkedIn.",
       });
     }
   };
