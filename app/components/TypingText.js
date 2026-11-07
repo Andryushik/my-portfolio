@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { motion, stagger } from "motion/react";
 
 const textContainer = {
@@ -35,11 +36,29 @@ export default function TypingText({ title, textStyles }) {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        {Array.from(title).map((letter, index) => (
-          <motion.span variants={textVariant} key={index}>
-            {letter === "%" ? <br /> : letter}
-          </motion.span>
-        ))}
+        {/* Screen readers get the plain title: letters as separate boxes can
+            be read one by one. */}
+        <span className="sr-only">{title}</span>
+        <span aria-hidden="true">
+          {title.split(" ").map((word, w) => (
+            <Fragment key={w}>
+              {w > 0 && " "}
+              {/* Letters are inline-block so y can move them (it can't move
+                  inline boxes); each word stays in one piece when wrapping. */}
+              <span className="whitespace-nowrap">
+                {Array.from(word).map((letter, i) => (
+                  <motion.span
+                    key={i}
+                    variants={textVariant}
+                    className="inline-block"
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </span>
+            </Fragment>
+          ))}
+        </span>
       </motion.p>
     </div>
   );

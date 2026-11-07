@@ -70,9 +70,9 @@ export default function ContactForm() {
 
   return (
     <div className="py-8 px-4 mx-auto max-w-3xl">
-      <h4 className="mb-6 text-2xl tracking-tight font-bold text-center text-text-head">
+      <h3 className="mb-6 text-2xl tracking-tight font-bold text-center text-text-head">
         Message Me
-      </h4>
+      </h3>
       <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
         Got a question? Want to send feedback? Let me know.
       </p>
@@ -111,7 +111,7 @@ export default function ContactForm() {
             aria-describedby="name-error"
             {...register("name")}
           />
-          <p id="name-error" className="absolute text-red-600 text-sm">
+          <p id="name-error" className="absolute text-red-600 dark:text-red-400 text-sm">
             {errors.name?.message}
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function ContactForm() {
             aria-describedby="email-error"
             {...register("email")}
           />
-          <p id="email-error" className="absolute text-red-600 text-sm">
+          <p id="email-error" className="absolute text-red-600 dark:text-red-400 text-sm">
             {errors.email?.message}
           </p>
         </div>
@@ -155,14 +155,14 @@ export default function ContactForm() {
             aria-describedby="message-error"
             {...register("message")}
           ></textarea>
-          <p id="message-error" className="absolute text-red-600 text-sm">
+          <p id="message-error" className="absolute text-red-600 dark:text-red-400 text-sm">
             {errors.message?.message}
           </p>
         </div>
         {/* On md+ the error sits beside the button and wraps in its own column. */}
         <div className="md:flex md:items-center">
           <button
-            className="block mx-auto md:mx-0 shrink-0 py-3 px-5 font-medium text-center text-white rounded-lg bg-text-head sm:w-fit hover:bg-text-head/70 transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-text-head/50 disabled:text-gray-500"
+            className="block mx-auto md:mx-0 shrink-0 py-3 px-5 font-medium text-center text-white rounded-lg bg-button sm:w-fit hover:bg-button-hover transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-button/50 disabled:text-gray-500"
             type="submit"
             disabled={isSubmitting}
           >
@@ -196,7 +196,7 @@ export default function ContactForm() {
             role="alert"
             className={
               errors.root?.server
-                ? "block mt-8 md:mt-0 pl-8 text-red-500"
+                ? "block mt-8 md:mt-0 pl-8 text-red-600 dark:text-red-400"
                 : undefined
             }
           >

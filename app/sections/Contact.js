@@ -5,9 +5,9 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="py-14 md:py-24 px-7 md:px-16 max-w-7xl mx-auto">
-        <h3 className="text-2xl md:text-3xl text-text-head py-1 drop-shadow-md">
+        <h2 className="text-2xl md:text-3xl text-text-head py-1 drop-shadow-md">
           Contacts
-        </h3>
+        </h2>
 
         <ContactForm />
 
@@ -17,14 +17,15 @@ export default function Contact() {
 
         <p className="text-sm/8 md:text-base pt-12 text-gray-800 dark:text-gray-200">
           This portfolio website has been created using Next.js, Motion
-          and Tailwind CSS. The
+          and Tailwind CSS. The{" "}
           <a
+            className="text-text-head underline"
             href="https://github.com/Andryushik/my-portfolio"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className="text-teal-500"> code source </span>
-          </a>
+            code source
+          </a>{" "}
           is available on my GitHub page.
           <br />
           Thx for visit. See you again!

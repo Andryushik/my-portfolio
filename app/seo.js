@@ -20,7 +20,7 @@ export const metadata = {
       {
         url: 'https://andrei-popov.me/og-image.webp',
         width: 1200,
-        height: 630,
+        height: 631,
         alt: 'Andrei Popov - Full-Stack Software Developer',
       },
     ],

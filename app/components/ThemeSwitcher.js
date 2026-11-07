@@ -22,10 +22,12 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <div
+    <button
+      type="button"
       className="cursor-pointer flex items-center justify-between p-1 w-14 h-8 border border-slate-500 dark:border-slate-400 rounded-full relative transition ease-in-out duration-500"
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
-      name="Change theme"
+      aria-label="Dark mode"
+      aria-pressed={resolvedTheme === "dark"}
     >
       <BsFillMoonStarsFill className="text-xl hover:scale-110 duration-500" />
       <BsFillSunFill className="text-xl hover:scale-110 duration-500" />
@@ -34,6 +36,6 @@ export default function ThemeSwitcher() {
           resolvedTheme === "light" ? "left-1" : "right-1"
         }`}
       />
-    </div>
+    </button>
   );
 }

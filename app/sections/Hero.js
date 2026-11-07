@@ -20,7 +20,9 @@ export default function Hero() {
     <section id="hero" ref={heroRef}>
       <div className="relative h-screen w-full flex md:items-center justify-center md:justify-end px-7 md:px-16 max-w-7xl mx-auto overflow-hidden">
         <motion.div
-          className="absolute inset-0 z-0 px-7 md:px-16 max-w-7xl mx-auto"
+          // The scroll parallax is inline style that MotionConfig doesn't cover;
+          // with "reduce motion" on, CSS overrides it.
+          className="absolute inset-0 z-0 px-7 md:px-16 max-w-7xl mx-auto motion-reduce:transform-none! motion-reduce:opacity-100!"
           style={{ y, opacity, scale }}
         >
           <Image
@@ -32,7 +34,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="absolute flex flex-col text-center md:text-right text-slate-500 mt-16 md:mt-0"
+          className="absolute flex flex-col text-center md:text-right text-slate-500 mt-16 md:mt-0 motion-reduce:transform-none! motion-reduce:opacity-100!"
           initial={{ x: 500 }}
           animate={{ x: 0 }}
           transition={{
@@ -45,6 +47,8 @@ export default function Hero() {
           <h1 className="text-3xl md:text-4xl lg:text-6xl 2xl:text-7xl py-3 md:py-5 text-transparent bg-clip-text bg-linear-to-br from-cyan-600 to-teal-600 font-medium">
             Hi, <br />
             my name is <br /> Andrei
+            {/* Full name for screen readers and search; the design shows the first name. */}
+            <span className="sr-only"> Popov</span>
           </h1>
 
           <TypingText

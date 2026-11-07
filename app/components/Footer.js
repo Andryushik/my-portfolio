@@ -14,7 +14,7 @@ export default function Footer() {
 
       {/* TO THE TOP */}
       <a
-        className="text-2xl text-slate-400 animate-bounce"
+        className="text-2xl text-slate-400 motion-safe:animate-bounce"
         href="#hero"
         aria-label="Go to the top of the page"
       >
