@@ -14,12 +14,7 @@ export async function POST(request) {
     return Response.json({ message: "Too large" }, { status: 413 });
   }
 
-  let body;
-  try {
-    body = await request.json();
-  } catch {
-    return Response.json({ message: "Invalid JSON" }, { status: 400 });
-  }
+  const body = await request.json().catch(() => null);
 
   // Honeypot: a hidden field that people never see but bots fill in.
   // Answer as if it worked so the bot learns nothing, but leave a trace.
@@ -28,10 +23,8 @@ export async function POST(request) {
     return Response.json({ message: "Success" });
   }
 
-  let data;
-  try {
-    data = await contactFormSchema.validate(body);
-  } catch {
+  const data = await contactFormSchema.validate(body).catch(() => null);
+  if (!data) {
     return Response.json({ message: "Invalid input" }, { status: 400 });
   }
 
