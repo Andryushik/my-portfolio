@@ -45,7 +45,7 @@ export default function TypingText({ title, textStyles }) {
               {w > 0 && " "}
               {/* Letters are inline-block so y can move them (it can't move
                   inline boxes); each word stays in one piece when wrapping. */}
-              <span className="inline-block whitespace-nowrap">
+              <span className="whitespace-nowrap">
                 {Array.from(word).map((letter, i) => (
                   <motion.span
                     key={i}
