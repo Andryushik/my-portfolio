@@ -67,7 +67,7 @@ export default function ContactForm() {
         Message Me
       </h3>
       <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-        Have a question, a project or a job opportunity? Let me know.
+        Hiring, have a project in mind, or just want to say hi? I&apos;d love to hear from you.
       </p>
       <form
         className="space-y-8"
