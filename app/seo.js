@@ -1,7 +1,7 @@
 export const metadata = {
   // SEO
   title: "Andrei Popov | Ruby on Rails & React Developer | Netherlands",
-  description: "Full-Stack Developer in Netherlands building web apps with Ruby on Rails & React. View projects, code samples. Available for opportunities.",
+  description: "Full-Stack Developer in the Netherlands building web apps with Ruby on Rails. See my projects and source code, or get in touch.",
 
   metadataBase: new URL("https://andrei-popov.me"),
   alternates: {
@@ -13,7 +13,7 @@ export const metadata = {
   // Open Graph
   openGraph: {
     title: "Andrei Popov | Developer Portfolio",
-    description: "Full-Stack Software Developer based in Netherlands, specializing in Ruby on Rails, React, and Next.js. Building fast, accessible web applications. Check out my projects and let's connect!",
+    description: "Full-Stack Developer based in the Netherlands, working with Ruby on Rails, React and Next.js. See my projects and get in touch.",
     url: 'https://andrei-popov.me',
     siteName: 'Andrei Popov Portfolio',
     images: [
@@ -51,7 +51,7 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Andrei Popov",
-    "jobTitle": "Full-Stack Software Developer",
+    "jobTitle": "Full-Stack Developer",
     "url": "https://andrei-popov.me",
     "image": "https://andrei-popov.me/og-image.webp",
     "sameAs": [
@@ -60,11 +60,13 @@ export function StructuredData() {
     ],
     "knowsAbout": [
       "Ruby on Rails",
+      "Ruby",
       "JavaScript",
       "React",
       "Next.js",
+      "Node.js",
       "PostgreSQL",
-      "TailwindCSS",
+      "Tailwind CSS",
       "Full-Stack Development"
     ],
     "address": {
