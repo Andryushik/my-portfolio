@@ -54,9 +54,9 @@ export default function Projects() {
     <section ref={projectsRef} id="projects">
       <div className="relative py-14 md:py-24 px-7 md:px-16 max-w-7xl mx-auto">
         <motion.div className="sticky top-14 md:top-24" style={{ opacity }}>
-          <h3 className="text-2xl md:text-3xl text-text-head py-1 drop-shadow-md">
+          <h2 className="text-2xl md:text-3xl text-text-head py-1 drop-shadow-md">
             Projects
-          </h3>
+          </h2>
         </motion.div>
 
         <div className="mx-auto py-12 max-w-lg lg:max-w-2xl xl:max-w-4xl">

@@ -1,16 +1,16 @@
 "use client";
 import { ThemeProvider } from "next-themes";
+import { MotionConfig } from "motion/react";
 
 export default function Providers({ children }) {
   return (
-    // New storage key: the old site saved the system theme under "theme" as
-    // if the visitor had picked it, which would pin the theme for them.
+    // Not "theme": the old site saved the system theme there as if picked.
     <ThemeProvider
       defaultTheme="system"
       attribute="class"
       storageKey="color-theme"
     >
-      {children}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </ThemeProvider>
   );
 }

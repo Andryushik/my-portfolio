@@ -54,25 +54,23 @@ export default function About() {
     <section id="about">
       <div className="min-h-screen flex items-center md:justify-between flex-col md:flex-row px-7 md:px-16 max-w-7xl mx-auto py-14 md:py-24">
         <div className="top-0 md:w-2/3 max-w-prose flex-auto py-14 md:py-20 md:pr-10">
-          <h3 className="text-2xl md:text-3xl text-text-head py-3 drop-shadow-md">
+          <h2 className="text-2xl md:text-3xl text-text-head py-3 drop-shadow-md">
             About & Skills
-          </h3>
+          </h2>
 
-          <ul>
-            {paragraphTexts.map((p) => (
-              <motion.li
-                variants={listVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false }}
-                custom={p.key}
-                key={p.key}
-                className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
-              >
-                {p.content}
-              </motion.li>
-            ))}
-          </ul>
+          {paragraphTexts.map((p) => (
+            <motion.div
+              variants={listVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              custom={p.key}
+              key={p.key}
+              className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
+            >
+              {p.content}
+            </motion.div>
+          ))}
         </div>
 
         <div className="flex-auto py-10 px-40 w-full md:w-1/3 md:max-w-md">

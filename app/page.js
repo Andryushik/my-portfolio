@@ -9,6 +9,7 @@ import Contact from "./sections/Contact";
 
 export default function Home() {
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const lenis = new Lenis({ autoRaf: true });
     return () => lenis.destroy();
   }, []);

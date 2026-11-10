@@ -2,15 +2,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Keep v3 behaviour: hover applies on tap too, so project cards reveal
-   Source/Live on touch devices (v4 limits hover to hover-capable devices). */
+/* v3 behaviour: hover also on tap, so project cards open on phones. */
 @custom-variant hover (&:hover);
 
 @theme {
-  --color-text-head: #11b7bb;
+  /* Darker than the logo teal so it reads on white (4.8:1). */
+  --color-text-head: #0b7f83;
+  --color-brand: #11b7bb;
+  /* Not text-head: white on the dark-theme teal is only 2.5:1. */
+  --color-button: #0b7f83;
+  --color-button-hover: #096b6e;
 
   --text-xxs: 0.6rem;
   --text-xxs--line-height: 0.6rem;
+}
+
+/* Plain selector: our dark variant matches only descendants of .dark. */
+.dark {
+  --color-text-head: #11b7bb;
 }
 
 /* Keep v3 behaviour: v4 resets buttons to cursor: default. */
@@ -21,8 +30,10 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Toast progress bar colour (react-toastify v11 removed the progressStyle prop) */
@@ -30,9 +41,7 @@ html {
   background: rgb(107 114 128);
 }
 
-/* Lenis does the smoothing while active; its stylesheet (imported in
-   app/page.js) no longer turns off the CSS smooth scrolling set on html above,
-   and running both makes scrolling fight itself. */
+/* Lenis smooths by itself; CSS smooth scrolling on top makes it stutter. */
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
