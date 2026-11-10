@@ -2,43 +2,14 @@ import { motion } from "motion/react";
 import Skills from "../components/Skills";
 
 export default function About() {
-  const paragraphTexts = [
-    {
-      key: 1,
-      content: (
-        <p>
-          Hello! I&apos;m a full-stack software developer based in the Netherlands,
-          passionate about building digital experiences that matter.
-        </p>
-      ),
-    },
-    {
-      key: 2,
-      content: (
-        <p>
-          I recently refreshed and expanded my coding expertise through an intensive development bootcamp, and I now work as a Software Developer at a dynamic startup. With a strong foundation in both customer service and IT, I&apos;ve evolved into a developer who understands not just the code, but the people behind the screen.
-        </p>
-      ),
-    },
-    {
-      key: 3,
-      content: (
-        <p>
-          I specialize in creating user-centric web solutions that blend functionality with seamless design. My international background and attention to detail help me excel in collaborative environments where innovation thrives.
-        </p>
-      ),
-    },
-    {
-      key: 4,
-      content: (
-        <p>
-          When I&apos;m not coding, you&apos;ll find me tinkering with smart home automation or bringing ideas to life through 3D printing. Ready to collaborate on your next project? Let&apos;s build something extraordinary together!
-        </p>
-      ),
-    },
+  const paragraphs = [
+    "Hello! I'm a full-stack software developer based in the Netherlands, passionate about building digital experiences that matter.",
+    "I recently refreshed and expanded my coding expertise through an intensive development bootcamp, and I now work as a Software Developer at a dynamic startup. With a strong foundation in both customer service and IT, I've evolved into a developer who understands not just the code, but the people behind the screen.",
+    "I specialize in creating user-centric web solutions that blend functionality with seamless design. My international background and attention to detail help me excel in collaborative environments where innovation thrives.",
+    "When I'm not coding, you'll find me tinkering with smart home automation or bringing ideas to life through 3D printing. Ready to collaborate on your next project? Let's build something extraordinary together!",
   ];
 
-  const listVariants = {
+  const paragraphVariants = {
     hidden: { opacity: 0, y: "100%" },
     visible: (key) => ({
       opacity: 1,
@@ -58,18 +29,18 @@ export default function About() {
             About & Skills
           </h2>
 
-          {paragraphTexts.map((p) => (
-            <motion.div
-              variants={listVariants}
+          {paragraphs.map((text, i) => (
+            <motion.p
+              key={i}
+              variants={paragraphVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
-              custom={p.key}
-              key={p.key}
+              custom={i + 1}
               className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
             >
-              {p.content}
-            </motion.div>
+              {text}
+            </motion.p>
           ))}
         </div>
 
