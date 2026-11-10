@@ -40,11 +40,6 @@
   background: rgb(107 114 128);
 }
 
-/* Lenis smooths by itself; CSS smooth scrolling on top makes it stutter. */
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
 /* Burger menu button */
 .burger {
   width: 100%;
