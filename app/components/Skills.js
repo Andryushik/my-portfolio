@@ -7,17 +7,17 @@ const skills = [
   { name: "CSS", icon: "css3-original.svg", x: "-9rem", y: "2rem" },
   { name: "JavaScript", icon: "javascript-original.svg", x: "0rem", y: "1rem" },
   { name: "Next.js", icon: "nextjs-original-wordmark.svg", x: "1rem", y: "-9rem" },
-  { name: "TailwindCss", icon: "tailwindcss-original.svg", x: "7rem", y: "8rem" },
+  { name: "Tailwind CSS", icon: "tailwindcss-original.svg", x: "7rem", y: "8rem" },
   { name: "Git", icon: "git-original.svg", x: "-7rem", y: "8rem" },
-  { name: "RubyOnRails", icon: "rails-original-wordmark.svg", x: "7rem", y: "-7rem" },
+  { name: "Ruby on Rails", icon: "rails-original-wordmark.svg", x: "7rem", y: "-7rem" },
   { name: "Ruby", icon: "ruby-original-wordmark.svg", x: "-8rem", y: "-4rem" },
   { name: "Node.js", icon: "nodejs-original-wordmark.svg", x: "3rem", y: "5rem" },
-  { name: "AlpineJS", icon: "alpinejs-original.svg", x: "-5rem", y: "-8rem" },
+  { name: "Alpine.js", icon: "alpinejs-original.svg", x: "-5rem", y: "-8rem" },
   { name: "MongoDB", icon: "mongodb-plain-wordmark.svg", x: "0rem", y: "10rem" },
   { name: "Express", icon: "express-original.svg", x: "-4rem", y: "4rem" },
   { name: "PostgreSQL", icon: "postgresql-original-wordmark.svg", x: "9rem", y: "3rem" },
   { name: "Figma", icon: "figma-original.svg", x: "9rem", y: "-2rem" },
-  { name: "React.js", icon: "react-original.svg", x: "3rem", y: "-3rem" },
+  { name: "React", icon: "react-original.svg", x: "3rem", y: "-3rem" },
 ];
 
 const Skill = ({ name, icon, x, y }) => {
