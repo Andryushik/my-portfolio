@@ -40,12 +40,12 @@ export default function TypingText({ title, textStyles }) {
         {title.split(" ").map((word, w) => (
           <Fragment key={w}>
             {w > 0 && " "}
-            {/* inline-block: transforms don't move inline boxes. */}
             <span className="whitespace-nowrap">
               {Array.from(word).map((letter, i) => (
                 <motion.span
                   key={i}
                   variants={textVariant}
+                  // Transforms don't move inline boxes.
                   className="inline-block"
                 >
                   {letter}

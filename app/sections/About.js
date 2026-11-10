@@ -11,12 +11,12 @@ export default function About() {
 
   const paragraphVariants = {
     hidden: { opacity: 0, y: "100%" },
-    visible: (key) => ({
+    visible: (order) => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        delay: key * 0.3,
+        delay: order * 0.3,
       },
     }),
   };
