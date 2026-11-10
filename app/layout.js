@@ -11,7 +11,7 @@ const gaId = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <StructuredData />
       </head>
