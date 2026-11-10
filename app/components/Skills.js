@@ -23,7 +23,7 @@ const skills = [
 const Skill = ({ name, icon, x, y }) => {
   return (
     <motion.div
-      className="absolute flex-1 w-10 h-10 lg:w-11 lg:h-11 bg-gray-100 dark:bg-gray-200 rounded-full p-2"
+      className="absolute w-10 h-10 lg:w-11 lg:h-11 bg-gray-100 dark:bg-gray-200 rounded-full p-2"
       whileHover={{ scale: 1.6 }}
       initial={{
         x: 0,
@@ -46,7 +46,7 @@ const Skill = ({ name, icon, x, y }) => {
 
 export default function Skills() {
   return (
-    <div className="relative overflow-visible flex justify-center items-center w-full h-72 md:h-fit">
+    <div className="relative flex justify-center items-center w-full h-72 md:h-fit">
       {skills.map((skill) => (
         <Skill key={skill.name} {...skill} />
       ))}

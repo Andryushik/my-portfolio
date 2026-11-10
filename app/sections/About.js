@@ -24,7 +24,7 @@ export default function About() {
   return (
     <section id="about">
       <div className="min-h-screen flex items-center md:justify-between flex-col md:flex-row px-7 md:px-16 max-w-7xl mx-auto py-14 md:py-24">
-        <div className="top-0 md:w-2/3 max-w-prose flex-auto py-14 md:py-20 md:pr-10">
+        <div className="md:w-2/3 max-w-prose flex-auto py-14 md:py-20 md:pr-10">
           <h2 className="text-2xl md:text-3xl text-text-head py-3 drop-shadow-md">
             About & Skills
           </h2>

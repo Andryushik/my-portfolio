@@ -127,7 +127,7 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <div className="sm:col-span-2">
+        <div>
           <label
             className="block mb-2 font-medium text-gray-900 dark:text-gray-300"
             htmlFor="message"
