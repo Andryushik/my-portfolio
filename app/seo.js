@@ -23,7 +23,7 @@ export const metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 631,
-        alt: 'Andrei Popov - Full-Stack Software Developer',
+        alt: 'Andrei Popov, Full-Stack Developer',
       },
     ],
     locale: 'en_US',
@@ -67,7 +67,7 @@ export function StructuredData() {
       "addressRegion": "North Brabant",
       "addressCountry": "NL"
     },
-    "description": "Full-Stack Software Developer specializing in Ruby on Rails and React, based in Netherlands"
+    "description": "Full-Stack Developer specializing in Ruby on Rails and React, based in the Netherlands"
   };
 
   return (
