@@ -66,7 +66,7 @@ export default function ContactForm() {
         Message Me
       </h3>
       <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-        Got a question? Want to send feedback? Let me know.
+        Have a question, a project or a job opportunity? Let me know.
       </p>
       <form
         className="space-y-8"
@@ -96,7 +96,7 @@ export default function ContactForm() {
             className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             type="text"
             id="name"
-            placeholder="Guest"
+            placeholder="Jane Doe"
             aria-invalid={Boolean(errors.name)}
             aria-describedby="name-error"
             {...register("name")}
@@ -117,7 +117,7 @@ export default function ContactForm() {
             className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             type="email"
             id="email"
-            placeholder="name@gmail.com"
+            placeholder="name@example.com"
             aria-invalid={Boolean(errors.email)}
             aria-describedby="email-error"
             {...register("email")}
@@ -139,7 +139,7 @@ export default function ContactForm() {
             id="message"
             rows="5"
             data-lenis-prevent
-            placeholder="Let me know how I can help you..."
+            placeholder="How can I help?"
             aria-invalid={Boolean(errors.message)}
             aria-describedby="message-error"
             {...register("message")}
