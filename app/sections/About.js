@@ -6,7 +6,7 @@ export default function About() {
     "I'm a full-stack developer based in 's-Hertogenbosch, the Netherlands. I build web applications that solve real problems and are a pleasure to use.",
     "I work at a startup on a B2B single sign-on (SSO) product built with Ruby on Rails. I came to code through an intensive bootcamp after working in customer service and IT, so I think about the people using the product as much as the code behind it.",
     "I like owning a feature from the database to the interface and getting the details right. My international background helps me work well in diverse, collaborative teams.",
-    "Away from the keyboard, I tinker with home automation and bring ideas to life with a 3D printer.",
+    "Outside work, I train at the gym and build an AI robot, which means 3D modelling and printing, soldering, programming and plenty of experimenting with AI models. I also tinker with home automation.",
   ];
 
   const paragraphVariants = {
