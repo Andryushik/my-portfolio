@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-// Icons from devicon 2.18.0 (MIT), kept in public/icons so a CDN change
-// can't alter the site. x/y place each icon around the centre.
+// public/icons: devicon 2.18.0 (MIT).
 const skills = [
   { name: "HTML", icon: "html5-original.svg", x: "-3rem", y: "-3rem" },
   { name: "CSS", icon: "css3-original.svg", x: "-9rem", y: "2rem" },

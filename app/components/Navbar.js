@@ -108,8 +108,7 @@ export default function Navbar() {
 
         {/* MENU */}
         <div ref={menuRef}>
-          {/* Closed on phones: invisible as well, so its links leave the Tab
-              order and the accessibility tree. Always shown from md up. */}
+          {/* invisible keeps the closed menu's links out of the Tab order. */}
           <div
             id="mobile-menu"
             className={`transition-all duration-500 ease-in-out overflow-hidden ${navbar ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible"
@@ -133,14 +132,11 @@ export default function Navbar() {
               {/* THEME SWITCHER */}
               <li
                 className="py-3 flex justify-center items-center ml-0 mt-3 md:mt-0 lg:ml-8 xl:ml-12"
-                // Close the mobile menu shortly after switching the theme, so the
-                // change is visible first.
+                // Wait so the theme change is seen first.
                 onClick={() =>
                   setTimeout(() => {
                     setNavbar(false);
-                    // The closed menu is hidden on phones, which would drop
-                    // keyboard focus: hand it to the burger. On desktop the
-                    // burger is hidden, so focus() does nothing there.
+                    // Hiding the menu would drop focus; on desktop the burger is hidden and focus() does nothing.
                     if (menuRef.current?.contains(document.activeElement)) {
                       hamburgerRef.current?.focus();
                     }

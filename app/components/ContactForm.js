@@ -15,10 +15,8 @@ export default function ContactForm() {
       _gotcha: "",
     },
     resolver: yupResolver(contactFormSchema),
-    // First check when leaving a field, then on every keystroke in it, so a
-    // fixed error clears as soon as the input is valid.
     mode: "onTouched",
-    // We focus the first invalid field ourselves, after its error is shown.
+    // focusFirstError does it, once the error is on the page.
     shouldFocusError: false,
   });
 
@@ -36,8 +34,7 @@ export default function ContactForm() {
         autoClose: 3000,
       });
     } catch {
-      // A root error marks the submit as unsuccessful (so the form isn't
-      // reset); react-hook-form clears it on the next submit.
+      // Marks the submit unsuccessful, so the form isn't reset.
       setError("root.server", {
         message:
           "Sorry, your message wasn't sent. Please try again or message me on LinkedIn.",
@@ -50,17 +47,12 @@ export default function ContactForm() {
     if (isSubmitSuccessful) reset();
   }, [isSubmitSuccessful, reset]);
 
-  // After a failed submit, focus the first invalid field once its error is on
-  // the page, so a screen reader reads the error with the field
-  // (react-hook-form's own focus comes before that render). An Effect Event
-  // reads the latest errors without re-running on them: errors change on
-  // every keystroke after a submit, and following them would pull focus away
-  // while typing.
+  // Focus the first invalid field once its error renders, so screen readers read both.
+  // An Effect Event, so errors changing while typing don't move focus.
   const focusFirstError = useEffectEvent(() => {
     const field = ["name", "email", "message"].find((name) => errors[name]);
     if (!field) return;
-    // Enter in the invalid field leaves it focused, and focusing it again
-    // does nothing, so blur it first to have its error read.
+    // Refocusing a focused field does nothing; blur it so the error is read.
     if (document.activeElement?.id === field) document.activeElement.blur();
     setFocus(field);
   });
@@ -81,9 +73,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
-        {/* Honeypot for bots: hidden from people, keyboard and screen readers.
-            The name means nothing to browser autofill, so real visitors
-            never fill it by accident. */}
+        {/* Honeypot: hidden from people; autofill doesn't know the name. */}
         <div className="absolute -left-[9999px]" aria-hidden="true">
           <label htmlFor="gotcha">Leave this field empty</label>
           <input
@@ -148,7 +138,6 @@ export default function ContactForm() {
             className="block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 rounded-lg dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white focus:outline-text-head"
             id="message"
             rows="5"
-            // Let the wheel scroll the textarea instead of Lenis scrolling the page.
             data-lenis-prevent
             placeholder="Let me know how I can help you..."
             aria-invalid={Boolean(errors.message)}
@@ -159,7 +148,6 @@ export default function ContactForm() {
             {errors.message?.message}
           </p>
         </div>
-        {/* On md+ the error sits beside the button and wraps in its own column. */}
         <div className="md:flex md:items-center">
           <button
             className="block mx-auto md:mx-0 shrink-0 py-3 px-5 font-medium text-center text-white rounded-lg bg-button sm:w-fit hover:bg-button-hover transition-all ease-in duration-200 focus:outline-hidden focus:ring-4 focus:ring-purple-300 disabled:bg-button/50 disabled:text-gray-500"
@@ -190,8 +178,7 @@ export default function ContactForm() {
               "Send message"
             )}
           </button>
-          {/* Always in the page: screen readers announce an alert when its
-              text changes, not when it is added with the text already in. */}
+          {/* Always rendered: an alert is announced when its text changes. */}
           <span
             role="alert"
             className={

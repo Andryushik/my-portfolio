@@ -2,18 +2,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Keep v3 behaviour: hover applies on tap too, so project cards reveal
-   Source/Live on touch devices (v4 limits hover to hover-capable devices). */
+/* v3 behaviour: hover also on tap, so project cards open on phones. */
 @custom-variant hover (&:hover);
 
 @theme {
-  /* Brand teal for text and controls. The light theme uses a darker
-     shade so it reads on white (4.8:1; #11b7bb is 2.5:1). */
+  /* Darker than the logo teal so it reads on white (4.8:1). */
   --color-text-head: #0b7f83;
-  /* The logo teal, same in both themes (tagline tiles over the logo). */
   --color-brand: #11b7bb;
-  /* Fill for buttons with white on them, the same in both themes: white
-     reads 4.8:1 on it, 6.3:1 on hover. */
+  /* Not text-head: white on the dark-theme teal is only 2.5:1. */
   --color-button: #0b7f83;
   --color-button-hover: #096b6e;
 
@@ -21,9 +17,7 @@
   --text-xxs--line-height: 0.6rem;
 }
 
-/* Dark theme keeps the logo teal (7.6:1 on the dark page, #121212). A plain
-   selector, because our dark variant only matches descendants of .dark,
-   not <html class="dark"> itself. */
+/* Plain selector: our dark variant matches only descendants of .dark. */
 .dark {
   --color-text-head: #11b7bb;
 }
@@ -47,9 +41,7 @@
   background: rgb(107 114 128);
 }
 
-/* Lenis does the smoothing while active; its stylesheet (imported in
-   app/page.js) no longer turns off the CSS smooth scrolling set on html above,
-   and running both makes scrolling fight itself. */
+/* Lenis smooths by itself; CSS smooth scrolling on top makes it stutter. */
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }

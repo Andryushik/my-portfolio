@@ -36,15 +36,12 @@ export default function TypingText({ title, textStyles }) {
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
       >
-        {/* Screen readers get the plain title: letters as separate boxes can
-            be read one by one. */}
         <span className="sr-only">{title}</span>
         <span aria-hidden="true">
           {title.split(" ").map((word, w) => (
             <Fragment key={w}>
               {w > 0 && " "}
-              {/* Letters are inline-block so y can move them (it can't move
-                  inline boxes); each word stays in one piece when wrapping. */}
+              {/* inline-block: transforms don't move inline boxes. */}
               <span className="whitespace-nowrap">
                 {Array.from(word).map((letter, i) => (
                   <motion.span

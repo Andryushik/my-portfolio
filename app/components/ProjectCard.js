@@ -18,12 +18,9 @@ export default function ProjectCard({
   return (
     <div className="top-0 lg:h-screen pt-32 pb-20 flex items-center justify-center sticky">
       <motion.div
-        // Shrinking on scroll is inline style; "reduce motion" turns it off.
         className="group relative overflow-hidden shadow-md dark:shadow-slate-700 rounded-xl flex-1 text-xs md:text-base motion-reduce:transform-none!"
         style={{ scale, top: `calc(${i * 40}px)` }}
       >
-        {/* Title first, so the heading comes before the content it names;
-            it is positioned absolutely, so the order doesn't change the look. */}
         <div className="absolute -bottom-full left-6 group-hover:bottom-6 group-focus-within:bottom-6 transition-all duration-700 z-40">
           <h3 className="text-xl xl:text-2xl text-text-head">{title}</h3>
         </div>
@@ -32,7 +29,7 @@ export default function ProjectCard({
           className="object-cover w-full h-full"
           src={imgSource}
           placeholder="blur"
-          // Card width: max-w-4xl / 2xl / lg, or the screen minus padding.
+          // Card widths: max-w-* in Projects.js.
           sizes="(min-width: 1280px) 896px, (min-width: 1024px) 672px, (min-width: 568px) 512px, 100vw"
           alt={`${title} screenshot`}
         />

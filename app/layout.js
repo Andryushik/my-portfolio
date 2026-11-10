@@ -22,7 +22,6 @@ export default function RootLayout({ children }) {
           <Footer />
         </Providers>
       </body>
-      {/* Only where a tracking ID is set (Production on Vercel). */}
       {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   );

@@ -10,15 +10,14 @@ export async function POST(request) {
     return Response.json({ message: "Expected JSON" }, { status: 415 });
   }
 
-  // Refuse big bodies before reading them; the form sends a few KB at most.
+  // The form sends a few KB at most.
   if (Number(request.headers.get("content-length")) > 16 * 1024) {
     return Response.json({ message: "Too large" }, { status: 413 });
   }
 
   const body = await request.json().catch(() => null);
 
-  // Honeypot: a hidden field that people never see but bots fill in.
-  // Answer as if it worked so the bot learns nothing, but leave a trace.
+  // Honeypot filled: pretend it worked.
   if (body?._gotcha) {
     console.warn("Contact form: honeypot filled, message dropped");
     return Response.json({ message: "Success" });

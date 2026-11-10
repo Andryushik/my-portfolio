@@ -1,7 +1,5 @@
-// No CORS headers here: app/api/contact/route.js relies on browsers
-// refusing cross-site JSON posts.
+// No CORS headers: see app/api/contact/route.js.
 const securityHeaders = [
-  // Don't let other sites show this one in a frame (clickjacking).
   { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-Content-Type-Options", value: "nosniff" },
