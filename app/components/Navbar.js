@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between md:block">
           {/* LOGO */}
           <a href="#hero" className="flex items-center h-14 w-40 md:w-56">
-            <div className="@container relative w-full aspect-[2000/434] hover:scale-105 ease-in duration-500">
+            <div className="@container relative w-full aspect-2000/434 hover:scale-105 ease-in duration-500">
               <Image
                 className="w-full h-auto dark:hidden"
                 src={logoLight}
@@ -68,7 +68,7 @@ export default function Navbar() {
               />
               {/* Tagline drawn over the image's empty slot; sizes in cqw
                   scale with the logo. Letters use the page background
-                  colour (Canvas) so they look cut out of the tiles. */}
+                  color (Canvas) so they look cut out of the tiles. */}
               <span
                 className={`${electrolize.className} absolute left-[24.65%] top-[66.6%] flex h-[19.6%] text-[3.7cqw] leading-none`}
                 aria-hidden="true"
@@ -79,7 +79,7 @@ export default function Navbar() {
                   ) : (
                     <span
                       key={i}
-                      className="flex w-[3.4cqw] items-center justify-center rounded-[1.1cqw] bg-brand text-[color:Canvas]"
+                      className="flex w-[3.4cqw] items-center justify-center rounded-[1.1cqw] bg-brand text-[Canvas]"
                     >
                       {char}
                     </span>
