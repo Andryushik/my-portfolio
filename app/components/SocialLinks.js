@@ -11,7 +11,7 @@ export default function SocialLinks({
         href="https://github.com/Andryushik"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="To see my GitHub page"
+        aria-label="GitHub profile (opens in a new tab)"
       >
         <AiFillGithub className="hover:scale-125 hover:animate-pulse duration-500" />
       </a>
@@ -19,7 +19,7 @@ export default function SocialLinks({
         href="https://www.linkedin.com/in/andrei-popov-g/"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="To see my LinkedIn profile"
+        aria-label="LinkedIn profile (opens in a new tab)"
       >
         <AiFillLinkedin className="hover:scale-125 hover:animate-pulse duration-500" />
       </a>

@@ -41,7 +41,7 @@ export default function Navbar() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [menuRef, hamburgerRef]);
+  }, []);
 
   return (
     <nav className="fixed backdrop-blur-lg w-full top-0 left-0 right-0 z-50">

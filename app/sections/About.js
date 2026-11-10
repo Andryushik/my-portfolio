@@ -2,50 +2,21 @@ import { motion } from "motion/react";
 import Skills from "../components/Skills";
 
 export default function About() {
-  const paragraphTexts = [
-    {
-      key: 1,
-      content: (
-        <p>
-          Hello! I&apos;m a full-stack software developer based in the Netherlands,
-          passionate about building digital experiences that matter.
-        </p>
-      ),
-    },
-    {
-      key: 2,
-      content: (
-        <p>
-          I recently refreshed and expanded my coding expertise through an intensive development bootcamp, and I now work as a Software Developer at a dynamic startup. With a strong foundation in both customer service and IT, I&apos;ve evolved into a developer who understands not just the code, but the people behind the screen.
-        </p>
-      ),
-    },
-    {
-      key: 3,
-      content: (
-        <p>
-          I specialize in creating user-centric web solutions that blend functionality with seamless design. My international background and attention to detail help me excel in collaborative environments where innovation thrives.
-        </p>
-      ),
-    },
-    {
-      key: 4,
-      content: (
-        <p>
-          When I&apos;m not coding, you&apos;ll find me tinkering with smart home automation or bringing ideas to life through 3D printing. Ready to collaborate on your next project? Let&apos;s build something extraordinary together!
-        </p>
-      ),
-    },
+  const paragraphs = [
+    "I'm a full-stack developer based in 's-Hertogenbosch, the Netherlands. I build web applications that solve real problems and are a pleasure to use.",
+    "I work at a startup on a B2B single sign-on (SSO) product built with Ruby on Rails. I came to code through an intensive bootcamp after working in customer service and IT, so I think about the people using the product as much as the code behind it.",
+    "I like owning a feature from the database to the interface and getting the details right. My international background helps me work well in diverse, collaborative teams.",
+    "Outside work, I play volleyball and go to the gym. At home, I build AI-powered robots, from 3D-printed parts to the code that runs them, and tinker with home automation.",
   ];
 
-  const listVariants = {
+  const paragraphVariants = {
     hidden: { opacity: 0, y: "100%" },
-    visible: (key) => ({
+    visible: (order) => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        delay: key * 0.3,
+        delay: order * 0.3,
       },
     }),
   };
@@ -53,23 +24,23 @@ export default function About() {
   return (
     <section id="about">
       <div className="min-h-screen flex items-center md:justify-between flex-col md:flex-row px-7 md:px-16 max-w-7xl mx-auto py-14 md:py-24">
-        <div className="top-0 md:w-2/3 max-w-prose flex-auto py-14 md:py-20 md:pr-10">
+        <div className="md:w-2/3 max-w-prose flex-auto py-14 md:py-20 md:pr-10">
           <h2 className="text-2xl md:text-3xl text-text-head py-3 drop-shadow-md">
             About & Skills
           </h2>
 
-          {paragraphTexts.map((p) => (
-            <motion.div
-              variants={listVariants}
+          {paragraphs.map((text, i) => (
+            <motion.p
+              key={i}
+              variants={paragraphVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
-              custom={p.key}
-              key={p.key}
+              custom={i + 1}
               className="text-sm/8 md:text-base py-2 text-gray-800 dark:text-gray-200"
             >
-              {p.content}
-            </motion.div>
+              {text}
+            </motion.p>
           ))}
         </div>
 

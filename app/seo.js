@@ -1,11 +1,13 @@
+export const SITE_URL = "https://andrei-popov.me";
+
 export const metadata = {
   // SEO
   title: "Andrei Popov | Ruby on Rails & React Developer | Netherlands",
-  description: "Full-Stack Developer in Netherlands building web apps with Ruby on Rails & React. View projects, code samples. Available for opportunities.",
+  description: "Full-Stack Developer in the Netherlands building web apps with Ruby on Rails. See my projects and source code, or get in touch.",
 
-  metadataBase: new URL("https://andrei-popov.me"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: 'https://andrei-popov.me',
+    canonical: '/',
   },
   authors: [{ name: 'Andrei Popov' }],
   creator: 'Andrei Popov',
@@ -13,15 +15,15 @@ export const metadata = {
   // Open Graph
   openGraph: {
     title: "Andrei Popov | Developer Portfolio",
-    description: "Full-Stack Software Developer based in Netherlands, specializing in Ruby on Rails, React, and Next.js. Building fast, accessible web applications. Check out my projects and let's connect!",
-    url: 'https://andrei-popov.me',
+    description: "Full-Stack Developer based in the Netherlands, working with Ruby on Rails, React and Next.js. See my projects and get in touch.",
+    url: '/',
     siteName: 'Andrei Popov Portfolio',
     images: [
       {
-        url: 'https://andrei-popov.me/og-image.webp',
+        url: '/og-image.webp',
         width: 1200,
         height: 631,
-        alt: 'Andrei Popov - Full-Stack Software Developer',
+        alt: 'Andrei Popov, Full-Stack Developer',
       },
     ],
     locale: 'en_US',
@@ -32,17 +34,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Andrei Popov | Developer Portfolio',
     description: 'Ruby on Rails & React developer. View my projects.',
-    images: ['https://andrei-popov.me/og-image.webp'],
-  },
-
-  // Robots
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    images: ['/og-image.webp'],
   },
 };
 
@@ -51,20 +43,22 @@ export function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Andrei Popov",
-    "jobTitle": "Full-Stack Software Developer",
-    "url": "https://andrei-popov.me",
-    "image": "https://andrei-popov.me/og-image.webp",
+    "jobTitle": "Full-Stack Developer",
+    "url": SITE_URL,
+    "image": `${SITE_URL}/og-image.webp`,
     "sameAs": [
       "https://github.com/Andryushik",
       "https://www.linkedin.com/in/andrei-popov-g/"
     ],
     "knowsAbout": [
       "Ruby on Rails",
+      "Ruby",
       "JavaScript",
       "React",
       "Next.js",
+      "Node.js",
       "PostgreSQL",
-      "TailwindCSS",
+      "Tailwind CSS",
       "Full-Stack Development"
     ],
     "address": {
@@ -73,7 +67,7 @@ export function StructuredData() {
       "addressRegion": "North Brabant",
       "addressCountry": "NL"
     },
-    "description": "Full-Stack Software Developer specializing in Ruby on Rails and React, based in Netherlands"
+    "description": "Full-Stack Developer specializing in Ruby on Rails and React, based in the Netherlands"
   };
 
   return (

@@ -1,3 +1,5 @@
+import { SITE_URL } from "./seo";
+
 export default function sitemap() {
-  return [{ url: "https://andrei-popov.me" }];
+  return [{ url: SITE_URL }];
 }

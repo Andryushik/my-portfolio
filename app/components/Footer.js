@@ -6,11 +6,9 @@ export default function Footer() {
   return (
     <footer className="py-7 mt-8 w-full mx-auto flex items-center justify-between px-7 md:px-16 max-w-7xl">
       {/* COPYRIGHT */}
-      <div className="">
-        <p className="text-xs md:text-sm text-text-head">
-          &copy; <CurrentYear initialYear={new Date().getFullYear()} /> Andrei Popov
-        </p>
-      </div>
+      <p className="text-xs md:text-sm text-text-head">
+        &copy; <CurrentYear initialYear={new Date().getFullYear()} /> Andrei Popov
+      </p>
 
       {/* TO THE TOP */}
       <a

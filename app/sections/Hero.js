@@ -26,7 +26,7 @@ export default function Hero() {
           <Image
             className="absolute bottom-0 w-auto max-h-[60%] md:h-full lg:max-h-screen"
             src={bgImage}
-            alt="Andrei's photo"
+            alt="Portrait of Andrei Popov"
             preload
           />
         </motion.div>
