@@ -3,10 +3,10 @@ import Skills from "../components/Skills";
 
 export default function About() {
   const paragraphs = [
-    "Hello! I'm a full-stack software developer based in the Netherlands, passionate about building digital experiences that matter.",
-    "I recently refreshed and expanded my coding expertise through an intensive development bootcamp, and I now work as a Software Developer at a dynamic startup. With a strong foundation in both customer service and IT, I've evolved into a developer who understands not just the code, but the people behind the screen.",
-    "I specialize in creating user-centric web solutions that blend functionality with seamless design. My international background and attention to detail help me excel in collaborative environments where innovation thrives.",
-    "When I'm not coding, you'll find me tinkering with smart home automation or bringing ideas to life through 3D printing. Ready to collaborate on your next project? Let's build something extraordinary together!",
+    "I'm a full-stack developer based in 's-Hertogenbosch, the Netherlands, and I enjoy building web applications that solve real problems.",
+    "After an intensive coding bootcamp, I joined a startup where I work as a full-stack developer on a B2B single sign-on (SSO) web application built with Ruby on Rails. My background in customer service and IT means I care not just about the code, but about the people who use it.",
+    "I like building web applications end to end, from the database to the interface, and making them reliable and pleasant to use. My international background and attention to detail help me work well in diverse, collaborative teams.",
+    "When I'm not coding, you'll find me tinkering with home automation or bringing ideas to life through 3D printing. Have a project or a role in mind? Let's talk!",
   ];
 
   const paragraphVariants = {
