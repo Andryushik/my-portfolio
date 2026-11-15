@@ -27,6 +27,11 @@
   button:not(:disabled) {
     cursor: pointer;
   }
+
+  /* An in-page link focuses its section; a ring around a whole section is noise. */
+  section[tabindex="-1"]:focus {
+    outline: none;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
