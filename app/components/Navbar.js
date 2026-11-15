@@ -48,7 +48,7 @@ export default function Navbar() {
       <div className="justify-between mx-auto md:items-center md:flex md:h-20 px-7 md:px-16 max-w-7xl">
         <div className="flex items-center justify-between md:block">
           {/* LOGO */}
-          <a href="#hero" className="flex items-center h-14 w-40 md:w-56">
+          <a href="/#hero" className="flex items-center h-14 w-40 md:w-56">
             <div className="@container relative w-full aspect-2000/434 hover:scale-105 ease-in duration-500">
               <Image
                 className="w-full h-auto dark:hidden"
@@ -121,7 +121,7 @@ export default function Navbar() {
                   className="text-xl md:text-lg lg:text-xl mb-1 md:mb-0 py-3 px-5 lg:px-8 xl:px-12 text-center rounded-sm hover:text-text-head ease-in-out duration-500"
                 >
                   <a
-                    href={`#${menuItem.toLowerCase()}`}
+                    href={`/#${menuItem.toLowerCase()}`}
                     onClick={() => setNavbar(false)}
                   >
                     {menuItem}

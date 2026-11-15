@@ -60,7 +60,7 @@ export default function Hero() {
 
         <a
           className="absolute right-2 lg:right-4 bottom-4 flex items-center"
-          href="#about"
+          href="/#about"
         >
           <motion.div
             className="relative text-xl mr-2"
