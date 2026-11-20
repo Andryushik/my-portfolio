@@ -35,6 +35,10 @@ export async function POST(request) {
     port: 465,
     secure: true,
     auth: { user: USER_EMAIL, pass: PASS_EMAIL },
+    // A hung SMTP server fails in ~10-20 s instead of minutes; the browser gives up at 20 s.
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 10_000,
   });
 
   try {
