@@ -23,6 +23,6 @@ PASS_EMAIL=...             # an app password for that account
 SEND_EMAIL=you@example.com # where messages are delivered
 ```
 
-Without these the form shows a send error. `NEXT_PUBLIC_GA_TRACKING_ID` is optional and turns on Google Analytics.
+Without these the form shows a send error. Analytics is Vercel Web Analytics, switched on in the Vercel dashboard.
 
 Other scripts: `npm run build`, `npm start`, `npm run lint`.
