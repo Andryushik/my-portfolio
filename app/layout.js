@@ -1,4 +1,4 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "./components/Navbar";
 import Providers from "./providers";
 import Footer from "./components/Footer";
@@ -6,8 +6,6 @@ import { StructuredData } from "./seo";
 import "./globals.css";
 
 export { metadata } from "./seo";
-
-const gaId = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 
 export default function RootLayout({ children }) {
   return (
@@ -21,8 +19,8 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </Providers>
+        <Analytics />
       </body>
-      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   );
 }
